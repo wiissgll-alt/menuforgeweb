@@ -29,6 +29,32 @@ function fullUrl(lang) {
     return `${DOMAIN}${langPath(lang)}`;
 }
 
+// Dimensiones reales de cada captura -nunca inventar un width/height uniforme para todas: cada
+// imagen tiene su propia proporción y forzar una distinta la deja estirada o aplastada-.
+const IMG_DIMS = {
+    'dish-de-dark.png': [1080, 2145],
+    'dish-pt.png': [1080, 2145],
+    'home-ar-dark.png': [1080, 2250],
+    'home-es.png': [1080, 2250],
+    'image-catalog.png': [1080, 1760],
+    'order-modal.png': [420, 750],
+    'published-home-dark.png': [420, 900],
+    'published-home.png': [420, 900],
+    'published-menu-cn.png': [420, 820],
+    'published-menu-dark.png': [420, 900],
+    'published-menu.png': [420, 900],
+    'qr-sheet.png': [1080, 2250],
+    'whatsapp-order.png': [1080, 1050]
+};
+
+// Calcula width/height a incluir en el <img> a partir de las dimensiones REALES del archivo,
+// escaladas para que quepan en displayWidth -así el navegador reserva el hueco correcto y no
+// distorsiona la imagen sea cual sea su proporción original-.
+function imgSize(file, displayWidth) {
+    const [w, h] = IMG_DIMS[file];
+    return { width: displayWidth, height: Math.round((displayWidth * h) / w) };
+}
+
 function escapeHtml(str) {
     return String(str).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }
@@ -66,11 +92,14 @@ function renderSteps(items) {
 }
 
 function renderGallery(items) {
-    return items.map((g, i) => `
+    return items.map((g, i) => {
+        const size = imgSize(g.img, 360);
+        return `
                 <div class="gallery-item fly-in" style="transition-delay:${(i % 5) * 70}ms">
-                    <div class="phone-frame"><img src="${asset(`/assets/screens/${g.img}`)}" alt="${escapeHtml(g.alt)}" loading="lazy" width="360" height="720"></div>
+                    <div class="phone-frame"><img src="${asset(`/assets/screens/${g.img}`)}" alt="${escapeHtml(g.alt)}" loading="lazy" width="${size.width}" height="${size.height}"></div>
                     <div class="gallery-caption">${escapeHtml(g.caption)}</div>
-                </div>`).join('');
+                </div>`;
+    }).join('');
 }
 
 function renderHonest(items) {
@@ -112,7 +141,7 @@ ${renderHreflangs(lang)}
     <meta property="og:title" content="${escapeHtml(c.meta.title)}">
     <meta property="og:description" content="${escapeHtml(c.meta.description)}">
     <meta property="og:url" content="${url}">
-    <meta property="og:image" content="${DOMAIN}${asset('/assets/screens/home-es.png')}">
+    <meta property="og:image" content="${DOMAIN}${asset('/assets/screens/published-home.png')}">
     <meta property="og:locale" content="${c.htmlLang}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${escapeHtml(c.meta.title)}">
@@ -156,7 +185,7 @@ ${renderHreflangs(lang)}
                     </div>
                 </div>
                 <div class="hero-visual fly-in-scale visible">
-                    <div class="phone-frame"><img src="${asset('/assets/screens/home-es.png')}" alt="${escapeHtml(c.gallery.items[0].alt)}" width="360" height="750"></div>
+                    <div class="phone-frame"><img src="${asset('/assets/screens/published-home.png')}" alt="${escapeHtml(c.gallery.items[0].alt)}" width="${imgSize('published-home.png', 300).width}" height="${imgSize('published-home.png', 300).height}"></div>
                     <div class="float-chip float-chip-1">🌐 8 / 8</div>
                     <div class="float-chip float-chip-2">📱 WhatsApp</div>
                     <div class="float-chip float-chip-3">🔲 QR</div>
@@ -172,13 +201,13 @@ ${renderHreflangs(lang)}
                 </div>
                 <div class="proof-wrap">
                     <div class="proof-card fly-in-left">
-                        <div class="phone-frame"><img src="${asset('/assets/screens/dish-pt.png')}" alt="Dish – ${escapeHtml(c.proof.captionLeft)}" width="330" height="660"></div>
-                        <div class="proof-caption">🇵🇹 ${escapeHtml(c.proof.captionLeft)}</div>
+                        <div class="phone-frame"><img src="${asset('/assets/screens/published-menu-cn.png')}" alt="${escapeHtml(c.proof.captionLeft)}" width="${imgSize('published-menu-cn.png', 280).width}" height="${imgSize('published-menu-cn.png', 280).height}"></div>
+                        <div class="proof-caption">🇨🇳 ${escapeHtml(c.proof.captionLeft)}</div>
                     </div>
-                    <div class="proof-arrow fly-in-scale">=</div>
+                    <div class="proof-arrow fly-in-scale">→</div>
                     <div class="proof-card fly-in-right">
-                        <div class="phone-frame"><img src="${asset('/assets/screens/dish-de-dark.png')}" alt="Dish – ${escapeHtml(c.proof.captionRight)}" width="330" height="660"></div>
-                        <div class="proof-caption">🇩🇪 ${escapeHtml(c.proof.captionRight)}</div>
+                        <div class="phone-frame"><img src="${asset('/assets/screens/whatsapp-order.png')}" alt="${escapeHtml(c.proof.captionRight)}" width="${imgSize('whatsapp-order.png', 280).width}" height="${imgSize('whatsapp-order.png', 280).height}"></div>
+                        <div class="proof-caption">🇪🇸 ${escapeHtml(c.proof.captionRight)}</div>
                     </div>
                 </div>
             </div>
@@ -243,7 +272,9 @@ ${renderHreflangs(lang)}
             <div class="brand"><img src="${asset('/assets/icons/icon-96.webp')}" alt="" width="24" height="24">MenuForge</div>
             <div class="footer-meta">
                 <span>© ${new Date().getFullYear()} ${escapeHtml(c.footer.rights)}</span>
-                <a href="mailto:wiissdeveloperapps@gmail.com">${escapeHtml(c.footer.contactLabel)}: wiissdeveloperapps@gmail.com</a>
+                <a class="icon-btn" href="mailto:wiissdeveloperapps@gmail.com" title="${escapeHtml(c.footer.contactLabel)}" aria-label="${escapeHtml(c.footer.contactLabel)}">
+                    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </a>
             </div>
         </div>
     </footer>

@@ -194,8 +194,11 @@ section { padding: 70px 0; }
 
 /* ---------- gallery ---------- */
 .gallery-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
-.gallery-item { display: flex; flex-direction: column; gap: 12px; }
-.gallery-item .phone-frame { border-radius: 26px; }
+.gallery-item { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+/* Dentro de la galería el marco tiene que ceder al ancho real de su columna -si no, con menos
+   de 5 columnas visibles el ancho fijo de .phone-frame desborda la rejilla y las imágenes de más
+   a la derecha quedan cortadas fuera de la pantalla-. */
+.gallery-item .phone-frame { width: 100%; border-radius: 26px; }
 .gallery-caption { font-size: 0.82rem; color: var(--text-muted); text-align: center; line-height: 1.4; }
 
 /* ---------- honest ---------- */
@@ -222,6 +225,9 @@ footer.site-footer { padding: 40px 0 60px; border-top: 1px solid var(--border); 
 .footer-meta a:hover { color: var(--accent); }
 
 /* ---------- responsive ---------- */
+@media (max-width: 1200px) {
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
 @media (max-width: 900px) {
     .hero-grid { grid-template-columns: 1fr; gap: 40px; }
     .hero-visual { order: -1; }

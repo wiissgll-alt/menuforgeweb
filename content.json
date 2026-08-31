@@ -1,9 +1,38 @@
 {
-  "languages": ["es", "en", "fr", "it", "de", "pt", "cn", "sa"],
+  "languages": [
+    "es",
+    "en",
+    "fr",
+    "it",
+    "de",
+    "pt",
+    "cn",
+    "sa"
+  ],
   "defaultLang": "es",
-  "rtlLangs": ["sa"],
-  "langNames": { "es": "Español", "en": "English", "fr": "Français", "it": "Italiano", "de": "Deutsch", "pt": "Português", "cn": "中文", "sa": "العربية" },
-  "langShort": { "es": "ES", "en": "EN", "fr": "FR", "it": "IT", "de": "DE", "pt": "PT", "cn": "中文", "sa": "عربي" },
+  "rtlLangs": [
+    "sa"
+  ],
+  "langNames": {
+    "es": "Español",
+    "en": "English",
+    "fr": "Français",
+    "it": "Italiano",
+    "de": "Deutsch",
+    "pt": "Português",
+    "cn": "中文",
+    "sa": "العربية"
+  },
+  "langShort": {
+    "es": "ES",
+    "en": "EN",
+    "fr": "FR",
+    "it": "IT",
+    "de": "DE",
+    "pt": "PT",
+    "cn": "中文",
+    "sa": "عربي"
+  },
   "content": {
     "es": {
       "htmlLang": "es",
@@ -11,7 +40,10 @@
         "title": "MenuForge — Carta digital con QR en 8 idiomas, gratis",
         "description": "Crea la carta digital de tu restaurante en minutos: QR, traducción real a 8 idiomas y pedidos por WhatsApp. Sin coste de entrada, sin anuncios que molesten al cliente."
       },
-      "nav": { "themeToggle": "Cambiar tema", "menuLabel": "Menú" },
+      "nav": {
+        "themeToggle": "Cambiar tema",
+        "menuLabel": "Menú"
+      },
       "hero": {
         "kicker": "Cartas QR para restaurantes",
         "titleLine1": "Tu carta, en 8 idiomas.",
@@ -29,38 +61,91 @@
         "Sin límite de mesas ni de idiomas"
       ],
       "proof": {
-        "title": "Un plato. Ocho idiomas. La misma foto.",
-        "subtitle": "Así ve tu carta un cliente en Portugal y otro en Alemania — el mismo plato, la misma foto, cada uno en su idioma.",
-        "captionLeft": "Portugués",
-        "captionRight": "Alemán"
+        "title": "Pide en chino. Te llega en español.",
+        "subtitle": "El cliente ve la carta y hace el pedido en su idioma — a ti te llega por WhatsApp en el tuyo, sin que nadie traduzca nada a mano.",
+        "captionLeft": "El cliente ve esto (chino)",
+        "captionRight": "A ti te llega esto (español)"
       },
       "features": {
         "title": "Todo lo que necesitas, ya incluido",
         "items": [
-          { "icon": "🌐", "title": "Traducción real, no decorativa", "desc": "Cada plato, categoría y hasta el nombre de tu carta se traduce de verdad a 8 idiomas — no es un selector de banderas sin más." },
-          { "icon": "📱", "title": "Pedidos por WhatsApp", "desc": "El cliente pide desde su móvil y el mensaje te llega en tu idioma, con el pedido, las notas y el total ya calculado." },
-          { "icon": "🖼️", "title": "Banco de fotos real incluido", "desc": "Cientos de fotos de platos ya listas por categoría. Si no tienes cámara profesional, no la necesitas." },
-          { "icon": "🥗", "title": "Alérgenos y dietas al detalle", "desc": "Vegano, sin gluten, picante... tus clientes filtran la carta según lo que pueden y quieren comer." },
-          { "icon": "🔲", "title": "QR y PDF en un toque", "desc": "Genera el código QR y una hoja lista para imprimir en las mesas, sin diseñar nada." },
-          { "icon": "🌙", "title": "Oscuro, claro y árabe (RTL)", "desc": "Tu carta se adapta al móvil de cada cliente, incluida la escritura de derecha a izquierda." }
+          {
+            "icon": "🌐",
+            "title": "Traducción real, no decorativa",
+            "desc": "Cada plato, categoría y hasta el nombre de tu carta se traduce de verdad a 8 idiomas — no es un selector de banderas sin más."
+          },
+          {
+            "icon": "📱",
+            "title": "Pedidos por WhatsApp",
+            "desc": "El cliente pide desde su móvil y el mensaje te llega en tu idioma, con el pedido, las notas y el total ya calculado."
+          },
+          {
+            "icon": "🖼️",
+            "title": "Banco de fotos real incluido",
+            "desc": "Cientos de fotos de platos ya listas por categoría. Si no tienes cámara profesional, no la necesitas."
+          },
+          {
+            "icon": "🥗",
+            "title": "Alérgenos y dietas al detalle",
+            "desc": "Vegano, sin gluten, picante... tus clientes filtran la carta según lo que pueden y quieren comer."
+          },
+          {
+            "icon": "🔲",
+            "title": "QR y PDF en un toque",
+            "desc": "Genera el código QR y una hoja lista para imprimir en las mesas, sin diseñar nada."
+          },
+          {
+            "icon": "🌙",
+            "title": "Oscuro, claro y árabe (RTL)",
+            "desc": "Tu carta se adapta al móvil de cada cliente, incluida la escritura de derecha a izquierda."
+          }
         ]
       },
       "steps": {
         "title": "De la idea a tu QR en 3 pasos",
         "items": [
-          { "title": "Escribe tu carta (o genérala al instante)", "desc": "Elige tu tipo de cocina y te la creamos ya con platos, precios y fotos de ejemplo listos para editar." },
-          { "title": "La traducimos y publicamos tu web", "desc": "En segundos tienes una web publicada con tu carta en 8 idiomas, sin tocar una línea de código." },
-          { "title": "Imprime el QR y listo", "desc": "Pégalo en las mesas. Cada cambio que hagas se actualiza al instante para todos tus clientes." }
+          {
+            "title": "Escribe tu carta (o genérala al instante)",
+            "desc": "Elige tu tipo de cocina y te la creamos ya con platos, precios y fotos de ejemplo listos para editar."
+          },
+          {
+            "title": "La traducimos y publicamos tu web",
+            "desc": "En segundos tienes una web publicada con tu carta en 8 idiomas, sin tocar una línea de código."
+          },
+          {
+            "title": "Imprime el QR y listo",
+            "desc": "Pégalo en las mesas. Cada cambio que hagas se actualiza al instante para todos tus clientes."
+          }
         ]
       },
       "gallery": {
         "title": "Así se ve por dentro",
         "items": [
-          { "img": "home-es.png", "alt": "Pantalla de inicio de MenuForge en español", "caption": "Tu carta habla 8 idiomas desde el primer minuto." },
-          { "img": "home-ar-dark.png", "alt": "MenuForge en árabe, modo oscuro y escritura de derecha a izquierda", "caption": "Modo oscuro y árabe (RTL), de fábrica." },
-          { "img": "qr-sheet.png", "alt": "Hoja de códigos QR lista para imprimir", "caption": "Hoja de QR lista para imprimir en tus mesas." },
-          { "img": "whatsapp-order.png", "alt": "Pedido recibido por WhatsApp", "caption": "El pedido llega a tu WhatsApp, en tu idioma." },
-          { "img": "image-catalog.png", "alt": "Banco de imágenes de platos incluido en la app", "caption": "Banco de fotos real, sin buscar en Google." }
+          {
+            "img": "published-home.png",
+            "alt": "Real published MenuForge restaurant page with food photos",
+            "caption": "Así ve tu carta un cliente real."
+          },
+          {
+            "img": "published-menu-dark.png",
+            "alt": "Real published menu page in dark mode with dish photos and prices",
+            "caption": "Categorías, fotos y precios — también en oscuro."
+          },
+          {
+            "img": "order-modal.png",
+            "alt": "Real order modal with table selector and notes",
+            "caption": "Mesa, notas y total — el pedido queda claro antes de enviarlo."
+          },
+          {
+            "img": "home-ar-dark.png",
+            "alt": "MenuForge en árabe, modo oscuro y escritura de derecha a izquierda",
+            "caption": "Modo oscuro y árabe (RTL), de fábrica."
+          },
+          {
+            "img": "qr-sheet.png",
+            "alt": "Hoja de códigos QR lista para imprimir",
+            "caption": "Hoja de QR lista para imprimir en tus mesas."
+          }
         ]
       },
       "honest": {
@@ -82,14 +167,16 @@
         "rights": "MenuForge. Todos los derechos reservados."
       }
     },
-
     "en": {
       "htmlLang": "en",
       "meta": {
         "title": "MenuForge — QR digital menu in 8 languages, free",
         "description": "Create your restaurant's digital menu in minutes: QR code, real translation into 8 languages and WhatsApp ordering. No entry cost, no ads bothering your customers."
       },
-      "nav": { "themeToggle": "Toggle theme", "menuLabel": "Menu" },
+      "nav": {
+        "themeToggle": "Toggle theme",
+        "menuLabel": "Menu"
+      },
       "hero": {
         "kicker": "QR menus for restaurants",
         "titleLine1": "Your menu, in 8 languages.",
@@ -107,38 +194,91 @@
         "No limit on tables or languages"
       ],
       "proof": {
-        "title": "One dish. Eight languages. The same photo.",
-        "subtitle": "This is how a customer in Portugal and one in Germany see your menu — same dish, same photo, each in their own language.",
-        "captionLeft": "Portuguese",
-        "captionRight": "German"
+        "title": "Order in Chinese. It reaches you in Spanish.",
+        "subtitle": "The customer sees the menu and orders in their own language — it reaches you on WhatsApp in yours, with nobody translating anything by hand.",
+        "captionLeft": "The customer sees this (Chinese)",
+        "captionRight": "You receive this (Spanish)"
       },
       "features": {
         "title": "Everything you need, already included",
         "items": [
-          { "icon": "🌐", "title": "Real translation, not decorative", "desc": "Every dish, category and even your menu's name is genuinely translated into 8 languages — not just a flag picker." },
-          { "icon": "📱", "title": "WhatsApp ordering", "desc": "Customers order from their phone and the message reaches you in your own language, with the order, notes and total already calculated." },
-          { "icon": "🖼️", "title": "Real photo library included", "desc": "Hundreds of dish photos ready by category. No professional camera required." },
-          { "icon": "🥗", "title": "Allergens and diets in detail", "desc": "Vegan, gluten-free, spicy... your customers filter the menu by what they can and want to eat." },
-          { "icon": "🔲", "title": "QR and PDF in one tap", "desc": "Generate the QR code and a print-ready sheet for your tables, with no design work." },
-          { "icon": "🌙", "title": "Dark, light and Arabic (RTL)", "desc": "Your menu adapts to every customer's phone, including right-to-left writing." }
+          {
+            "icon": "🌐",
+            "title": "Real translation, not decorative",
+            "desc": "Every dish, category and even your menu's name is genuinely translated into 8 languages — not just a flag picker."
+          },
+          {
+            "icon": "📱",
+            "title": "WhatsApp ordering",
+            "desc": "Customers order from their phone and the message reaches you in your own language, with the order, notes and total already calculated."
+          },
+          {
+            "icon": "🖼️",
+            "title": "Real photo library included",
+            "desc": "Hundreds of dish photos ready by category. No professional camera required."
+          },
+          {
+            "icon": "🥗",
+            "title": "Allergens and diets in detail",
+            "desc": "Vegan, gluten-free, spicy... your customers filter the menu by what they can and want to eat."
+          },
+          {
+            "icon": "🔲",
+            "title": "QR and PDF in one tap",
+            "desc": "Generate the QR code and a print-ready sheet for your tables, with no design work."
+          },
+          {
+            "icon": "🌙",
+            "title": "Dark, light and Arabic (RTL)",
+            "desc": "Your menu adapts to every customer's phone, including right-to-left writing."
+          }
         ]
       },
       "steps": {
         "title": "From idea to your QR in 3 steps",
         "items": [
-          { "title": "Write your menu (or generate one instantly)", "desc": "Pick your cuisine type and we build it for you with dishes, prices and sample photos ready to edit." },
-          { "title": "We translate it and publish your site", "desc": "In seconds you have a live website with your menu in 8 languages, without touching a line of code." },
-          { "title": "Print the QR code, done", "desc": "Stick it on your tables. Every change you make updates instantly for all your customers." }
+          {
+            "title": "Write your menu (or generate one instantly)",
+            "desc": "Pick your cuisine type and we build it for you with dishes, prices and sample photos ready to edit."
+          },
+          {
+            "title": "We translate it and publish your site",
+            "desc": "In seconds you have a live website with your menu in 8 languages, without touching a line of code."
+          },
+          {
+            "title": "Print the QR code, done",
+            "desc": "Stick it on your tables. Every change you make updates instantly for all your customers."
+          }
         ]
       },
       "gallery": {
         "title": "A look inside",
         "items": [
-          { "img": "home-es.png", "alt": "MenuForge home screen", "caption": "Your menu speaks 8 languages from minute one." },
-          { "img": "home-ar-dark.png", "alt": "MenuForge in Arabic, dark mode and right-to-left writing", "caption": "Dark mode and Arabic (RTL), out of the box." },
-          { "img": "qr-sheet.png", "alt": "Print-ready QR code sheet", "caption": "A QR sheet ready to print for your tables." },
-          { "img": "whatsapp-order.png", "alt": "Order received via WhatsApp", "caption": "The order lands on your WhatsApp, in your language." },
-          { "img": "image-catalog.png", "alt": "Dish photo library included in the app", "caption": "A real photo library, no Google searching." }
+          {
+            "img": "published-home.png",
+            "alt": "Real published MenuForge restaurant page with food photos",
+            "caption": "This is what your customers actually see."
+          },
+          {
+            "img": "published-menu-dark.png",
+            "alt": "Real published menu page in dark mode with dish photos and prices",
+            "caption": "Categories, photos and prices — in dark mode too."
+          },
+          {
+            "img": "order-modal.png",
+            "alt": "Real order modal with table selector and notes",
+            "caption": "Table, notes and total — the order is clear before it's sent."
+          },
+          {
+            "img": "home-ar-dark.png",
+            "alt": "MenuForge in Arabic, dark mode and right-to-left writing",
+            "caption": "Dark mode and Arabic (RTL), out of the box."
+          },
+          {
+            "img": "qr-sheet.png",
+            "alt": "Print-ready QR code sheet",
+            "caption": "A QR sheet ready to print for your tables."
+          }
         ]
       },
       "honest": {
@@ -160,14 +300,16 @@
         "rights": "MenuForge. All rights reserved."
       }
     },
-
     "fr": {
       "htmlLang": "fr",
       "meta": {
         "title": "MenuForge — Carte digitale QR en 8 langues, gratuite",
         "description": "Créez la carte digitale de votre restaurant en quelques minutes : QR code, traduction réelle en 8 langues et commandes par WhatsApp. Sans coût de départ, sans publicité gênante."
       },
-      "nav": { "themeToggle": "Changer de thème", "menuLabel": "Menu" },
+      "nav": {
+        "themeToggle": "Changer de thème",
+        "menuLabel": "Menu"
+      },
       "hero": {
         "kicker": "Cartes QR pour restaurants",
         "titleLine1": "Votre carte, en 8 langues.",
@@ -185,38 +327,91 @@
         "Aucune limite de tables ni de langues"
       ],
       "proof": {
-        "title": "Un plat. Huit langues. La même photo.",
-        "subtitle": "Voici comment un client au Portugal et un autre en Allemagne voient votre carte — le même plat, la même photo, chacun dans sa langue.",
-        "captionLeft": "Portugais",
-        "captionRight": "Allemand"
+        "title": "Commande en chinois. Elle vous arrive en espagnol.",
+        "subtitle": "Le client voit la carte et commande dans sa langue — cela vous arrive sur WhatsApp dans la vôtre, sans que personne ne traduise quoi que ce soit à la main.",
+        "captionLeft": "Le client voit ceci (chinois)",
+        "captionRight": "Vous recevez ceci (espagnol)"
       },
       "features": {
         "title": "Tout ce qu'il vous faut, déjà inclus",
         "items": [
-          { "icon": "🌐", "title": "Vraie traduction, pas décorative", "desc": "Chaque plat, catégorie et même le nom de votre carte est réellement traduit en 8 langues — pas juste un sélecteur de drapeaux." },
-          { "icon": "📱", "title": "Commandes par WhatsApp", "desc": "Le client commande depuis son téléphone et le message vous arrive dans votre langue, avec la commande, les notes et le total déjà calculé." },
-          { "icon": "🖼️", "title": "Banque de photos réelle incluse", "desc": "Des centaines de photos de plats prêtes par catégorie. Pas besoin d'appareil photo professionnel." },
-          { "icon": "🥗", "title": "Allergènes et régimes en détail", "desc": "Végan, sans gluten, épicé... vos clients filtrent la carte selon ce qu'ils peuvent et veulent manger." },
-          { "icon": "🔲", "title": "QR et PDF en un geste", "desc": "Générez le QR code et une feuille prête à imprimer pour vos tables, sans rien concevoir." },
-          { "icon": "🌙", "title": "Sombre, clair et arabe (RTL)", "desc": "Votre carte s'adapte au téléphone de chaque client, écriture de droite à gauche incluse." }
+          {
+            "icon": "🌐",
+            "title": "Vraie traduction, pas décorative",
+            "desc": "Chaque plat, catégorie et même le nom de votre carte est réellement traduit en 8 langues — pas juste un sélecteur de drapeaux."
+          },
+          {
+            "icon": "📱",
+            "title": "Commandes par WhatsApp",
+            "desc": "Le client commande depuis son téléphone et le message vous arrive dans votre langue, avec la commande, les notes et le total déjà calculé."
+          },
+          {
+            "icon": "🖼️",
+            "title": "Banque de photos réelle incluse",
+            "desc": "Des centaines de photos de plats prêtes par catégorie. Pas besoin d'appareil photo professionnel."
+          },
+          {
+            "icon": "🥗",
+            "title": "Allergènes et régimes en détail",
+            "desc": "Végan, sans gluten, épicé... vos clients filtrent la carte selon ce qu'ils peuvent et veulent manger."
+          },
+          {
+            "icon": "🔲",
+            "title": "QR et PDF en un geste",
+            "desc": "Générez le QR code et une feuille prête à imprimer pour vos tables, sans rien concevoir."
+          },
+          {
+            "icon": "🌙",
+            "title": "Sombre, clair et arabe (RTL)",
+            "desc": "Votre carte s'adapte au téléphone de chaque client, écriture de droite à gauche incluse."
+          }
         ]
       },
       "steps": {
         "title": "De l'idée à votre QR en 3 étapes",
         "items": [
-          { "title": "Écrivez votre carte (ou générez-en une à l'instant)", "desc": "Choisissez votre type de cuisine et nous la créons avec plats, prix et photos d'exemple prêts à modifier." },
-          { "title": "Nous la traduisons et publions votre site", "desc": "En quelques secondes, votre site est en ligne avec votre carte en 8 langues, sans toucher une ligne de code." },
-          { "title": "Imprimez le QR, c'est fait", "desc": "Collez-le sur vos tables. Chaque modification se met à jour instantanément pour tous vos clients." }
+          {
+            "title": "Écrivez votre carte (ou générez-en une à l'instant)",
+            "desc": "Choisissez votre type de cuisine et nous la créons avec plats, prix et photos d'exemple prêts à modifier."
+          },
+          {
+            "title": "Nous la traduisons et publions votre site",
+            "desc": "En quelques secondes, votre site est en ligne avec votre carte en 8 langues, sans toucher une ligne de code."
+          },
+          {
+            "title": "Imprimez le QR, c'est fait",
+            "desc": "Collez-le sur vos tables. Chaque modification se met à jour instantanément pour tous vos clients."
+          }
         ]
       },
       "gallery": {
         "title": "L'intérieur de l'app",
         "items": [
-          { "img": "home-es.png", "alt": "Écran d'accueil de MenuForge", "caption": "Votre carte parle 8 langues dès la première minute." },
-          { "img": "home-ar-dark.png", "alt": "MenuForge en arabe, mode sombre et écriture de droite à gauche", "caption": "Mode sombre et arabe (RTL), de série." },
-          { "img": "qr-sheet.png", "alt": "Feuille de QR codes prête à imprimer", "caption": "Une feuille de QR prête à imprimer pour vos tables." },
-          { "img": "whatsapp-order.png", "alt": "Commande reçue par WhatsApp", "caption": "La commande arrive sur votre WhatsApp, dans votre langue." },
-          { "img": "image-catalog.png", "alt": "Banque de photos de plats incluse dans l'app", "caption": "Une vraie banque de photos, sans chercher sur Google." }
+          {
+            "img": "published-home.png",
+            "alt": "Real published MenuForge restaurant page with food photos",
+            "caption": "Voici ce que voit vraiment votre client."
+          },
+          {
+            "img": "published-menu-dark.png",
+            "alt": "Real published menu page in dark mode with dish photos and prices",
+            "caption": "Catégories, photos et prix — aussi en mode sombre."
+          },
+          {
+            "img": "order-modal.png",
+            "alt": "Real order modal with table selector and notes",
+            "caption": "Table, notes et total — la commande est claire avant l'envoi."
+          },
+          {
+            "img": "home-ar-dark.png",
+            "alt": "MenuForge en arabe, mode sombre et écriture de droite à gauche",
+            "caption": "Mode sombre et arabe (RTL), de série."
+          },
+          {
+            "img": "qr-sheet.png",
+            "alt": "Feuille de QR codes prête à imprimer",
+            "caption": "Une feuille de QR prête à imprimer pour vos tables."
+          }
         ]
       },
       "honest": {
@@ -238,14 +433,16 @@
         "rights": "MenuForge. Tous droits réservés."
       }
     },
-
     "it": {
       "htmlLang": "it",
       "meta": {
         "title": "MenuForge — Menu digitale QR in 8 lingue, gratis",
         "description": "Crea il menu digitale del tuo ristorante in pochi minuti: QR code, traduzione reale in 8 lingue e ordini via WhatsApp. Nessun costo iniziale, nessuna pubblicità fastidiosa."
       },
-      "nav": { "themeToggle": "Cambia tema", "menuLabel": "Menu" },
+      "nav": {
+        "themeToggle": "Cambia tema",
+        "menuLabel": "Menu"
+      },
       "hero": {
         "kicker": "Menu QR per ristoranti",
         "titleLine1": "Il tuo menu, in 8 lingue.",
@@ -263,38 +460,91 @@
         "Nessun limite di tavoli né di lingue"
       ],
       "proof": {
-        "title": "Un piatto. Otto lingue. La stessa foto.",
-        "subtitle": "Ecco come un cliente in Portogallo e uno in Germania vedono il tuo menu — stesso piatto, stessa foto, ciascuno nella propria lingua.",
-        "captionLeft": "Portoghese",
-        "captionRight": "Tedesco"
+        "title": "Ordina in cinese. Ti arriva in spagnolo.",
+        "subtitle": "Il cliente vede il menu e ordina nella sua lingua — a te arriva su WhatsApp nella tua, senza che nessuno traduca nulla a mano.",
+        "captionLeft": "Il cliente vede questo (cinese)",
+        "captionRight": "A te arriva questo (spagnolo)"
       },
       "features": {
         "title": "Tutto quello che ti serve, già incluso",
         "items": [
-          { "icon": "🌐", "title": "Traduzione vera, non decorativa", "desc": "Ogni piatto, categoria e persino il nome del tuo menu viene tradotto davvero in 8 lingue — non è solo un selettore di bandiere." },
-          { "icon": "📱", "title": "Ordini via WhatsApp", "desc": "Il cliente ordina dal telefono e il messaggio ti arriva nella tua lingua, con l'ordine, le note e il totale già calcolato." },
-          { "icon": "🖼️", "title": "Banca di foto reale inclusa", "desc": "Centinaia di foto di piatti già pronte per categoria. Non serve una fotocamera professionale." },
-          { "icon": "🥗", "title": "Allergeni e diete nel dettaglio", "desc": "Vegano, senza glutine, piccante... i tuoi clienti filtrano il menu in base a ciò che possono e vogliono mangiare." },
-          { "icon": "🔲", "title": "QR e PDF con un tocco", "desc": "Genera il codice QR e un foglio pronto da stampare per i tavoli, senza progettare nulla." },
-          { "icon": "🌙", "title": "Scuro, chiaro e arabo (RTL)", "desc": "Il tuo menu si adatta al telefono di ogni cliente, scrittura da destra a sinistra inclusa." }
+          {
+            "icon": "🌐",
+            "title": "Traduzione vera, non decorativa",
+            "desc": "Ogni piatto, categoria e persino il nome del tuo menu viene tradotto davvero in 8 lingue — non è solo un selettore di bandiere."
+          },
+          {
+            "icon": "📱",
+            "title": "Ordini via WhatsApp",
+            "desc": "Il cliente ordina dal telefono e il messaggio ti arriva nella tua lingua, con l'ordine, le note e il totale già calcolato."
+          },
+          {
+            "icon": "🖼️",
+            "title": "Banca di foto reale inclusa",
+            "desc": "Centinaia di foto di piatti già pronte per categoria. Non serve una fotocamera professionale."
+          },
+          {
+            "icon": "🥗",
+            "title": "Allergeni e diete nel dettaglio",
+            "desc": "Vegano, senza glutine, piccante... i tuoi clienti filtrano il menu in base a ciò che possono e vogliono mangiare."
+          },
+          {
+            "icon": "🔲",
+            "title": "QR e PDF con un tocco",
+            "desc": "Genera il codice QR e un foglio pronto da stampare per i tavoli, senza progettare nulla."
+          },
+          {
+            "icon": "🌙",
+            "title": "Scuro, chiaro e arabo (RTL)",
+            "desc": "Il tuo menu si adatta al telefono di ogni cliente, scrittura da destra a sinistra inclusa."
+          }
         ]
       },
       "steps": {
         "title": "Dall'idea al tuo QR in 3 passi",
         "items": [
-          { "title": "Scrivi il tuo menu (o generane uno all'istante)", "desc": "Scegli il tuo tipo di cucina e lo creiamo già con piatti, prezzi e foto di esempio pronti da modificare." },
-          { "title": "Lo traduciamo e pubblichiamo il tuo sito", "desc": "In pochi secondi hai un sito pubblicato con il tuo menu in 8 lingue, senza toccare una riga di codice." },
-          { "title": "Stampa il QR, fatto", "desc": "Incollalo sui tavoli. Ogni modifica si aggiorna all'istante per tutti i tuoi clienti." }
+          {
+            "title": "Scrivi il tuo menu (o generane uno all'istante)",
+            "desc": "Scegli il tuo tipo di cucina e lo creiamo già con piatti, prezzi e foto di esempio pronti da modificare."
+          },
+          {
+            "title": "Lo traduciamo e pubblichiamo il tuo sito",
+            "desc": "In pochi secondi hai un sito pubblicato con il tuo menu in 8 lingue, senza toccare una riga di codice."
+          },
+          {
+            "title": "Stampa il QR, fatto",
+            "desc": "Incollalo sui tavoli. Ogni modifica si aggiorna all'istante per tutti i tuoi clienti."
+          }
         ]
       },
       "gallery": {
         "title": "Uno sguardo dentro",
         "items": [
-          { "img": "home-es.png", "alt": "Schermata iniziale di MenuForge", "caption": "Il tuo menu parla 8 lingue dal primo minuto." },
-          { "img": "home-ar-dark.png", "alt": "MenuForge in arabo, modalità scura e scrittura da destra a sinistra", "caption": "Modalità scura e arabo (RTL), di serie." },
-          { "img": "qr-sheet.png", "alt": "Foglio di codici QR pronto da stampare", "caption": "Un foglio QR pronto da stampare per i tuoi tavoli." },
-          { "img": "whatsapp-order.png", "alt": "Ordine ricevuto via WhatsApp", "caption": "L'ordine arriva sul tuo WhatsApp, nella tua lingua." },
-          { "img": "image-catalog.png", "alt": "Banca di foto di piatti inclusa nell'app", "caption": "Una vera banca di foto, senza cercare su Google." }
+          {
+            "img": "published-home.png",
+            "alt": "Real published MenuForge restaurant page with food photos",
+            "caption": "Ecco cosa vede davvero il tuo cliente."
+          },
+          {
+            "img": "published-menu-dark.png",
+            "alt": "Real published menu page in dark mode with dish photos and prices",
+            "caption": "Categorie, foto e prezzi — anche in modalità scura."
+          },
+          {
+            "img": "order-modal.png",
+            "alt": "Real order modal with table selector and notes",
+            "caption": "Tavolo, note e totale — l'ordine è chiaro prima di inviarlo."
+          },
+          {
+            "img": "home-ar-dark.png",
+            "alt": "MenuForge in arabo, modalità scura e scrittura da destra a sinistra",
+            "caption": "Modalità scura e arabo (RTL), di serie."
+          },
+          {
+            "img": "qr-sheet.png",
+            "alt": "Foglio di codici QR pronto da stampare",
+            "caption": "Un foglio QR pronto da stampare per i tuoi tavoli."
+          }
         ]
       },
       "honest": {
@@ -316,14 +566,16 @@
         "rights": "MenuForge. Tutti i diritti riservati."
       }
     },
-
     "de": {
       "htmlLang": "de",
       "meta": {
         "title": "MenuForge — Digitale QR-Speisekarte in 8 Sprachen, kostenlos",
         "description": "Erstellen Sie die digitale Speisekarte Ihres Restaurants in Minuten: QR-Code, echte Übersetzung in 8 Sprachen und Bestellungen per WhatsApp. Keine Startkosten, keine störende Werbung."
       },
-      "nav": { "themeToggle": "Design wechseln", "menuLabel": "Menü" },
+      "nav": {
+        "themeToggle": "Design wechseln",
+        "menuLabel": "Menü"
+      },
       "hero": {
         "kicker": "QR-Speisekarten für Restaurants",
         "titleLine1": "Ihre Speisekarte, in 8 Sprachen.",
@@ -341,38 +593,91 @@
         "Kein Limit bei Tischen oder Sprachen"
       ],
       "proof": {
-        "title": "Ein Gericht. Acht Sprachen. Dasselbe Foto.",
-        "subtitle": "So sehen ein Kunde in Portugal und einer in Deutschland Ihre Speisekarte — dasselbe Gericht, dasselbe Foto, jeder in seiner Sprache.",
-        "captionLeft": "Portugiesisch",
-        "captionRight": "Deutsch"
+        "title": "Bestellung auf Chinesisch. Kommt bei Ihnen auf Spanisch an.",
+        "subtitle": "Der Kunde sieht die Karte und bestellt in seiner Sprache — bei Ihnen kommt es per WhatsApp in Ihrer Sprache an, ohne dass jemand von Hand übersetzt.",
+        "captionLeft": "Das sieht der Kunde (Chinesisch)",
+        "captionRight": "Das erhalten Sie (Spanisch)"
       },
       "features": {
         "title": "Alles, was Sie brauchen, schon dabei",
         "items": [
-          { "icon": "🌐", "title": "Echte Übersetzung, nicht nur Deko", "desc": "Jedes Gericht, jede Kategorie und sogar der Name Ihrer Speisekarte wird wirklich in 8 Sprachen übersetzt — kein bloßer Flaggenauswähler." },
-          { "icon": "📱", "title": "Bestellungen per WhatsApp", "desc": "Der Kunde bestellt vom Handy, und die Nachricht erreicht Sie in Ihrer Sprache — mit Bestellung, Notizen und bereits berechneter Summe." },
-          { "icon": "🖼️", "title": "Echte Foto-Bibliothek inklusive", "desc": "Hunderte Gerichtfotos, fertig nach Kategorie sortiert. Keine professionelle Kamera nötig." },
-          { "icon": "🥗", "title": "Allergene und Diäten im Detail", "desc": "Vegan, glutenfrei, scharf... Ihre Kunden filtern die Karte nach dem, was sie essen können und möchten." },
-          { "icon": "🔲", "title": "QR und PDF mit einem Klick", "desc": "Erzeugen Sie den QR-Code und ein druckfertiges Blatt für Ihre Tische — ohne eigenes Design." },
-          { "icon": "🌙", "title": "Dunkel, hell und Arabisch (RTL)", "desc": "Ihre Speisekarte passt sich dem Handy jedes Kunden an, inklusive Schreibrichtung von rechts nach links." }
+          {
+            "icon": "🌐",
+            "title": "Echte Übersetzung, nicht nur Deko",
+            "desc": "Jedes Gericht, jede Kategorie und sogar der Name Ihrer Speisekarte wird wirklich in 8 Sprachen übersetzt — kein bloßer Flaggenauswähler."
+          },
+          {
+            "icon": "📱",
+            "title": "Bestellungen per WhatsApp",
+            "desc": "Der Kunde bestellt vom Handy, und die Nachricht erreicht Sie in Ihrer Sprache — mit Bestellung, Notizen und bereits berechneter Summe."
+          },
+          {
+            "icon": "🖼️",
+            "title": "Echte Foto-Bibliothek inklusive",
+            "desc": "Hunderte Gerichtfotos, fertig nach Kategorie sortiert. Keine professionelle Kamera nötig."
+          },
+          {
+            "icon": "🥗",
+            "title": "Allergene und Diäten im Detail",
+            "desc": "Vegan, glutenfrei, scharf... Ihre Kunden filtern die Karte nach dem, was sie essen können und möchten."
+          },
+          {
+            "icon": "🔲",
+            "title": "QR und PDF mit einem Klick",
+            "desc": "Erzeugen Sie den QR-Code und ein druckfertiges Blatt für Ihre Tische — ohne eigenes Design."
+          },
+          {
+            "icon": "🌙",
+            "title": "Dunkel, hell und Arabisch (RTL)",
+            "desc": "Ihre Speisekarte passt sich dem Handy jedes Kunden an, inklusive Schreibrichtung von rechts nach links."
+          }
         ]
       },
       "steps": {
         "title": "Von der Idee zu Ihrem QR-Code in 3 Schritten",
         "items": [
-          { "title": "Schreiben Sie Ihre Karte (oder erzeugen Sie sofort eine)", "desc": "Wählen Sie Ihre Küchenart, und wir erstellen sie mit Gerichten, Preisen und Beispielfotos, bereit zum Bearbeiten." },
-          { "title": "Wir übersetzen sie und veröffentlichen Ihre Website", "desc": "In Sekunden ist Ihre Website mit der Speisekarte in 8 Sprachen online, ohne eine Zeile Code anzufassen." },
-          { "title": "QR-Code drucken, fertig", "desc": "Kleben Sie ihn auf die Tische. Jede Änderung wird sofort für alle Kunden aktualisiert." }
+          {
+            "title": "Schreiben Sie Ihre Karte (oder erzeugen Sie sofort eine)",
+            "desc": "Wählen Sie Ihre Küchenart, und wir erstellen sie mit Gerichten, Preisen und Beispielfotos, bereit zum Bearbeiten."
+          },
+          {
+            "title": "Wir übersetzen sie und veröffentlichen Ihre Website",
+            "desc": "In Sekunden ist Ihre Website mit der Speisekarte in 8 Sprachen online, ohne eine Zeile Code anzufassen."
+          },
+          {
+            "title": "QR-Code drucken, fertig",
+            "desc": "Kleben Sie ihn auf die Tische. Jede Änderung wird sofort für alle Kunden aktualisiert."
+          }
         ]
       },
       "gallery": {
         "title": "Ein Blick hinein",
         "items": [
-          { "img": "home-es.png", "alt": "Startbildschirm von MenuForge", "caption": "Ihre Speisekarte spricht ab der ersten Minute 8 Sprachen." },
-          { "img": "home-ar-dark.png", "alt": "MenuForge auf Arabisch, dunkler Modus und Schrift von rechts nach links", "caption": "Dunkler Modus und Arabisch (RTL), serienmäßig." },
-          { "img": "qr-sheet.png", "alt": "Druckfertiges Blatt mit QR-Codes", "caption": "Ein druckfertiges QR-Blatt für Ihre Tische." },
-          { "img": "whatsapp-order.png", "alt": "Per WhatsApp erhaltene Bestellung", "caption": "Die Bestellung kommt auf Ihr WhatsApp, in Ihrer Sprache." },
-          { "img": "image-catalog.png", "alt": "In der App enthaltene Foto-Bibliothek für Gerichte", "caption": "Eine echte Foto-Bibliothek, ohne Google-Suche." }
+          {
+            "img": "published-home.png",
+            "alt": "Real published MenuForge restaurant page with food photos",
+            "caption": "So sieht Ihr Kunde Ihre Karte wirklich."
+          },
+          {
+            "img": "published-menu-dark.png",
+            "alt": "Real published menu page in dark mode with dish photos and prices",
+            "caption": "Kategorien, Fotos und Preise — auch im Dunkelmodus."
+          },
+          {
+            "img": "order-modal.png",
+            "alt": "Real order modal with table selector and notes",
+            "caption": "Tisch, Notizen und Summe — die Bestellung ist vor dem Senden klar."
+          },
+          {
+            "img": "home-ar-dark.png",
+            "alt": "MenuForge auf Arabisch, dunkler Modus und Schrift von rechts nach links",
+            "caption": "Dunkler Modus und Arabisch (RTL), serienmäßig."
+          },
+          {
+            "img": "qr-sheet.png",
+            "alt": "Druckfertiges Blatt mit QR-Codes",
+            "caption": "Ein druckfertiges QR-Blatt für Ihre Tische."
+          }
         ]
       },
       "honest": {
@@ -394,14 +699,16 @@
         "rights": "MenuForge. Alle Rechte vorbehalten."
       }
     },
-
     "pt": {
       "htmlLang": "pt",
       "meta": {
         "title": "MenuForge — Cardápio digital com QR em 8 idiomas, grátis",
         "description": "Crie o cardápio digital do seu restaurante em minutos: QR code, tradução real para 8 idiomas e pedidos por WhatsApp. Sem custo inicial, sem anúncios a incomodar o cliente."
       },
-      "nav": { "themeToggle": "Alternar tema", "menuLabel": "Menu" },
+      "nav": {
+        "themeToggle": "Alternar tema",
+        "menuLabel": "Menu"
+      },
       "hero": {
         "kicker": "Cardápios QR para restaurantes",
         "titleLine1": "Seu cardápio, em 8 idiomas.",
@@ -419,38 +726,91 @@
         "Sem limite de mesas nem de idiomas"
       ],
       "proof": {
-        "title": "Um prato. Oito idiomas. A mesma foto.",
-        "subtitle": "É assim que um cliente em Portugal e outro na Alemanha veem o seu cardápio — o mesmo prato, a mesma foto, cada um no seu idioma.",
-        "captionLeft": "Português",
-        "captionRight": "Alemão"
+        "title": "Pede em chinês. Chega até você em espanhol.",
+        "subtitle": "O cliente vê o cardápio e faz o pedido no seu idioma — chega até você pelo WhatsApp no seu, sem que ninguém traduza nada à mão.",
+        "captionLeft": "O cliente vê isto (chinês)",
+        "captionRight": "Você recebe isto (espanhol)"
       },
       "features": {
         "title": "Tudo o que você precisa, já incluído",
         "items": [
-          { "icon": "🌐", "title": "Tradução real, não decorativa", "desc": "Cada prato, categoria e até o nome do seu cardápio é traduzido de verdade para 8 idiomas — não é só um seletor de bandeiras." },
-          { "icon": "📱", "title": "Pedidos por WhatsApp", "desc": "O cliente pede pelo celular e a mensagem chega até você no seu idioma, com o pedido, as notas e o total já calculado." },
-          { "icon": "🖼️", "title": "Banco de fotos real incluído", "desc": "Centenas de fotos de pratos já prontas por categoria. Se não tem câmera profissional, não precisa." },
-          { "icon": "🥗", "title": "Alérgenos e dietas em detalhe", "desc": "Vegano, sem glúten, picante... seus clientes filtram o cardápio pelo que podem e querem comer." },
-          { "icon": "🔲", "title": "QR e PDF em um toque", "desc": "Gere o código QR e uma folha pronta para imprimir nas mesas, sem precisar desenhar nada." },
-          { "icon": "🌙", "title": "Escuro, claro e árabe (RTL)", "desc": "Seu cardápio se adapta ao celular de cada cliente, incluindo a escrita da direita para a esquerda." }
+          {
+            "icon": "🌐",
+            "title": "Tradução real, não decorativa",
+            "desc": "Cada prato, categoria e até o nome do seu cardápio é traduzido de verdade para 8 idiomas — não é só um seletor de bandeiras."
+          },
+          {
+            "icon": "📱",
+            "title": "Pedidos por WhatsApp",
+            "desc": "O cliente pede pelo celular e a mensagem chega até você no seu idioma, com o pedido, as notas e o total já calculado."
+          },
+          {
+            "icon": "🖼️",
+            "title": "Banco de fotos real incluído",
+            "desc": "Centenas de fotos de pratos já prontas por categoria. Se não tem câmera profissional, não precisa."
+          },
+          {
+            "icon": "🥗",
+            "title": "Alérgenos e dietas em detalhe",
+            "desc": "Vegano, sem glúten, picante... seus clientes filtram o cardápio pelo que podem e querem comer."
+          },
+          {
+            "icon": "🔲",
+            "title": "QR e PDF em um toque",
+            "desc": "Gere o código QR e uma folha pronta para imprimir nas mesas, sem precisar desenhar nada."
+          },
+          {
+            "icon": "🌙",
+            "title": "Escuro, claro e árabe (RTL)",
+            "desc": "Seu cardápio se adapta ao celular de cada cliente, incluindo a escrita da direita para a esquerda."
+          }
         ]
       },
       "steps": {
         "title": "Da ideia ao seu QR em 3 passos",
         "items": [
-          { "title": "Escreva seu cardápio (ou gere um na hora)", "desc": "Escolha o tipo de cozinha e nós já criamos com pratos, preços e fotos de exemplo prontos para editar." },
-          { "title": "Nós traduzimos e publicamos o seu site", "desc": "Em segundos você tem um site publicado com o seu cardápio em 8 idiomas, sem tocar em uma linha de código." },
-          { "title": "Imprima o QR, pronto", "desc": "Cole nas mesas. Cada alteração que você fizer é atualizada na hora para todos os clientes." }
+          {
+            "title": "Escreva seu cardápio (ou gere um na hora)",
+            "desc": "Escolha o tipo de cozinha e nós já criamos com pratos, preços e fotos de exemplo prontos para editar."
+          },
+          {
+            "title": "Nós traduzimos e publicamos o seu site",
+            "desc": "Em segundos você tem um site publicado com o seu cardápio em 8 idiomas, sem tocar em uma linha de código."
+          },
+          {
+            "title": "Imprima o QR, pronto",
+            "desc": "Cole nas mesas. Cada alteração que você fizer é atualizada na hora para todos os clientes."
+          }
         ]
       },
       "gallery": {
         "title": "Um olhar por dentro",
         "items": [
-          { "img": "home-es.png", "alt": "Tela inicial do MenuForge", "caption": "Seu cardápio fala 8 idiomas desde o primeiro minuto." },
-          { "img": "home-ar-dark.png", "alt": "MenuForge em árabe, modo escuro e escrita da direita para a esquerda", "caption": "Modo escuro e árabe (RTL), de fábrica." },
-          { "img": "qr-sheet.png", "alt": "Folha de códigos QR pronta para imprimir", "caption": "Uma folha de QR pronta para imprimir nas suas mesas." },
-          { "img": "whatsapp-order.png", "alt": "Pedido recebido pelo WhatsApp", "caption": "O pedido chega no seu WhatsApp, no seu idioma." },
-          { "img": "image-catalog.png", "alt": "Banco de fotos de pratos incluído no app", "caption": "Um banco de fotos real, sem precisar buscar no Google." }
+          {
+            "img": "published-home.png",
+            "alt": "Real published MenuForge restaurant page with food photos",
+            "caption": "É assim que o seu cliente vê o cardápio de verdade."
+          },
+          {
+            "img": "published-menu-dark.png",
+            "alt": "Real published menu page in dark mode with dish photos and prices",
+            "caption": "Categorias, fotos e preços — também no modo escuro."
+          },
+          {
+            "img": "order-modal.png",
+            "alt": "Real order modal with table selector and notes",
+            "caption": "Mesa, notas e total — o pedido fica claro antes de enviar."
+          },
+          {
+            "img": "home-ar-dark.png",
+            "alt": "MenuForge em árabe, modo escuro e escrita da direita para a esquerda",
+            "caption": "Modo escuro e árabe (RTL), de fábrica."
+          },
+          {
+            "img": "qr-sheet.png",
+            "alt": "Folha de códigos QR pronta para imprimir",
+            "caption": "Uma folha de QR pronta para imprimir nas suas mesas."
+          }
         ]
       },
       "honest": {
@@ -472,14 +832,16 @@
         "rights": "MenuForge. Todos os direitos reservados."
       }
     },
-
     "cn": {
       "htmlLang": "zh-CN",
       "meta": {
         "title": "MenuForge — 支持8种语言的QR数字菜单，完全免费",
         "description": "几分钟内创建您餐厅的数字菜单：QR码、真正的8语言翻译、以及WhatsApp点餐功能。无需启动成本，无广告打扰顾客。"
       },
-      "nav": { "themeToggle": "切换主题", "menuLabel": "菜单" },
+      "nav": {
+        "themeToggle": "切换主题",
+        "menuLabel": "菜单"
+      },
       "hero": {
         "kicker": "餐厅QR菜单",
         "titleLine1": "您的菜单，8种语言。",
@@ -497,38 +859,91 @@
         "桌数和语言数量均无限制"
       ],
       "proof": {
-        "title": "一道菜。八种语言。同一张照片。",
-        "subtitle": "这就是葡萄牙和德国的顾客看到您菜单的方式——同一道菜，同一张照片，各自使用自己的语言。",
-        "captionLeft": "葡萄牙语",
-        "captionRight": "德语"
+        "title": "用中文下单，你收到的是西班牙语。",
+        "subtitle": "顾客用自己的语言查看菜单并下单——订单会以你的语言通过WhatsApp发送给你，全程无需任何人手动翻译。",
+        "captionLeft": "顾客看到的是这个（中文）",
+        "captionRight": "你收到的是这个（西班牙语）"
       },
       "features": {
         "title": "您需要的一切，全部内置",
         "items": [
-          { "icon": "🌐", "title": "真正的翻译，不只是摆设", "desc": "每道菜、每个分类，甚至您菜单的名称都会被真正翻译成8种语言——而不仅仅是一个国旗选择器。" },
-          { "icon": "📱", "title": "WhatsApp点餐", "desc": "顾客用手机下单，订单信息会以您的语言发送给您，包含菜品、备注和已计算好的总价。" },
-          { "icon": "🖼️", "title": "内置真实图库", "desc": "数百张按分类整理好的菜品照片，无需专业相机也能拥有精美菜单。" },
-          { "icon": "🥗", "title": "详细的过敏原与饮食标签", "desc": "素食、无麸质、辣味……顾客可以根据自己的饮食需求筛选菜单。" },
-          { "icon": "🔲", "title": "一键生成QR码和PDF", "desc": "无需任何设计，即可生成QR码和可直接打印的桌卡。" },
-          { "icon": "🌙", "title": "深色、浅色与阿拉伯语（RTL）", "desc": "您的菜单会自动适配每位顾客的手机，包括从右到左的书写方式。" }
+          {
+            "icon": "🌐",
+            "title": "真正的翻译，不只是摆设",
+            "desc": "每道菜、每个分类，甚至您菜单的名称都会被真正翻译成8种语言——而不仅仅是一个国旗选择器。"
+          },
+          {
+            "icon": "📱",
+            "title": "WhatsApp点餐",
+            "desc": "顾客用手机下单，订单信息会以您的语言发送给您，包含菜品、备注和已计算好的总价。"
+          },
+          {
+            "icon": "🖼️",
+            "title": "内置真实图库",
+            "desc": "数百张按分类整理好的菜品照片，无需专业相机也能拥有精美菜单。"
+          },
+          {
+            "icon": "🥗",
+            "title": "详细的过敏原与饮食标签",
+            "desc": "素食、无麸质、辣味……顾客可以根据自己的饮食需求筛选菜单。"
+          },
+          {
+            "icon": "🔲",
+            "title": "一键生成QR码和PDF",
+            "desc": "无需任何设计，即可生成QR码和可直接打印的桌卡。"
+          },
+          {
+            "icon": "🌙",
+            "title": "深色、浅色与阿拉伯语（RTL）",
+            "desc": "您的菜单会自动适配每位顾客的手机，包括从右到左的书写方式。"
+          }
         ]
       },
       "steps": {
         "title": "从想法到QR码，只需3步",
         "items": [
-          { "title": "编写您的菜单（或即时生成一份）", "desc": "选择您的菜系类型，我们会为您准备好菜品、价格和示例照片，随时可编辑。" },
-          { "title": "我们翻译并发布您的网站", "desc": "几秒钟内，您就能拥有一个包含8种语言菜单的在线网站，无需编写任何代码。" },
-          { "title": "打印QR码，大功告成", "desc": "贴在桌上即可。您所做的每一次修改都会为所有顾客即时更新。" }
+          {
+            "title": "编写您的菜单（或即时生成一份）",
+            "desc": "选择您的菜系类型，我们会为您准备好菜品、价格和示例照片，随时可编辑。"
+          },
+          {
+            "title": "我们翻译并发布您的网站",
+            "desc": "几秒钟内，您就能拥有一个包含8种语言菜单的在线网站，无需编写任何代码。"
+          },
+          {
+            "title": "打印QR码，大功告成",
+            "desc": "贴在桌上即可。您所做的每一次修改都会为所有顾客即时更新。"
+          }
         ]
       },
       "gallery": {
         "title": "内部一览",
         "items": [
-          { "img": "home-es.png", "alt": "MenuForge主界面", "caption": "从第一分钟起，您的菜单就能说8种语言。" },
-          { "img": "home-ar-dark.png", "alt": "MenuForge阿拉伯语版本，深色模式与从右到左书写", "caption": "原生支持深色模式与阿拉伯语（RTL）。" },
-          { "img": "qr-sheet.png", "alt": "可直接打印的QR码表", "caption": "为您的餐桌准备的可打印QR码表。" },
-          { "img": "whatsapp-order.png", "alt": "通过WhatsApp收到的订单", "caption": "订单会以您的语言发送到您的WhatsApp。" },
-          { "img": "image-catalog.png", "alt": "应用内置的菜品图库", "caption": "真实的图库，无需在谷歌上搜索。" }
+          {
+            "img": "published-home.png",
+            "alt": "Real published MenuForge restaurant page with food photos",
+            "caption": "这就是顾客真正看到的菜单。"
+          },
+          {
+            "img": "published-menu-dark.png",
+            "alt": "Real published menu page in dark mode with dish photos and prices",
+            "caption": "分类、照片和价格——深色模式下同样清晰。"
+          },
+          {
+            "img": "order-modal.png",
+            "alt": "Real order modal with table selector and notes",
+            "caption": "桌号、备注和总价——发送前一目了然。"
+          },
+          {
+            "img": "home-ar-dark.png",
+            "alt": "MenuForge阿拉伯语版本，深色模式与从右到左书写",
+            "caption": "原生支持深色模式与阿拉伯语（RTL）。"
+          },
+          {
+            "img": "qr-sheet.png",
+            "alt": "可直接打印的QR码表",
+            "caption": "为您的餐桌准备的可打印QR码表。"
+          }
         ]
       },
       "honest": {
@@ -550,14 +965,16 @@
         "rights": "MenuForge. 保留所有权利。"
       }
     },
-
     "sa": {
       "htmlLang": "ar",
       "meta": {
         "title": "MenuForge — قائمة طعام رقمية برمز QR بثماني لغات، مجانًا",
         "description": "أنشئ قائمة الطعام الرقمية لمطعمك في دقائق: رمز QR، وترجمة حقيقية إلى 8 لغات، وطلبات عبر واتساب. بدون تكلفة بداية، وبدون إعلانات تزعج عملاءك."
       },
-      "nav": { "themeToggle": "تبديل المظهر", "menuLabel": "القائمة" },
+      "nav": {
+        "themeToggle": "تبديل المظهر",
+        "menuLabel": "القائمة"
+      },
       "hero": {
         "kicker": "قوائم QR للمطاعم",
         "titleLine1": "قائمتك، بثماني لغات.",
@@ -575,38 +992,91 @@
         "بدون حدّ لعدد الطاولات أو اللغات"
       ],
       "proof": {
-        "title": "طبق واحد. ثماني لغات. نفس الصورة.",
-        "subtitle": "هكذا يرى عميل في البرتغال وآخر في ألمانيا قائمتك — نفس الطبق، نفس الصورة، كل منهما بلغته.",
-        "captionLeft": "البرتغالية",
-        "captionRight": "الألمانية"
+        "title": "يطلب بالصينية، يصلك بالإسبانية.",
+        "subtitle": "يرى العميل القائمة ويطلب بلغته — ويصلك الطلب عبر واتساب بلغتك أنت، دون أن يترجم أحد شيئًا يدويًا.",
+        "captionLeft": "هذا ما يراه العميل (بالصينية)",
+        "captionRight": "هذا ما يصلك (بالإسبانية)"
       },
       "features": {
         "title": "كل ما تحتاجه، مُضمَّن بالفعل",
         "items": [
-          { "icon": "🌐", "title": "ترجمة حقيقية، لا مجرد شكل", "desc": "كل طبق وكل قسم وحتى اسم قائمتك يُترجم فعليًا إلى 8 لغات — وليس مجرد قائمة أعلام." },
-          { "icon": "📱", "title": "طلبات عبر واتساب", "desc": "يطلب العميل من هاتفه وتصلك الرسالة بلغتك، مع الطلب والملاحظات والمجموع محسوبًا بالفعل." },
-          { "icon": "🖼️", "title": "مكتبة صور حقيقية مُضمّنة", "desc": "مئات صور الأطباق جاهزة حسب الفئة. لا تحتاج إلى كاميرا احترافية." },
-          { "icon": "🥗", "title": "المسببات للحساسية والأنظمة الغذائية بالتفصيل", "desc": "نباتي، خالٍ من الغلوتين، حار... يقوم عملاؤك بتصفية القائمة حسب ما يمكنهم وما يريدون تناوله." },
-          { "icon": "🔲", "title": "رمز QR وملف PDF بلمسة واحدة", "desc": "أنشئ رمز QR وورقة جاهزة للطباعة لطاولاتك، دون أي تصميم." },
-          { "icon": "🌙", "title": "داكن وفاتح وعربي (من اليمين لليسار)", "desc": "تتكيف قائمتك مع هاتف كل عميل، بما في ذلك الكتابة من اليمين إلى اليسار." }
+          {
+            "icon": "🌐",
+            "title": "ترجمة حقيقية، لا مجرد شكل",
+            "desc": "كل طبق وكل قسم وحتى اسم قائمتك يُترجم فعليًا إلى 8 لغات — وليس مجرد قائمة أعلام."
+          },
+          {
+            "icon": "📱",
+            "title": "طلبات عبر واتساب",
+            "desc": "يطلب العميل من هاتفه وتصلك الرسالة بلغتك، مع الطلب والملاحظات والمجموع محسوبًا بالفعل."
+          },
+          {
+            "icon": "🖼️",
+            "title": "مكتبة صور حقيقية مُضمّنة",
+            "desc": "مئات صور الأطباق جاهزة حسب الفئة. لا تحتاج إلى كاميرا احترافية."
+          },
+          {
+            "icon": "🥗",
+            "title": "المسببات للحساسية والأنظمة الغذائية بالتفصيل",
+            "desc": "نباتي، خالٍ من الغلوتين، حار... يقوم عملاؤك بتصفية القائمة حسب ما يمكنهم وما يريدون تناوله."
+          },
+          {
+            "icon": "🔲",
+            "title": "رمز QR وملف PDF بلمسة واحدة",
+            "desc": "أنشئ رمز QR وورقة جاهزة للطباعة لطاولاتك، دون أي تصميم."
+          },
+          {
+            "icon": "🌙",
+            "title": "داكن وفاتح وعربي (من اليمين لليسار)",
+            "desc": "تتكيف قائمتك مع هاتف كل عميل، بما في ذلك الكتابة من اليمين إلى اليسار."
+          }
         ]
       },
       "steps": {
         "title": "من الفكرة إلى رمز QR في 3 خطوات",
         "items": [
-          { "title": "اكتب قائمتك (أو أنشئها فورًا)", "desc": "اختر نوع مطبخك وسننشئها لك بأطباق وأسعار وصور نموذجية جاهزة للتعديل." },
-          { "title": "نترجمها وننشر موقعك", "desc": "في ثوانٍ سيكون لديك موقع منشور بقائمتك بـ8 لغات، دون لمس أي سطر برمجي." },
-          { "title": "اطبع رمز QR وانتهى الأمر", "desc": "ألصقه على الطاولات. كل تعديل تجريه يتحدث فورًا لجميع عملائك." }
+          {
+            "title": "اكتب قائمتك (أو أنشئها فورًا)",
+            "desc": "اختر نوع مطبخك وسننشئها لك بأطباق وأسعار وصور نموذجية جاهزة للتعديل."
+          },
+          {
+            "title": "نترجمها وننشر موقعك",
+            "desc": "في ثوانٍ سيكون لديك موقع منشور بقائمتك بـ8 لغات، دون لمس أي سطر برمجي."
+          },
+          {
+            "title": "اطبع رمز QR وانتهى الأمر",
+            "desc": "ألصقه على الطاولات. كل تعديل تجريه يتحدث فورًا لجميع عملائك."
+          }
         ]
       },
       "gallery": {
         "title": "نظرة من الداخل",
         "items": [
-          { "img": "home-es.png", "alt": "الشاشة الرئيسية لتطبيق MenuForge", "caption": "قائمتك تتحدث 8 لغات منذ الدقيقة الأولى." },
-          { "img": "home-ar-dark.png", "alt": "MenuForge بالعربية، الوضع الداكن والكتابة من اليمين لليسار", "caption": "الوضع الداكن والعربية (RTL)، بشكل أصلي." },
-          { "img": "qr-sheet.png", "alt": "ورقة رموز QR جاهزة للطباعة", "caption": "ورقة QR جاهزة للطباعة لطاولاتك." },
-          { "img": "whatsapp-order.png", "alt": "طلب مستلم عبر واتساب", "caption": "يصلك الطلب على واتساب، بلغتك." },
-          { "img": "image-catalog.png", "alt": "مكتبة صور الأطباق المُضمّنة في التطبيق", "caption": "مكتبة صور حقيقية، دون البحث في غوغل." }
+          {
+            "img": "published-home.png",
+            "alt": "Real published MenuForge restaurant page with food photos",
+            "caption": "هكذا يرى عميلك قائمتك بالفعل."
+          },
+          {
+            "img": "published-menu-dark.png",
+            "alt": "Real published menu page in dark mode with dish photos and prices",
+            "caption": "الفئات والصور والأسعار — في الوضع الداكن أيضًا."
+          },
+          {
+            "img": "order-modal.png",
+            "alt": "Real order modal with table selector and notes",
+            "caption": "الطاولة والملاحظات والمجموع — الطلب واضح قبل إرساله."
+          },
+          {
+            "img": "home-ar-dark.png",
+            "alt": "MenuForge بالعربية، الوضع الداكن والكتابة من اليمين لليسار",
+            "caption": "الوضع الداكن والعربية (RTL)، بشكل أصلي."
+          },
+          {
+            "img": "qr-sheet.png",
+            "alt": "ورقة رموز QR جاهزة للطباعة",
+            "caption": "ورقة QR جاهزة للطباعة لطاولاتك."
+          }
         ]
       },
       "honest": {
