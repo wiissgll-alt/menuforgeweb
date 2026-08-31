@@ -61,10 +61,10 @@
         "Sin límite de mesas ni de idiomas"
       ],
       "proof": {
-        "title": "Pide en chino. Te llega en español.",
-        "subtitle": "El cliente ve la carta y hace el pedido en su idioma — a ti te llega por WhatsApp en el tuyo, sin que nadie traduzca nada a mano.",
-        "captionLeft": "El cliente ve esto (chino)",
-        "captionRight": "A ti te llega esto (español)"
+        "title": "Pide en tu idioma. Al hostelero le llega en el suyo.",
+        "subtitle": "El cliente hace el pedido en su idioma — tú lo recibes automáticamente en el tuyo.",
+        "captionLeft": "El cliente ve la carta en chino",
+        "captionRight": "El hostelero recibe el pedido en español"
       },
       "features": {
         "title": "Todo lo que necesitas, ya incluido",
@@ -201,10 +201,10 @@
         "No limit on tables or languages"
       ],
       "proof": {
-        "title": "Order in Chinese. It reaches you in Spanish.",
-        "subtitle": "The customer sees the menu and orders in their own language — it reaches you on WhatsApp in yours, with nobody translating anything by hand.",
-        "captionLeft": "The customer sees this (Chinese)",
-        "captionRight": "You receive this (Spanish)"
+        "title": "Order in your language. It reaches the restaurateur in theirs.",
+        "subtitle": "The customer places the order in their language — you receive it automatically in yours.",
+        "captionLeft": "The customer sees the menu in Chinese",
+        "captionRight": "The restaurateur receives the order in English"
       },
       "features": {
         "title": "Everything you need, already included",
@@ -341,10 +341,10 @@
         "Aucune limite de tables ni de langues"
       ],
       "proof": {
-        "title": "Commande en chinois. Elle vous arrive en espagnol.",
-        "subtitle": "Le client voit la carte et commande dans sa langue — cela vous arrive sur WhatsApp dans la vôtre, sans que personne ne traduise quoi que ce soit à la main.",
-        "captionLeft": "Le client voit ceci (chinois)",
-        "captionRight": "Vous recevez ceci (espagnol)"
+        "title": "Commandez dans votre langue. Elle arrive au restaurateur dans la sienne.",
+        "subtitle": "Le client passe commande dans sa langue — vous la recevez automatiquement dans la vôtre.",
+        "captionLeft": "Le client voit la carte en chinois",
+        "captionRight": "Le restaurateur reçoit la commande en français"
       },
       "features": {
         "title": "Tout ce qu'il vous faut, déjà inclus",
@@ -481,10 +481,10 @@
         "Nessun limite di tavoli né di lingue"
       ],
       "proof": {
-        "title": "Ordina in cinese. Ti arriva in spagnolo.",
-        "subtitle": "Il cliente vede il menu e ordina nella sua lingua — a te arriva su WhatsApp nella tua, senza che nessuno traduca nulla a mano.",
-        "captionLeft": "Il cliente vede questo (cinese)",
-        "captionRight": "A te arriva questo (spagnolo)"
+        "title": "Ordina nella tua lingua. Arriva al ristoratore nella sua.",
+        "subtitle": "Il cliente effettua l'ordine nella sua lingua — tu lo ricevi automaticamente nella tua.",
+        "captionLeft": "Il cliente vede il menu in cinese",
+        "captionRight": "Il ristoratore riceve l'ordine in italiano"
       },
       "features": {
         "title": "Tutto quello che ti serve, già incluso",
@@ -621,10 +621,10 @@
         "Kein Limit bei Tischen oder Sprachen"
       ],
       "proof": {
-        "title": "Bestellung auf Chinesisch. Kommt bei Ihnen auf Spanisch an.",
-        "subtitle": "Der Kunde sieht die Karte und bestellt in seiner Sprache — bei Ihnen kommt es per WhatsApp in Ihrer Sprache an, ohne dass jemand von Hand übersetzt.",
-        "captionLeft": "Das sieht der Kunde (Chinesisch)",
-        "captionRight": "Das erhalten Sie (Spanisch)"
+        "title": "Bestellen in Ihrer Sprache. Beim Gastwirt kommt es in seiner an.",
+        "subtitle": "Der Kunde bestellt in seiner Sprache — Sie erhalten es automatisch in Ihrer.",
+        "captionLeft": "Der Kunde sieht die Speisekarte auf Chinesisch",
+        "captionRight": "Der Gastwirt erhält die Bestellung auf Deutsch"
       },
       "features": {
         "title": "Alles, was Sie brauchen, schon dabei",
@@ -761,10 +761,10 @@
         "Sem limite de mesas nem de idiomas"
       ],
       "proof": {
-        "title": "Pede em chinês. Chega até você em espanhol.",
-        "subtitle": "O cliente vê o cardápio e faz o pedido no seu idioma — chega até você pelo WhatsApp no seu, sem que ninguém traduza nada à mão.",
-        "captionLeft": "O cliente vê isto (chinês)",
-        "captionRight": "Você recebe isto (espanhol)"
+        "title": "Peça no seu idioma. Chega ao restaurateur no dele.",
+        "subtitle": "O cliente faz o pedido no seu idioma — você o recebe automaticamente no seu.",
+        "captionLeft": "O cliente vê o cardápio em chinês",
+        "captionRight": "O restaurateur recebe o pedido em português"
       },
       "features": {
         "title": "Tudo o que você precisa, já incluído",
@@ -901,10 +901,10 @@
         "桌数和语言数量均无限制"
       ],
       "proof": {
-        "title": "用中文下单，你收到的是西班牙语。",
-        "subtitle": "顾客用自己的语言查看菜单并下单——订单会以你的语言通过WhatsApp发送给你，全程无需任何人手动翻译。",
-        "captionLeft": "顾客看到的是这个（中文）",
-        "captionRight": "你收到的是这个（西班牙语）"
+        "title": "用您的语言点餐，餐厅老板以其语言接收。",
+        "subtitle": "顾客用自己的语言下单——您将自动以您的语言收到订单。",
+        "captionLeft": "顾客看到的是中文菜单",
+        "captionRight": "餐厅老板收到的是中文订单"
       },
       "features": {
         "title": "您需要的一切，全部内置",
@@ -1041,10 +1041,10 @@
         "بدون حدّ لعدد الطاولات أو اللغات"
       ],
       "proof": {
-        "title": "يطلب بالصينية، يصلك بالإسبانية.",
-        "subtitle": "يرى العميل القائمة ويطلب بلغته — ويصلك الطلب عبر واتساب بلغتك أنت، دون أن يترجم أحد شيئًا يدويًا.",
-        "captionLeft": "هذا ما يراه العميل (بالصينية)",
-        "captionRight": "هذا ما يصلك (بالإسبانية)"
+        "title": "يطلب بلغته، ويصل إلى صاحب المطعم بلغته.",
+        "subtitle": "يقدم العميل الطلب بلغته — وتتلقاه تلقائيًا بلغتك.",
+        "captionLeft": "يرى العميل القائمة بالصينية",
+        "captionRight": "يتلقى صاحب المطعم الطلب بالعربية"
       },
       "features": {
         "title": "كل ما تحتاجه، مُضمَّن بالفعل",
