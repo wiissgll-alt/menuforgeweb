@@ -78,7 +78,7 @@ header.site-header {
     backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
     border-bottom: 1px solid var(--border);
 }
-.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0; direction: ltr; }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.15rem; direction: ltr; margin-inline-start: 15px; }
 .brand img { width: 30px; height: 30px; border-radius: 8px; }
 .header-actions { display: flex; align-items: center; gap: 8px; margin-inline-end: 15px; }
