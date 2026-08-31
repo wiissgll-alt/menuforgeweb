@@ -118,36 +118,6 @@
           }
         ]
       },
-      "gallery": {
-        "title": "Así se ve por dentro",
-        "items": [
-          {
-            "img": "published-home.png",
-            "alt": "Real published MenuForge restaurant page with food photos",
-            "caption": "Así ve tu carta un cliente real."
-          },
-          {
-            "img": "published-menu-dark.png",
-            "alt": "Real published menu page in dark mode with dish photos and prices",
-            "caption": "Categorías, fotos y precios — también en oscuro."
-          },
-          {
-            "img": "order-modal.png",
-            "alt": "Real order modal with table selector and notes",
-            "caption": "Mesa, notas y total — el pedido queda claro antes de enviarlo."
-          },
-          {
-            "img": "home-ar-dark.png",
-            "alt": "MenuForge en árabe, modo oscuro y escritura de derecha a izquierda",
-            "caption": "Modo oscuro y árabe (RTL), de fábrica."
-          },
-          {
-            "img": "qr-sheet.png",
-            "alt": "Hoja de códigos QR lista para imprimir",
-            "caption": "Hoja de QR lista para imprimir en tus mesas."
-          }
-        ]
-      },
       "honest": {
         "title": "Sin trampas",
         "items": [
@@ -165,6 +135,43 @@
       "footer": {
         "contactLabel": "Contacto",
         "rights": "MenuForge. Todos los derechos reservados."
+      },
+      "appGallery": {
+        "title": "La app, en tu bolsillo",
+        "subtitle": "Crea, traduce y publica tu carta desde el móvil — sin ordenador, sin curva de aprendizaje.",
+        "items": [
+          {
+            "img": "home-ar-dark.png",
+            "alt": "MenuForge en árabe, modo oscuro y escritura de derecha a izquierda",
+            "caption": "Modo oscuro y árabe (RTL), de fábrica."
+          },
+          {
+            "img": "order-modal.png",
+            "alt": "Real order modal with table selector and notes",
+            "caption": "Mesa, notas y total — el pedido queda claro antes de enviarlo."
+          },
+          {
+            "img": "qr-sheet.png",
+            "alt": "Hoja de códigos QR lista para imprimir",
+            "caption": "Hoja de QR lista para imprimir en tus mesas."
+          }
+        ]
+      },
+      "webGallery": {
+        "title": "La web que publicamos por ti",
+        "subtitle": "Esto es justo lo que ve tu cliente al escanear el QR — con tus fotos, tus precios, tu carta real.",
+        "items": [
+          {
+            "img": "published-home.png",
+            "alt": "Real published MenuForge restaurant page with food photos",
+            "caption": "Así ve tu carta un cliente real."
+          },
+          {
+            "img": "published-menu-dark.png",
+            "alt": "Real published menu page in dark mode with dish photos and prices",
+            "caption": "Categorías, fotos y precios — también en oscuro."
+          }
+        ]
       }
     },
     "en": {
@@ -251,36 +258,6 @@
           }
         ]
       },
-      "gallery": {
-        "title": "A look inside",
-        "items": [
-          {
-            "img": "published-home.png",
-            "alt": "Real published MenuForge restaurant page with food photos",
-            "caption": "This is what your customers actually see."
-          },
-          {
-            "img": "published-menu-dark.png",
-            "alt": "Real published menu page in dark mode with dish photos and prices",
-            "caption": "Categories, photos and prices — in dark mode too."
-          },
-          {
-            "img": "order-modal.png",
-            "alt": "Real order modal with table selector and notes",
-            "caption": "Table, notes and total — the order is clear before it's sent."
-          },
-          {
-            "img": "home-ar-dark.png",
-            "alt": "MenuForge in Arabic, dark mode and right-to-left writing",
-            "caption": "Dark mode and Arabic (RTL), out of the box."
-          },
-          {
-            "img": "qr-sheet.png",
-            "alt": "Print-ready QR code sheet",
-            "caption": "A QR sheet ready to print for your tables."
-          }
-        ]
-      },
       "honest": {
         "title": "No catches",
         "items": [
@@ -298,6 +275,43 @@
       "footer": {
         "contactLabel": "Contact",
         "rights": "MenuForge. All rights reserved."
+      },
+      "appGallery": {
+        "title": "The app, in your pocket",
+        "subtitle": "Create, translate and publish your menu from your phone — no computer, no learning curve.",
+        "items": [
+          {
+            "img": "home-ar-dark.png",
+            "alt": "MenuForge in Arabic, dark mode and right-to-left writing",
+            "caption": "Dark mode and Arabic (RTL), out of the box."
+          },
+          {
+            "img": "order-modal.png",
+            "alt": "Real order modal with table selector and notes",
+            "caption": "Table, notes and total — the order is clear before it's sent."
+          },
+          {
+            "img": "qr-sheet.png",
+            "alt": "Print-ready QR code sheet",
+            "caption": "A QR sheet ready to print for your tables."
+          }
+        ]
+      },
+      "webGallery": {
+        "title": "The website we publish for you",
+        "subtitle": "This is exactly what your customer sees when they scan the QR — your photos, your prices, your real menu.",
+        "items": [
+          {
+            "img": "published-home.png",
+            "alt": "Real published MenuForge restaurant page with food photos",
+            "caption": "This is what your customers actually see."
+          },
+          {
+            "img": "published-menu-dark.png",
+            "alt": "Real published menu page in dark mode with dish photos and prices",
+            "caption": "Categories, photos and prices — in dark mode too."
+          }
+        ]
       }
     },
     "fr": {
@@ -384,36 +398,6 @@
           }
         ]
       },
-      "gallery": {
-        "title": "L'intérieur de l'app",
-        "items": [
-          {
-            "img": "published-home.png",
-            "alt": "Real published MenuForge restaurant page with food photos",
-            "caption": "Voici ce que voit vraiment votre client."
-          },
-          {
-            "img": "published-menu-dark.png",
-            "alt": "Real published menu page in dark mode with dish photos and prices",
-            "caption": "Catégories, photos et prix — aussi en mode sombre."
-          },
-          {
-            "img": "order-modal.png",
-            "alt": "Real order modal with table selector and notes",
-            "caption": "Table, notes et total — la commande est claire avant l'envoi."
-          },
-          {
-            "img": "home-ar-dark.png",
-            "alt": "MenuForge en arabe, mode sombre et écriture de droite à gauche",
-            "caption": "Mode sombre et arabe (RTL), de série."
-          },
-          {
-            "img": "qr-sheet.png",
-            "alt": "Feuille de QR codes prête à imprimer",
-            "caption": "Une feuille de QR prête à imprimer pour vos tables."
-          }
-        ]
-      },
       "honest": {
         "title": "Sans arnaque",
         "items": [
@@ -431,6 +415,43 @@
       "footer": {
         "contactLabel": "Contact",
         "rights": "MenuForge. Tous droits réservés."
+      },
+      "appGallery": {
+        "title": "L'appli, dans votre poche",
+        "subtitle": "Créez, traduisez et publiez votre carte depuis votre téléphone — sans ordinateur, sans courbe d'apprentissage.",
+        "items": [
+          {
+            "img": "home-ar-dark.png",
+            "alt": "MenuForge en arabe, mode sombre et écriture de droite à gauche",
+            "caption": "Mode sombre et arabe (RTL), de série."
+          },
+          {
+            "img": "order-modal.png",
+            "alt": "Real order modal with table selector and notes",
+            "caption": "Table, notes et total — la commande est claire avant l'envoi."
+          },
+          {
+            "img": "qr-sheet.png",
+            "alt": "Feuille de QR codes prête à imprimer",
+            "caption": "Une feuille de QR prête à imprimer pour vos tables."
+          }
+        ]
+      },
+      "webGallery": {
+        "title": "Le site que nous publions pour vous",
+        "subtitle": "Voici exactement ce que voit votre client en scannant le QR — vos photos, vos prix, votre vraie carte.",
+        "items": [
+          {
+            "img": "published-home.png",
+            "alt": "Real published MenuForge restaurant page with food photos",
+            "caption": "Voici ce que voit vraiment votre client."
+          },
+          {
+            "img": "published-menu-dark.png",
+            "alt": "Real published menu page in dark mode with dish photos and prices",
+            "caption": "Catégories, photos et prix — aussi en mode sombre."
+          }
+        ]
       }
     },
     "it": {
@@ -517,36 +538,6 @@
           }
         ]
       },
-      "gallery": {
-        "title": "Uno sguardo dentro",
-        "items": [
-          {
-            "img": "published-home.png",
-            "alt": "Real published MenuForge restaurant page with food photos",
-            "caption": "Ecco cosa vede davvero il tuo cliente."
-          },
-          {
-            "img": "published-menu-dark.png",
-            "alt": "Real published menu page in dark mode with dish photos and prices",
-            "caption": "Categorie, foto e prezzi — anche in modalità scura."
-          },
-          {
-            "img": "order-modal.png",
-            "alt": "Real order modal with table selector and notes",
-            "caption": "Tavolo, note e totale — l'ordine è chiaro prima di inviarlo."
-          },
-          {
-            "img": "home-ar-dark.png",
-            "alt": "MenuForge in arabo, modalità scura e scrittura da destra a sinistra",
-            "caption": "Modalità scura e arabo (RTL), di serie."
-          },
-          {
-            "img": "qr-sheet.png",
-            "alt": "Foglio di codici QR pronto da stampare",
-            "caption": "Un foglio QR pronto da stampare per i tuoi tavoli."
-          }
-        ]
-      },
       "honest": {
         "title": "Senza trucchi",
         "items": [
@@ -564,6 +555,43 @@
       "footer": {
         "contactLabel": "Contatto",
         "rights": "MenuForge. Tutti i diritti riservati."
+      },
+      "appGallery": {
+        "title": "L'app, in tasca",
+        "subtitle": "Crea, traduci e pubblica il tuo menu dal telefono — senza computer, senza curva di apprendimento.",
+        "items": [
+          {
+            "img": "home-ar-dark.png",
+            "alt": "MenuForge in arabo, modalità scura e scrittura da destra a sinistra",
+            "caption": "Modalità scura e arabo (RTL), di serie."
+          },
+          {
+            "img": "order-modal.png",
+            "alt": "Real order modal with table selector and notes",
+            "caption": "Tavolo, note e totale — l'ordine è chiaro prima di inviarlo."
+          },
+          {
+            "img": "qr-sheet.png",
+            "alt": "Foglio di codici QR pronto da stampare",
+            "caption": "Un foglio QR pronto da stampare per i tuoi tavoli."
+          }
+        ]
+      },
+      "webGallery": {
+        "title": "Il sito che pubblichiamo per te",
+        "subtitle": "Ecco esattamente cosa vede il tuo cliente scansionando il QR — le tue foto, i tuoi prezzi, il tuo vero menu.",
+        "items": [
+          {
+            "img": "published-home.png",
+            "alt": "Real published MenuForge restaurant page with food photos",
+            "caption": "Ecco cosa vede davvero il tuo cliente."
+          },
+          {
+            "img": "published-menu-dark.png",
+            "alt": "Real published menu page in dark mode with dish photos and prices",
+            "caption": "Categorie, foto e prezzi — anche in modalità scura."
+          }
+        ]
       }
     },
     "de": {
@@ -650,36 +678,6 @@
           }
         ]
       },
-      "gallery": {
-        "title": "Ein Blick hinein",
-        "items": [
-          {
-            "img": "published-home.png",
-            "alt": "Real published MenuForge restaurant page with food photos",
-            "caption": "So sieht Ihr Kunde Ihre Karte wirklich."
-          },
-          {
-            "img": "published-menu-dark.png",
-            "alt": "Real published menu page in dark mode with dish photos and prices",
-            "caption": "Kategorien, Fotos und Preise — auch im Dunkelmodus."
-          },
-          {
-            "img": "order-modal.png",
-            "alt": "Real order modal with table selector and notes",
-            "caption": "Tisch, Notizen und Summe — die Bestellung ist vor dem Senden klar."
-          },
-          {
-            "img": "home-ar-dark.png",
-            "alt": "MenuForge auf Arabisch, dunkler Modus und Schrift von rechts nach links",
-            "caption": "Dunkler Modus und Arabisch (RTL), serienmäßig."
-          },
-          {
-            "img": "qr-sheet.png",
-            "alt": "Druckfertiges Blatt mit QR-Codes",
-            "caption": "Ein druckfertiges QR-Blatt für Ihre Tische."
-          }
-        ]
-      },
       "honest": {
         "title": "Ohne Haken",
         "items": [
@@ -697,6 +695,43 @@
       "footer": {
         "contactLabel": "Kontakt",
         "rights": "MenuForge. Alle Rechte vorbehalten."
+      },
+      "appGallery": {
+        "title": "Die App, in Ihrer Tasche",
+        "subtitle": "Erstellen, übersetzen und veröffentlichen Sie Ihre Speisekarte vom Handy aus — ohne Computer, ohne Lernkurve.",
+        "items": [
+          {
+            "img": "home-ar-dark.png",
+            "alt": "MenuForge auf Arabisch, dunkler Modus und Schrift von rechts nach links",
+            "caption": "Dunkler Modus und Arabisch (RTL), serienmäßig."
+          },
+          {
+            "img": "order-modal.png",
+            "alt": "Real order modal with table selector and notes",
+            "caption": "Tisch, Notizen und Summe — die Bestellung ist vor dem Senden klar."
+          },
+          {
+            "img": "qr-sheet.png",
+            "alt": "Druckfertiges Blatt mit QR-Codes",
+            "caption": "Ein druckfertiges QR-Blatt für Ihre Tische."
+          }
+        ]
+      },
+      "webGallery": {
+        "title": "Die Website, die wir für Sie veröffentlichen",
+        "subtitle": "Genau das sieht Ihr Kunde beim Scannen des QR-Codes — Ihre Fotos, Ihre Preise, Ihre echte Speisekarte.",
+        "items": [
+          {
+            "img": "published-home.png",
+            "alt": "Real published MenuForge restaurant page with food photos",
+            "caption": "So sieht Ihr Kunde Ihre Karte wirklich."
+          },
+          {
+            "img": "published-menu-dark.png",
+            "alt": "Real published menu page in dark mode with dish photos and prices",
+            "caption": "Kategorien, Fotos und Preise — auch im Dunkelmodus."
+          }
+        ]
       }
     },
     "pt": {
@@ -783,36 +818,6 @@
           }
         ]
       },
-      "gallery": {
-        "title": "Um olhar por dentro",
-        "items": [
-          {
-            "img": "published-home.png",
-            "alt": "Real published MenuForge restaurant page with food photos",
-            "caption": "É assim que o seu cliente vê o cardápio de verdade."
-          },
-          {
-            "img": "published-menu-dark.png",
-            "alt": "Real published menu page in dark mode with dish photos and prices",
-            "caption": "Categorias, fotos e preços — também no modo escuro."
-          },
-          {
-            "img": "order-modal.png",
-            "alt": "Real order modal with table selector and notes",
-            "caption": "Mesa, notas e total — o pedido fica claro antes de enviar."
-          },
-          {
-            "img": "home-ar-dark.png",
-            "alt": "MenuForge em árabe, modo escuro e escrita da direita para a esquerda",
-            "caption": "Modo escuro e árabe (RTL), de fábrica."
-          },
-          {
-            "img": "qr-sheet.png",
-            "alt": "Folha de códigos QR pronta para imprimir",
-            "caption": "Uma folha de QR pronta para imprimir nas suas mesas."
-          }
-        ]
-      },
       "honest": {
         "title": "Sem pegadinhas",
         "items": [
@@ -830,6 +835,43 @@
       "footer": {
         "contactLabel": "Contato",
         "rights": "MenuForge. Todos os direitos reservados."
+      },
+      "appGallery": {
+        "title": "O app, no seu bolso",
+        "subtitle": "Crie, traduza e publique o seu cardápio pelo celular — sem computador, sem curva de aprendizado.",
+        "items": [
+          {
+            "img": "home-ar-dark.png",
+            "alt": "MenuForge em árabe, modo escuro e escrita da direita para a esquerda",
+            "caption": "Modo escuro e árabe (RTL), de fábrica."
+          },
+          {
+            "img": "order-modal.png",
+            "alt": "Real order modal with table selector and notes",
+            "caption": "Mesa, notas e total — o pedido fica claro antes de enviar."
+          },
+          {
+            "img": "qr-sheet.png",
+            "alt": "Folha de códigos QR pronta para imprimir",
+            "caption": "Uma folha de QR pronta para imprimir nas suas mesas."
+          }
+        ]
+      },
+      "webGallery": {
+        "title": "O site que publicamos por você",
+        "subtitle": "É exatamente isto que o seu cliente vê ao escanear o QR — suas fotos, seus preços, seu cardápio real.",
+        "items": [
+          {
+            "img": "published-home.png",
+            "alt": "Real published MenuForge restaurant page with food photos",
+            "caption": "É assim que o seu cliente vê o cardápio de verdade."
+          },
+          {
+            "img": "published-menu-dark.png",
+            "alt": "Real published menu page in dark mode with dish photos and prices",
+            "caption": "Categorias, fotos e preços — também no modo escuro."
+          }
+        ]
       }
     },
     "cn": {
@@ -916,36 +958,6 @@
           }
         ]
       },
-      "gallery": {
-        "title": "内部一览",
-        "items": [
-          {
-            "img": "published-home.png",
-            "alt": "Real published MenuForge restaurant page with food photos",
-            "caption": "这就是顾客真正看到的菜单。"
-          },
-          {
-            "img": "published-menu-dark.png",
-            "alt": "Real published menu page in dark mode with dish photos and prices",
-            "caption": "分类、照片和价格——深色模式下同样清晰。"
-          },
-          {
-            "img": "order-modal.png",
-            "alt": "Real order modal with table selector and notes",
-            "caption": "桌号、备注和总价——发送前一目了然。"
-          },
-          {
-            "img": "home-ar-dark.png",
-            "alt": "MenuForge阿拉伯语版本，深色模式与从右到左书写",
-            "caption": "原生支持深色模式与阿拉伯语（RTL）。"
-          },
-          {
-            "img": "qr-sheet.png",
-            "alt": "可直接打印的QR码表",
-            "caption": "为您的餐桌准备的可打印QR码表。"
-          }
-        ]
-      },
       "honest": {
         "title": "没有套路",
         "items": [
@@ -963,6 +975,43 @@
       "footer": {
         "contactLabel": "联系我们",
         "rights": "MenuForge. 保留所有权利。"
+      },
+      "appGallery": {
+        "title": "应用，装进口袋",
+        "subtitle": "用手机创建、翻译并发布你的菜单——无需电脑，无需学习成本。",
+        "items": [
+          {
+            "img": "home-ar-dark.png",
+            "alt": "MenuForge阿拉伯语版本，深色模式与从右到左书写",
+            "caption": "原生支持深色模式与阿拉伯语（RTL）。"
+          },
+          {
+            "img": "order-modal.png",
+            "alt": "Real order modal with table selector and notes",
+            "caption": "桌号、备注和总价——发送前一目了然。"
+          },
+          {
+            "img": "qr-sheet.png",
+            "alt": "可直接打印的QR码表",
+            "caption": "为您的餐桌准备的可打印QR码表。"
+          }
+        ]
+      },
+      "webGallery": {
+        "title": "我们为你发布的网站",
+        "subtitle": "这正是顾客扫描二维码后看到的画面——你的照片、你的价格、你真实的菜单。",
+        "items": [
+          {
+            "img": "published-home.png",
+            "alt": "Real published MenuForge restaurant page with food photos",
+            "caption": "这就是顾客真正看到的菜单。"
+          },
+          {
+            "img": "published-menu-dark.png",
+            "alt": "Real published menu page in dark mode with dish photos and prices",
+            "caption": "分类、照片和价格——深色模式下同样清晰。"
+          }
+        ]
       }
     },
     "sa": {
@@ -1049,36 +1098,6 @@
           }
         ]
       },
-      "gallery": {
-        "title": "نظرة من الداخل",
-        "items": [
-          {
-            "img": "published-home.png",
-            "alt": "Real published MenuForge restaurant page with food photos",
-            "caption": "هكذا يرى عميلك قائمتك بالفعل."
-          },
-          {
-            "img": "published-menu-dark.png",
-            "alt": "Real published menu page in dark mode with dish photos and prices",
-            "caption": "الفئات والصور والأسعار — في الوضع الداكن أيضًا."
-          },
-          {
-            "img": "order-modal.png",
-            "alt": "Real order modal with table selector and notes",
-            "caption": "الطاولة والملاحظات والمجموع — الطلب واضح قبل إرساله."
-          },
-          {
-            "img": "home-ar-dark.png",
-            "alt": "MenuForge بالعربية، الوضع الداكن والكتابة من اليمين لليسار",
-            "caption": "الوضع الداكن والعربية (RTL)، بشكل أصلي."
-          },
-          {
-            "img": "qr-sheet.png",
-            "alt": "ورقة رموز QR جاهزة للطباعة",
-            "caption": "ورقة QR جاهزة للطباعة لطاولاتك."
-          }
-        ]
-      },
       "honest": {
         "title": "بدون خدع",
         "items": [
@@ -1096,6 +1115,43 @@
       "footer": {
         "contactLabel": "تواصل معنا",
         "rights": "MenuForge. جميع الحقوق محفوظة."
+      },
+      "appGallery": {
+        "title": "التطبيق، في جيبك",
+        "subtitle": "أنشئ وترجم وانشر قائمتك من هاتفك — بدون حاسوب، وبدون منحنى تعلم.",
+        "items": [
+          {
+            "img": "home-ar-dark.png",
+            "alt": "MenuForge بالعربية، الوضع الداكن والكتابة من اليمين لليسار",
+            "caption": "الوضع الداكن والعربية (RTL)، بشكل أصلي."
+          },
+          {
+            "img": "order-modal.png",
+            "alt": "Real order modal with table selector and notes",
+            "caption": "الطاولة والملاحظات والمجموع — الطلب واضح قبل إرساله."
+          },
+          {
+            "img": "qr-sheet.png",
+            "alt": "ورقة رموز QR جاهزة للطباعة",
+            "caption": "ورقة QR جاهزة للطباعة لطاولاتك."
+          }
+        ]
+      },
+      "webGallery": {
+        "title": "الموقع الذي ننشره لك",
+        "subtitle": "هذا بالضبط ما يراه عميلك عند مسح رمز QR — صورك وأسعارك وقائمتك الحقيقية.",
+        "items": [
+          {
+            "img": "published-home.png",
+            "alt": "Real published MenuForge restaurant page with food photos",
+            "caption": "هكذا يرى عميلك قائمتك بالفعل."
+          },
+          {
+            "img": "published-menu-dark.png",
+            "alt": "Real published menu page in dark mode with dish photos and prices",
+            "caption": "الفئات والصور والأسعار — في الوضع الداكن أيضًا."
+          }
+        ]
       }
     }
   }

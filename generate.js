@@ -55,6 +55,13 @@ function imgSize(file, displayWidth) {
     return { width: displayWidth, height: Math.round((displayWidth * h) / w) };
 }
 
+// Badge oficial de "Disponible en Google Play" -no hay versión oficial en chino simplificado,
+// así que esa página cae en la inglesa, igual que hacen muchas apps reales-.
+const GOOGLE_PLAY_BADGE = { es: 'es', en: 'en', fr: 'fr', it: 'it', de: 'de', pt: 'pt', cn: 'en', sa: 'ar' };
+function googlePlayBadgeSrc(lang) {
+    return asset(`/assets/badges/google-play-${GOOGLE_PLAY_BADGE[lang]}.png`);
+}
+
 function escapeHtml(str) {
     return String(str).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }
@@ -91,11 +98,11 @@ function renderSteps(items) {
                 </div>`).join('');
 }
 
-function renderGallery(items) {
+function renderGallery(items, cols) {
     return items.map((g, i) => {
         const size = imgSize(g.img, 360);
         return `
-                <div class="gallery-item fly-in" style="transition-delay:${(i % 5) * 70}ms">
+                <div class="gallery-item fly-in" style="transition-delay:${(i % cols) * 70}ms">
                     <div class="phone-frame"><img src="${asset(`/assets/screens/${g.img}`)}" alt="${escapeHtml(g.alt)}" loading="lazy" width="${size.width}" height="${size.height}"></div>
                     <div class="gallery-caption">${escapeHtml(g.caption)}</div>
                 </div>`;
@@ -176,7 +183,9 @@ ${renderHreflangs(lang)}
                     <h1 class="fly-in-left visible">${escapeHtml(c.hero.titleLine1)}<br><span class="accent-text">${escapeHtml(c.hero.titleLine2)}</span></h1>
                     <p class="lead fly-in-left visible" style="transition-delay:80ms">${escapeHtml(c.hero.subtitle)}</p>
                     <div class="cta-row fly-in-left visible" style="transition-delay:140ms">
-                        <a href="#" class="btn btn-primary" data-cta="download" data-soon-label="${escapeHtml(c.hero.ctaPrimarySoon)}"><span data-cta-label>${escapeHtml(c.hero.ctaPrimary)}</span></a>
+                        <a href="#" class="cta-badge-link" data-cta="download" title="${escapeHtml(c.hero.ctaPrimarySoon)}">
+                            <img class="google-play-badge" src="${googlePlayBadgeSrc(lang)}" alt="${escapeHtml(c.hero.ctaPrimary)}" width="180" height="54">
+                        </a>
                         <a href="#steps" class="btn btn-ghost">${escapeHtml(c.hero.ctaSecondary)}</a>
                     </div>
                     <div class="hero-note fly-in-left visible" style="transition-delay:180ms">${escapeHtml(c.hero.note)}</div>
@@ -185,7 +194,7 @@ ${renderHreflangs(lang)}
                     </div>
                 </div>
                 <div class="hero-visual fly-in-scale visible">
-                    <div class="phone-frame"><img src="${asset('/assets/screens/published-home.png')}" alt="${escapeHtml(c.gallery.items[0].alt)}" width="${imgSize('published-home.png', 300).width}" height="${imgSize('published-home.png', 300).height}"></div>
+                    <div class="phone-frame"><img src="${asset('/assets/screens/published-home.png')}" alt="${escapeHtml(c.webGallery.items[0].alt)}" width="${imgSize('published-home.png', 300).width}" height="${imgSize('published-home.png', 300).height}"></div>
                     <div class="float-chip float-chip-1">🌐 8 / 8</div>
                     <div class="float-chip float-chip-2">📱 WhatsApp</div>
                     <div class="float-chip float-chip-3">🔲 QR</div>
@@ -233,12 +242,24 @@ ${renderHreflangs(lang)}
             </div>
         </section>
 
-        <section id="gallery">
+        <section id="webgallery">
             <div class="container">
                 <div class="section-head fly-in">
-                    <h2>${escapeHtml(c.gallery.title)}</h2>
+                    <h2>${escapeHtml(c.webGallery.title)}</h2>
+                    <p>${escapeHtml(c.webGallery.subtitle)}</p>
                 </div>
-                <div class="gallery-grid">${renderGallery(c.gallery.items)}
+                <div class="gallery-grid gallery-grid-2">${renderGallery(c.webGallery.items, 2)}
+                </div>
+            </div>
+        </section>
+
+        <section id="appgallery">
+            <div class="container">
+                <div class="section-head fly-in">
+                    <h2>${escapeHtml(c.appGallery.title)}</h2>
+                    <p>${escapeHtml(c.appGallery.subtitle)}</p>
+                </div>
+                <div class="gallery-grid gallery-grid-3">${renderGallery(c.appGallery.items, 3)}
                 </div>
             </div>
         </section>
@@ -261,7 +282,9 @@ ${renderHreflangs(lang)}
                 <div class="final-cta fly-in-scale">
                     <h2>${escapeHtml(c.finalCta.title)}</h2>
                     <p>${escapeHtml(c.finalCta.subtitle)}</p>
-                    <a href="#" class="btn btn-primary" data-cta="download" data-soon-label="${escapeHtml(c.hero.ctaPrimarySoon)}"><span data-cta-label>${escapeHtml(c.finalCta.button)}</span></a>
+                    <a href="#" class="cta-badge-link" data-cta="download" title="${escapeHtml(c.hero.ctaPrimarySoon)}">
+                        <img class="google-play-badge" src="${googlePlayBadgeSrc(lang)}" alt="${escapeHtml(c.finalCta.button)}" width="180" height="54">
+                    </a>
                 </div>
             </div>
         </section>

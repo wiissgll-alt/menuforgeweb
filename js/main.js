@@ -82,8 +82,9 @@
                         btn.classList.add('is-disabled');
                         btn.setAttribute('aria-disabled', 'true');
                         btn.addEventListener('click', function (e) { e.preventDefault(); });
+                        var label = btn.querySelector('[data-cta-label]');
                         var soon = btn.getAttribute('data-soon-label');
-                        if (soon) btn.querySelector('[data-cta-label]').textContent = soon;
+                        if (soon && label) label.textContent = soon;
                     }
                 });
             })
