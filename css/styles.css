@@ -130,7 +130,10 @@ html[dir="rtl"] .lang-picker select { padding: 9px 14px 9px 30px; }
     width: min(300px, 78vw); border-radius: 38px; overflow: hidden; border: 1px solid var(--border);
     box-shadow: var(--shadow-card); background: var(--surface);
 }
-.phone-frame img { width: 100%; display: block; }
+/* height:auto es imprescindible aquí: sin él, el navegador reduce el ancho por el width:100% de
+   arriba pero deja el alto literal del atributo HTML original -pensado para el ancho grande de
+   partida-, y la imagen sale deformada en cuanto la columna real es más estrecha. */
+.phone-frame img { width: 100%; height: auto; display: block; }
 .float-chip {
     position: absolute; padding: 10px 16px; border-radius: 14px; background: var(--surface);
     border: 1px solid var(--border); box-shadow: var(--shadow-soft); font-weight: 700; font-size: 0.82rem;
@@ -230,7 +233,6 @@ footer.site-footer { padding: 40px 0 60px; border-top: 1px solid var(--border); 
 }
 @media (max-width: 900px) {
     .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-    .hero-visual { order: -1; }
     .float-chip { display: none; }
     .features-grid { grid-template-columns: repeat(2, 1fr); }
     .steps-grid { grid-template-columns: 1fr; }
