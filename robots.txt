@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://menuforge.wiissdeveloperapps.dpdns.org/sitemap.xml
+Sitemap: https://wiissgll-alt.github.io/menuforgeweb/sitemap.xml

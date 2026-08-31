@@ -67,7 +67,8 @@
     function initCta() {
         var buttons = document.querySelectorAll('[data-cta="download"]');
         if (!buttons.length) return;
-        fetch('/config.json', { cache: 'no-store' })
+        var base = window.__BASE__ || '';
+        fetch(base + '/config.json', { cache: 'no-store' })
             .then(function (r) { return r.ok ? r.json() : null; })
             .then(function (cfg) {
                 var url = cfg && cfg.playStoreUrl ? cfg.playStoreUrl.trim() : '';

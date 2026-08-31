@@ -6,13 +6,27 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
-const DOMAIN = 'https://menuforge.wiissdeveloperapps.dpdns.org'; // PLACEHOLDER: confirmar dominio real antes de publicar
+// De momento en la URL por defecto de GitHub Pages (proyecto, no dominio propio todavía) ->
+// BASE_PATH = '/menuforgeweb'. El día que se ponga el dominio propio vía Cloudflare, cambiar
+// DOMAIN y poner BASE_PATH = '' (raíz), y volver a ejecutar `node generate.js`.
+const DOMAIN = 'https://wiissgll-alt.github.io';
+const BASE_PATH = '/menuforgeweb';
 
 const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'content.json'), 'utf8'));
 const { languages, defaultLang, rtlLangs, langNames, langShort, content } = data;
 
+// Ruta local (sin dominio) de un idioma, ya con el subpath de GitHub Pages incluido.
 function langPath(lang) {
-    return lang === defaultLang ? '/' : `/${lang}/`;
+    return `${BASE_PATH}${lang === defaultLang ? '/' : `/${lang}/`}`;
+}
+
+// Ruta local de un asset estático (css/js/imagen...), con el subpath incluido.
+function asset(rel) {
+    return `${BASE_PATH}${rel}`;
+}
+
+function fullUrl(lang) {
+    return `${DOMAIN}${langPath(lang)}`;
 }
 
 function escapeHtml(str) {
@@ -20,8 +34,8 @@ function escapeHtml(str) {
 }
 
 function renderHreflangs(lang) {
-    const links = languages.map((l) => `    <link rel="alternate" hreflang="${content[l].htmlLang}" href="${DOMAIN}${langPath(l)}">`).join('\n');
-    return `${links}\n    <link rel="alternate" hreflang="x-default" href="${DOMAIN}${langPath(defaultLang)}">`;
+    const links = languages.map((l) => `    <link rel="alternate" hreflang="${content[l].htmlLang}" href="${fullUrl(l)}">`).join('\n');
+    return `${links}\n    <link rel="alternate" hreflang="x-default" href="${fullUrl(defaultLang)}">`;
 }
 
 function renderLangSwitcher(lang) {
@@ -54,7 +68,7 @@ function renderSteps(items) {
 function renderGallery(items) {
     return items.map((g, i) => `
                 <div class="gallery-item fly-in" style="transition-delay:${(i % 5) * 70}ms">
-                    <div class="phone-frame"><img src="/assets/screens/${g.img}" alt="${escapeHtml(g.alt)}" loading="lazy" width="360" height="720"></div>
+                    <div class="phone-frame"><img src="${asset(`/assets/screens/${g.img}`)}" alt="${escapeHtml(g.alt)}" loading="lazy" width="360" height="720"></div>
                     <div class="gallery-caption">${escapeHtml(g.caption)}</div>
                 </div>`).join('');
 }
@@ -70,7 +84,7 @@ function jsonLd(lang, c) {
         name: 'MenuForge',
         applicationCategory: 'BusinessApplication',
         operatingSystem: 'Android',
-        url: `${DOMAIN}${langPath(lang)}`,
+        url: fullUrl(lang),
         description: c.meta.description,
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
         inLanguage: c.htmlLang
@@ -80,7 +94,7 @@ function jsonLd(lang, c) {
 function renderPage(lang) {
     const c = content[lang];
     const dir = rtlLangs.includes(lang) ? 'rtl' : 'ltr';
-    const url = `${DOMAIN}${langPath(lang)}`;
+    const url = fullUrl(lang);
     const fontLink = lang === 'sa'
         ? `<link rel="preconnect" href="https://fonts.googleapis.com">\n    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700;800&display=swap" rel="stylesheet">`
         : `<link rel="preconnect" href="https://fonts.googleapis.com">\n    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">`;
@@ -98,17 +112,18 @@ ${renderHreflangs(lang)}
     <meta property="og:title" content="${escapeHtml(c.meta.title)}">
     <meta property="og:description" content="${escapeHtml(c.meta.description)}">
     <meta property="og:url" content="${url}">
-    <meta property="og:image" content="${DOMAIN}/assets/screens/home-es.png">
+    <meta property="og:image" content="${DOMAIN}${asset('/assets/screens/home-es.png')}">
     <meta property="og:locale" content="${c.htmlLang}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${escapeHtml(c.meta.title)}">
     <meta name="twitter:description" content="${escapeHtml(c.meta.description)}">
     <meta name="theme-color" content="#4f46e5">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="/assets/icons/icon-96.webp">
-    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="${asset('/manifest.json')}">
+    <link rel="icon" href="${asset('/assets/icons/icon-96.webp')}">
+    <link rel="apple-touch-icon" href="${asset('/assets/icons/apple-touch-icon.png')}">
     ${fontLink}
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="${asset('/css/styles.css')}">
+    <script>window.__BASE__=${JSON.stringify(BASE_PATH)};</script>
     <script type="application/ld+json">${jsonLd(lang, c)}</script>
 </head>
 <body>
@@ -116,7 +131,7 @@ ${renderHreflangs(lang)}
 
     <header class="site-header">
         <div class="container header-inner">
-            <div class="brand"><img src="/assets/icons/icon-96.webp" alt="MenuForge" width="30" height="30">MenuForge</div>
+            <div class="brand"><img src="${asset('/assets/icons/icon-96.webp')}" alt="MenuForge" width="30" height="30">MenuForge</div>
             <div class="header-actions">
                 ${renderLangSwitcher(lang)}
                 <button id="theme-toggle" class="icon-btn" onclick="toggleTheme()" aria-label="${escapeHtml(c.nav.themeToggle)}" type="button"></button>
@@ -141,7 +156,7 @@ ${renderHreflangs(lang)}
                     </div>
                 </div>
                 <div class="hero-visual fly-in-scale visible">
-                    <div class="phone-frame"><img src="/assets/screens/home-es.png" alt="${escapeHtml(c.gallery.items[0].alt)}" width="360" height="750"></div>
+                    <div class="phone-frame"><img src="${asset('/assets/screens/home-es.png')}" alt="${escapeHtml(c.gallery.items[0].alt)}" width="360" height="750"></div>
                     <div class="float-chip float-chip-1">🌐 8 / 8</div>
                     <div class="float-chip float-chip-2">📱 WhatsApp</div>
                     <div class="float-chip float-chip-3">🔲 QR</div>
@@ -157,12 +172,12 @@ ${renderHreflangs(lang)}
                 </div>
                 <div class="proof-wrap">
                     <div class="proof-card fly-in-left">
-                        <div class="phone-frame"><img src="/assets/screens/dish-pt.png" alt="Dish – ${escapeHtml(c.proof.captionLeft)}" width="330" height="660"></div>
+                        <div class="phone-frame"><img src="${asset('/assets/screens/dish-pt.png')}" alt="Dish – ${escapeHtml(c.proof.captionLeft)}" width="330" height="660"></div>
                         <div class="proof-caption">🇵🇹 ${escapeHtml(c.proof.captionLeft)}</div>
                     </div>
                     <div class="proof-arrow fly-in-scale">=</div>
                     <div class="proof-card fly-in-right">
-                        <div class="phone-frame"><img src="/assets/screens/dish-de-dark.png" alt="Dish – ${escapeHtml(c.proof.captionRight)}" width="330" height="660"></div>
+                        <div class="phone-frame"><img src="${asset('/assets/screens/dish-de-dark.png')}" alt="Dish – ${escapeHtml(c.proof.captionRight)}" width="330" height="660"></div>
                         <div class="proof-caption">🇩🇪 ${escapeHtml(c.proof.captionRight)}</div>
                     </div>
                 </div>
@@ -225,7 +240,7 @@ ${renderHreflangs(lang)}
 
     <footer class="site-footer">
         <div class="container footer-inner">
-            <div class="brand"><img src="/assets/icons/icon-96.webp" alt="" width="24" height="24">MenuForge</div>
+            <div class="brand"><img src="${asset('/assets/icons/icon-96.webp')}" alt="" width="24" height="24">MenuForge</div>
             <div class="footer-meta">
                 <span>© ${new Date().getFullYear()} ${escapeHtml(c.footer.rights)}</span>
                 <a href="mailto:wiissdeveloperapps@gmail.com">${escapeHtml(c.footer.contactLabel)}: wiissdeveloperapps@gmail.com</a>
@@ -233,7 +248,7 @@ ${renderHreflangs(lang)}
         </div>
     </footer>
 
-    <script src="/js/main.js"></script>
+    <script src="${asset('/js/main.js')}"></script>
 </body>
 </html>
 `;
@@ -252,20 +267,20 @@ languages.forEach((lang) => {
 });
 
 // sitemap.xml
-const urls = languages.map((l) => `  <url>\n    <loc>${DOMAIN}${langPath(l)}</loc>\n${languages.map((l2) => `    <xhtml:link rel="alternate" hreflang="${content[l2].htmlLang}" href="${DOMAIN}${langPath(l2)}"/>`).join('\n')}\n  </url>`).join('\n');
+const urls = languages.map((l) => `  <url>\n    <loc>${fullUrl(l)}</loc>\n${languages.map((l2) => `    <xhtml:link rel="alternate" hreflang="${content[l2].htmlLang}" href="${fullUrl(l2)}"/>`).join('\n')}\n  </url>`).join('\n');
 writeFile('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls}\n</urlset>\n`);
 
-writeFile('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${DOMAIN}/sitemap.xml\n`);
+writeFile('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${DOMAIN}${asset('/sitemap.xml')}\n`);
 
 writeFile('manifest.json', JSON.stringify({
     name: 'MenuForge',
     short_name: 'MenuForge',
-    start_url: '/',
-    scope: '/',
+    start_url: `${BASE_PATH}/`,
+    scope: `${BASE_PATH}/`,
     display: 'standalone',
     background_color: '#f8fafc',
     theme_color: '#4f46e5',
-    icons: [48, 72, 96, 128, 192, 256, 512].map((s) => ({ src: `/assets/icons/icon-${s}.webp`, type: 'image/webp', sizes: `${s}x${s}`, purpose: 'any maskable' }))
+    icons: [48, 72, 96, 128, 192, 256, 512].map((s) => ({ src: asset(`/assets/icons/icon-${s}.webp`), type: 'image/webp', sizes: `${s}x${s}`, purpose: 'any maskable' }))
 }, null, 2) + '\n');
 
-console.log('\nListo. Dominio usado en canonical/sitemap:', DOMAIN, '(cámbialo en generate.js si es distinto y vuelve a ejecutar).');
+console.log('\nListo. Dominio:', DOMAIN, '- BASE_PATH:', JSON.stringify(BASE_PATH), '(cámbialo en generate.js cuando pongas el dominio propio y vuelve a ejecutar).');
