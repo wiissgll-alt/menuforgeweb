@@ -105,7 +105,7 @@ html[dir="rtl"] .lang-picker select { padding: 9px 14px 9px 30px; }
 
 /* ---------- hero ---------- */
 .hero { padding: 64px 0 40px; }
-.hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; }
+.hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; direction: ltr; }
 .kicker {
     display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px; border-radius: 999px;
     background: var(--surface-soft); border: 1px solid var(--border); font-size: 0.8rem; font-weight: 700;
@@ -113,7 +113,6 @@ html[dir="rtl"] .lang-picker select { padding: 9px 14px 9px 30px; }
 }
 .hero h1 { font-size: clamp(2.1rem, 4.4vw, 3.4rem); line-height: 1.08; font-weight: 800; margin: 0 0 20px; letter-spacing: -0.01em; }
 
-/* MEJORA: Shimmer effect para destacar aún más la propuesta de valor */
 .hero h1 .accent-text { 
     background: linear-gradient(135deg, #4f46e5 20%, #9333ea 50%, #4f46e5 80%);
     background-size: 200% auto;
@@ -191,7 +190,7 @@ section { padding: 70px 0; }
 .section-head p { color: var(--text-muted); font-size: 1.02rem; line-height: 1.6; margin: 0; }
 
 /* ---------- proof (same dish, two languages) ---------- */
-.proof-wrap { display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap; }
+.proof-wrap { display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap; direction: ltr; }
 .proof-card { display: flex; flex-direction: column; align-items: center; gap: 14px; }
 .proof-card .phone-frame { width: min(230px, 68vw); }
 .proof-caption { font-weight: 700; font-size: 0.88rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
@@ -203,7 +202,6 @@ section { padding: 70px 0; }
     background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);
     padding: 26px; box-shadow: var(--shadow-soft); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
-/* MEJORA: Hover premium en cards */
 .feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); border-color: var(--accent); }
 .feature-icon {
     width: 50px; height: 50px; border-radius: 14px; background: var(--surface-soft); display: flex;
@@ -249,18 +247,14 @@ section { padding: 70px 0; }
 
 /* ---------- FOOTER FIJO & RESPONSIVE ---------- */
 footer.site-footer { 
-    /* Cambios clave para fijarlo */
     position: fixed; 
     bottom: 0; 
     left: 0; 
     width: 100%; 
     z-index: 100;
-    
-    /* Estilos Glassmorphism idénticos al header */
     background: color-mix(in srgb, var(--bg) 85%, transparent);
     backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
     border-top: 1px solid var(--border); 
-    
     padding: 12px 0; 
     margin-top: 0; 
     box-shadow: 0 -10px 30px -10px rgba(0,0,0,0.05);
@@ -271,20 +265,21 @@ footer.site-footer {
 
 .footer-inner { 
     display: flex; 
-    flex-wrap: nowrap; /* Evita que salte de línea */
+    flex-wrap: nowrap; 
     justify-content: space-between; 
     gap: 16px; 
     align-items: center; 
+    direction: ltr; 
 }
 .footer-inner .brand { font-size: 1rem; flex-shrink: 0; }
 .footer-meta { 
     font-size: 0.85rem; 
     color: var(--text-muted); 
     display: flex; 
-    flex-wrap: nowrap; /* Mantiene icono y texto en la misma línea */
+    flex-wrap: nowrap; 
     align-items: center; 
     gap: 12px; 
-    min-width: 0; /* Vital para que el texto se pueda truncar */
+    min-width: 0; 
 }
 .footer-meta > span {
     white-space: nowrap;
@@ -311,17 +306,14 @@ footer.site-footer {
     section { padding: 50px 0; }
     .honest-box { padding: 26px; }
     
-    /* Ajustes específicos para el footer fijo en móvil */
     footer.site-footer { padding: 10px 0; }
     .footer-inner { gap: 8px; }
     .footer-inner .brand { font-size: 0.9rem; }
     .footer-inner .brand img { width: 22px; height: 22px; }
     .footer-meta { font-size: 0.75rem; gap: 8px; }
     
-    /* Reducimos un pelín los botones para ahorrar espacio */
     .icon-btn { width: 34px; height: 34px; border-radius: 10px; }
     .icon-btn svg { width: 16px; height: 16px; }
     
-    /* Ajustamos el padding-bottom del body para pantallas más pequeñas */
     main { padding-bottom: 75px; }
 }
