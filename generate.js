@@ -1,0 +1,271 @@
+// Generador de páginas estáticas -sin dependencias, node generate.js- que produce una página
+// HTML completa por idioma a partir de content.json. Cada idioma tiene su propia URL real
+// (/, /en/, /fr/...) en vez de un único HTML con textos cambiados por JS, para que Google pueda
+// indexar cada idioma por separado (hreflang) en vez de solo el contenido en español.
+const fs = require('fs');
+const path = require('path');
+
+const ROOT = __dirname;
+const DOMAIN = 'https://menuforge.wiissdeveloperapps.dpdns.org'; // PLACEHOLDER: confirmar dominio real antes de publicar
+
+const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'content.json'), 'utf8'));
+const { languages, defaultLang, rtlLangs, langNames, langShort, content } = data;
+
+function langPath(lang) {
+    return lang === defaultLang ? '/' : `/${lang}/`;
+}
+
+function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+function renderHreflangs(lang) {
+    const links = languages.map((l) => `    <link rel="alternate" hreflang="${content[l].htmlLang}" href="${DOMAIN}${langPath(l)}">`).join('\n');
+    return `${links}\n    <link rel="alternate" hreflang="x-default" href="${DOMAIN}${langPath(defaultLang)}">`;
+}
+
+function renderLangSwitcher(lang) {
+    const options = languages.map((l) => `<option value="${langPath(l)}" ${l === lang ? 'selected' : ''}>${escapeHtml(langShort[l])}</option>`).join('');
+    return `<div class="lang-picker"><select onchange="goToLang(this)" aria-label="${escapeHtml(content[lang].nav.menuLabel)}">${options}</select></div>`;
+}
+
+function renderBadges(items) {
+    return items.map((b) => `<span class="pill">${escapeHtml(b)}</span>`).join('\n                ');
+}
+
+function renderFeatures(items) {
+    return items.map((f, i) => `
+                <div class="feature-card fly-in-scale" style="transition-delay:${(i % 3) * 80}ms">
+                    <div class="feature-icon">${f.icon}</div>
+                    <h3>${escapeHtml(f.title)}</h3>
+                    <p>${escapeHtml(f.desc)}</p>
+                </div>`).join('');
+}
+
+function renderSteps(items) {
+    return items.map((s, i) => `
+                <div class="step-card fly-in" style="transition-delay:${i * 100}ms">
+                    <div class="step-num">${i + 1}</div>
+                    <h3>${escapeHtml(s.title)}</h3>
+                    <p>${escapeHtml(s.desc)}</p>
+                </div>`).join('');
+}
+
+function renderGallery(items) {
+    return items.map((g, i) => `
+                <div class="gallery-item fly-in" style="transition-delay:${(i % 5) * 70}ms">
+                    <div class="phone-frame"><img src="/assets/screens/${g.img}" alt="${escapeHtml(g.alt)}" loading="lazy" width="360" height="720"></div>
+                    <div class="gallery-caption">${escapeHtml(g.caption)}</div>
+                </div>`).join('');
+}
+
+function renderHonest(items) {
+    return items.map((h) => `<li><span class="honest-check">✓</span><span>${escapeHtml(h)}</span></li>`).join('\n                ');
+}
+
+function jsonLd(lang, c) {
+    return JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: 'MenuForge',
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: 'Android',
+        url: `${DOMAIN}${langPath(lang)}`,
+        description: c.meta.description,
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+        inLanguage: c.htmlLang
+    });
+}
+
+function renderPage(lang) {
+    const c = content[lang];
+    const dir = rtlLangs.includes(lang) ? 'rtl' : 'ltr';
+    const url = `${DOMAIN}${langPath(lang)}`;
+    const fontLink = lang === 'sa'
+        ? `<link rel="preconnect" href="https://fonts.googleapis.com">\n    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700;800&display=swap" rel="stylesheet">`
+        : `<link rel="preconnect" href="https://fonts.googleapis.com">\n    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">`;
+
+    return `<!DOCTYPE html>
+<html lang="${c.htmlLang}" dir="${dir}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>${escapeHtml(c.meta.title)}</title>
+    <meta name="description" content="${escapeHtml(c.meta.description)}">
+    <link rel="canonical" href="${url}">
+${renderHreflangs(lang)}
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="${escapeHtml(c.meta.title)}">
+    <meta property="og:description" content="${escapeHtml(c.meta.description)}">
+    <meta property="og:url" content="${url}">
+    <meta property="og:image" content="${DOMAIN}/assets/screens/home-es.png">
+    <meta property="og:locale" content="${c.htmlLang}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${escapeHtml(c.meta.title)}">
+    <meta name="twitter:description" content="${escapeHtml(c.meta.description)}">
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/assets/icons/icon-96.webp">
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+    ${fontLink}
+    <link rel="stylesheet" href="/css/styles.css">
+    <script type="application/ld+json">${jsonLd(lang, c)}</script>
+</head>
+<body>
+    <div class="ambient"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand"><img src="/assets/icons/icon-96.webp" alt="MenuForge" width="30" height="30">MenuForge</div>
+            <div class="header-actions">
+                ${renderLangSwitcher(lang)}
+                <button id="theme-toggle" class="icon-btn" onclick="toggleTheme()" aria-label="${escapeHtml(c.nav.themeToggle)}" type="button"></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <span class="kicker fly-in visible">✨ ${escapeHtml(c.hero.kicker)}</span>
+                    <h1 class="fly-in-left visible">${escapeHtml(c.hero.titleLine1)}<br><span class="accent-text">${escapeHtml(c.hero.titleLine2)}</span></h1>
+                    <p class="lead fly-in-left visible" style="transition-delay:80ms">${escapeHtml(c.hero.subtitle)}</p>
+                    <div class="cta-row fly-in-left visible" style="transition-delay:140ms">
+                        <a href="#" class="btn btn-primary" data-cta="download" data-soon-label="${escapeHtml(c.hero.ctaPrimarySoon)}"><span data-cta-label>${escapeHtml(c.hero.ctaPrimary)}</span></a>
+                        <a href="#steps" class="btn btn-ghost">${escapeHtml(c.hero.ctaSecondary)}</a>
+                    </div>
+                    <div class="hero-note fly-in-left visible" style="transition-delay:180ms">${escapeHtml(c.hero.note)}</div>
+                    <div class="badge-row">
+                ${renderBadges(c.badges)}
+                    </div>
+                </div>
+                <div class="hero-visual fly-in-scale visible">
+                    <div class="phone-frame"><img src="/assets/screens/home-es.png" alt="${escapeHtml(c.gallery.items[0].alt)}" width="360" height="750"></div>
+                    <div class="float-chip float-chip-1">🌐 8 / 8</div>
+                    <div class="float-chip float-chip-2">📱 WhatsApp</div>
+                    <div class="float-chip float-chip-3">🔲 QR</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proof">
+            <div class="container">
+                <div class="section-head fly-in">
+                    <h2>${escapeHtml(c.proof.title)}</h2>
+                    <p>${escapeHtml(c.proof.subtitle)}</p>
+                </div>
+                <div class="proof-wrap">
+                    <div class="proof-card fly-in-left">
+                        <div class="phone-frame"><img src="/assets/screens/dish-pt.png" alt="Dish – ${escapeHtml(c.proof.captionLeft)}" width="330" height="660"></div>
+                        <div class="proof-caption">🇵🇹 ${escapeHtml(c.proof.captionLeft)}</div>
+                    </div>
+                    <div class="proof-arrow fly-in-scale">=</div>
+                    <div class="proof-card fly-in-right">
+                        <div class="phone-frame"><img src="/assets/screens/dish-de-dark.png" alt="Dish – ${escapeHtml(c.proof.captionRight)}" width="330" height="660"></div>
+                        <div class="proof-caption">🇩🇪 ${escapeHtml(c.proof.captionRight)}</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <div class="section-head fly-in">
+                    <h2>${escapeHtml(c.features.title)}</h2>
+                </div>
+                <div class="features-grid">${renderFeatures(c.features.items)}
+                </div>
+            </div>
+        </section>
+
+        <section id="steps">
+            <div class="container">
+                <div class="section-head fly-in">
+                    <h2>${escapeHtml(c.steps.title)}</h2>
+                </div>
+                <div class="steps-grid">${renderSteps(c.steps.items)}
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="container">
+                <div class="section-head fly-in">
+                    <h2>${escapeHtml(c.gallery.title)}</h2>
+                </div>
+                <div class="gallery-grid">${renderGallery(c.gallery.items)}
+                </div>
+            </div>
+        </section>
+
+        <section id="honest">
+            <div class="container">
+                <div class="section-head fly-in">
+                    <h2>${escapeHtml(c.honest.title)}</h2>
+                </div>
+                <div class="honest-box fly-in-scale">
+                    <ul class="honest-list">
+                ${renderHonest(c.honest.items)}
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="final-cta">
+            <div class="container">
+                <div class="final-cta fly-in-scale">
+                    <h2>${escapeHtml(c.finalCta.title)}</h2>
+                    <p>${escapeHtml(c.finalCta.subtitle)}</p>
+                    <a href="#" class="btn btn-primary" data-cta="download" data-soon-label="${escapeHtml(c.hero.ctaPrimarySoon)}"><span data-cta-label>${escapeHtml(c.finalCta.button)}</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="brand"><img src="/assets/icons/icon-96.webp" alt="" width="24" height="24">MenuForge</div>
+            <div class="footer-meta">
+                <span>© ${new Date().getFullYear()} ${escapeHtml(c.footer.rights)}</span>
+                <a href="mailto:wiissdeveloperapps@gmail.com">${escapeHtml(c.footer.contactLabel)}: wiissdeveloperapps@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
+`;
+}
+
+function writeFile(rel, content_) {
+    const full = path.join(ROOT, rel);
+    fs.mkdirSync(path.dirname(full), { recursive: true });
+    fs.writeFileSync(full, content_, 'utf8');
+    console.log('wrote', rel);
+}
+
+languages.forEach((lang) => {
+    const rel = lang === defaultLang ? 'index.html' : `${lang}/index.html`;
+    writeFile(rel, renderPage(lang));
+});
+
+// sitemap.xml
+const urls = languages.map((l) => `  <url>\n    <loc>${DOMAIN}${langPath(l)}</loc>\n${languages.map((l2) => `    <xhtml:link rel="alternate" hreflang="${content[l2].htmlLang}" href="${DOMAIN}${langPath(l2)}"/>`).join('\n')}\n  </url>`).join('\n');
+writeFile('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls}\n</urlset>\n`);
+
+writeFile('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${DOMAIN}/sitemap.xml\n`);
+
+writeFile('manifest.json', JSON.stringify({
+    name: 'MenuForge',
+    short_name: 'MenuForge',
+    start_url: '/',
+    scope: '/',
+    display: 'standalone',
+    background_color: '#f8fafc',
+    theme_color: '#4f46e5',
+    icons: [48, 72, 96, 128, 192, 256, 512].map((s) => ({ src: `/assets/icons/icon-${s}.webp`, type: 'image/webp', sizes: `${s}x${s}`, purpose: 'any maskable' }))
+}, null, 2) + '\n');
+
+console.log('\nListo. Dominio usado en canonical/sitemap:', DOMAIN, '(cámbialo en generate.js si es distinto y vuelve a ejecutar).');
