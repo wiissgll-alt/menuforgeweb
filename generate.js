@@ -6,21 +6,19 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
-// De momento en la URL por defecto de GitHub Pages (proyecto, no dominio propio todavía) ->
-// BASE_PATH = '/menuforgeweb'. El día que se ponga el dominio propio vía Cloudflare, cambiar
-// DOMAIN y poner BASE_PATH = '' (raíz), y volver a ejecutar `node generate.js`.
-const DOMAIN = 'https://wiissgll-alt.github.io';
-const BASE_PATH = '/menuforgeweb';
+// Configurado para el dominio propio en la raíz
+const DOMAIN = 'https://wsapps.dpdns.org';
+const BASE_PATH = '';
 
 const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'content.json'), 'utf8'));
 const { languages, defaultLang, rtlLangs, langNames, langShort, content } = data;
 
-// Ruta local (sin dominio) de un idioma, ya con el subpath de GitHub Pages incluido.
+// Ruta local (sin dominio) de un idioma, ya con la estructura de raíz adaptada.
 function langPath(lang) {
-    return `${BASE_PATH}${lang === defaultLang ? '/' : `/${lang}/`}`;
+    return `${BASE_PATH === '' ? '' : BASE_PATH}${lang === defaultLang ? '/' : `/${lang}/`}`;
 }
 
-// Ruta local de un asset estático (css/js/imagen...), con el subpath incluido.
+// Ruta local de un asset estático (css/js/imagen...), adaptado a la raíz.
 function asset(rel) {
     return `${BASE_PATH}${rel}`;
 }
@@ -329,12 +327,12 @@ writeFile('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${DOMAIN}${asset('/
 writeFile('manifest.json', JSON.stringify({
     name: 'MenuForge',
     short_name: 'MenuForge',
-    start_url: `${BASE_PATH}/`,
-    scope: `${BASE_PATH}/`,
+    start_url: `${BASE_PATH === '' ? '/' : BASE_PATH + '/'}`,
+    scope: `${BASE_PATH === '' ? '/' : BASE_PATH + '/'}`,
     display: 'standalone',
     background_color: '#f8fafc',
     theme_color: '#4f46e5',
     icons: [48, 72, 96, 128, 192, 256, 512].map((s) => ({ src: asset(`/assets/icons/icon-${s}.webp`), type: 'image/webp', sizes: `${s}x${s}`, purpose: 'any maskable' }))
 }, null, 2) + '\n');
 
-console.log('\nListo. Dominio:', DOMAIN, '- BASE_PATH:', JSON.stringify(BASE_PATH), '(cámbialo en generate.js cuando pongas el dominio propio y vuelve a ejecutar).');
+console.log('\nListo. Dominio:', DOMAIN, '- BASE_PATH limpio para la raíz.');
