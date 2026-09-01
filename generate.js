@@ -8,7 +8,7 @@ const path = require('path');
 const ROOT = __dirname;
 // Configurado para el dominio propio en la raíz
 const DOMAIN = 'https://wsapps.dpdns.org';
-const BASE_PATH = '/menuforge';
+const BASE_PATH = '/menuforgeweb';
 
 const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'content.json'), 'utf8'));
 const { languages, defaultLang, rtlLangs, langNames, langShort, content } = data;
