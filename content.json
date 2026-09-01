@@ -64,7 +64,7 @@
         "title": "Pide en tu idioma. Al hostelero le llega en el suyo.",
         "subtitle": "El cliente hace el pedido en su idioma — tú lo recibes automáticamente en el tuyo.",
         "captionLeft": "El cliente ve la carta en chino",
-        "captionRight": "El hostelero recibe el pedido en español"
+        "captionRight": "El hostelero lo recibe en el suyo (aquí, español)"
       },
       "features": {
         "title": "Todo lo que necesitas, ya incluido",
@@ -201,10 +201,10 @@
         "No limit on tables or languages"
       ],
       "proof": {
-        "title": "Order in your language. It reaches the restaurateur in theirs.",
+        "title": "Order in your language. It reaches the restaurant owner in theirs.",
         "subtitle": "The customer places the order in their language — you receive it automatically in yours.",
         "captionLeft": "The customer sees the menu in Chinese",
-        "captionRight": "The restaurateur receives the order in English"
+        "captionRight": "The owner receives it in theirs (here, Spanish)"
       },
       "features": {
         "title": "Everything you need, already included",
@@ -344,7 +344,7 @@
         "title": "Commandez dans votre langue. Elle arrive au restaurateur dans la sienne.",
         "subtitle": "Le client passe commande dans sa langue — vous la recevez automatiquement dans la vôtre.",
         "captionLeft": "Le client voit la carte en chinois",
-        "captionRight": "Le restaurateur reçoit la commande en français"
+        "captionRight": "Le restaurateur la reçoit dans la sienne (ici, espagnol)"
       },
       "features": {
         "title": "Tout ce qu'il vous faut, déjà inclus",
@@ -484,7 +484,7 @@
         "title": "Ordina nella tua lingua. Arriva al ristoratore nella sua.",
         "subtitle": "Il cliente effettua l'ordine nella sua lingua — tu lo ricevi automaticamente nella tua.",
         "captionLeft": "Il cliente vede il menu in cinese",
-        "captionRight": "Il ristoratore riceve l'ordine in italiano"
+        "captionRight": "Il ristoratore lo riceve nella sua (qui, spagnolo)"
       },
       "features": {
         "title": "Tutto quello che ti serve, già incluso",
@@ -624,7 +624,7 @@
         "title": "Bestellen in Ihrer Sprache. Beim Gastwirt kommt es in seiner an.",
         "subtitle": "Der Kunde bestellt in seiner Sprache — Sie erhalten es automatisch in Ihrer.",
         "captionLeft": "Der Kunde sieht die Speisekarte auf Chinesisch",
-        "captionRight": "Der Gastwirt erhält die Bestellung auf Deutsch"
+        "captionRight": "Der Gastwirt erhält es in seiner (hier: Spanisch)"
       },
       "features": {
         "title": "Alles, was Sie brauchen, schon dabei",
@@ -761,10 +761,10 @@
         "Sem limite de mesas nem de idiomas"
       ],
       "proof": {
-        "title": "Peça no seu idioma. Chega ao restaurateur no dele.",
+        "title": "Peça no seu idioma. Chega ao dono do restaurante no dele.",
         "subtitle": "O cliente faz o pedido no seu idioma — você o recebe automaticamente no seu.",
         "captionLeft": "O cliente vê o cardápio em chinês",
-        "captionRight": "O restaurateur recebe o pedido em português"
+        "captionRight": "O dono recebe no dele (aqui, espanhol)"
       },
       "features": {
         "title": "Tudo o que você precisa, já incluído",
@@ -904,7 +904,7 @@
         "title": "用您的语言点餐，餐厅老板以其语言接收。",
         "subtitle": "顾客用自己的语言下单——您将自动以您的语言收到订单。",
         "captionLeft": "顾客看到的是中文菜单",
-        "captionRight": "餐厅老板收到的是中文订单"
+        "captionRight": "老板以他的语言收到（此处为西班牙语）"
       },
       "features": {
         "title": "您需要的一切，全部内置",
@@ -1044,7 +1044,7 @@
         "title": "يطلب بلغته، ويصل إلى صاحب المطعم بلغته.",
         "subtitle": "يقدم العميل الطلب بلغته — وتتلقاه تلقائيًا بلغتك.",
         "captionLeft": "يرى العميل القائمة بالصينية",
-        "captionRight": "يتلقى صاحب المطعم الطلب بالعربية"
+        "captionRight": "يتلقاه صاحب المطعم بلغته (هنا، الإسبانية)"
       },
       "features": {
         "title": "كل ما تحتاجه، مُضمَّن بالفعل",

@@ -50,8 +50,6 @@ body {
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Evita que el contenido quede oculto bajo el footer fijo */
-main { padding-bottom: 90px; } 
 
 html[dir="rtl"] body { font-family: 'Noto Sans Arabic', 'Outfit', Tahoma, "Segoe UI", sans-serif; }
 
@@ -245,22 +243,16 @@ section { padding: 70px 0; }
 .final-cta p { opacity: 0.92; margin: 0 0 26px; }
 .final-cta .cta-badge-link { display: inline-flex; }
 
-/* ---------- FOOTER FIJO & RESPONSIVE ---------- */
-footer.site-footer { 
-    position: fixed; 
-    bottom: 0; 
-    left: 0; 
-    width: 100%; 
-    z-index: 100;
+/* ---------- FOOTER ----------
+   Fue fixed/bottom:0 en un intento anterior, pero al no ser realmente "sticky" tapaba cualquier
+   sección que pasase por esa franja al hacer scroll (no solo el final real de la página) -por
+   ejemplo cortaba el titular de "features" a media página-. Vuelve al flujo normal del documento. */
+footer.site-footer {
     background: color-mix(in srgb, var(--bg) 85%, transparent);
     backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-    border-top: 1px solid var(--border); 
-    padding: 12px 0; 
-    margin-top: 0; 
-    box-shadow: 0 -10px 30px -10px rgba(0,0,0,0.05);
-}
-[data-theme="dark"] footer.site-footer {
-    box-shadow: 0 -10px 30px -10px rgba(0,0,0,0.5);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 30px;
 }
 
 .footer-inner { 
@@ -306,14 +298,12 @@ footer.site-footer {
     section { padding: 50px 0; }
     .honest-box { padding: 26px; }
     
-    footer.site-footer { padding: 10px 0; }
+    footer.site-footer { padding: 20px 0; }
     .footer-inner { gap: 8px; }
     .footer-inner .brand { font-size: 0.9rem; }
     .footer-inner .brand img { width: 22px; height: 22px; }
     .footer-meta { font-size: 0.75rem; gap: 8px; }
-    
+
     .icon-btn { width: 34px; height: 34px; border-radius: 10px; }
     .icon-btn svg { width: 16px; height: 16px; }
-    
-    main { padding-bottom: 75px; }
 }
