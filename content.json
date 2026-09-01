@@ -98,6 +98,16 @@
             "icon": "🌙",
             "title": "Oscuro, claro y árabe (RTL)",
             "desc": "Tu carta se adapta al móvil de cada cliente, incluida la escritura de derecha a izquierda."
+          },
+          {
+            "icon": "📍",
+            "title": "Pedidos solo desde el local",
+            "desc": "Puedes exigir que el cliente esté físicamente cerca del restaurante para poder pedir — lo activas tú, cuando quieras."
+          },
+          {
+            "icon": "🎨",
+            "title": "El estilo que combine con tu local",
+            "desc": "Clásico, playa, asiático, rústico... elige el aspecto de tu carta y tu QR en un toque, sin tocar diseño."
           }
         ]
       },
@@ -151,9 +161,9 @@
             "caption": "Mesa, notas y total — el pedido queda claro antes de enviarlo."
           },
           {
-            "img": "qr-sheet.png",
-            "alt": "Hoja de códigos QR lista para imprimir",
-            "caption": "Hoja de QR lista para imprimir en tus mesas."
+            "img": "pdf-menu.png",
+            "alt": "Printable PDF menu with categories, dishes and prices",
+            "caption": "Tu carta también en PDF, lista para imprimir."
           }
         ]
       },
@@ -238,6 +248,16 @@
             "icon": "🌙",
             "title": "Dark, light and Arabic (RTL)",
             "desc": "Your menu adapts to every customer's phone, including right-to-left writing."
+          },
+          {
+            "icon": "📍",
+            "title": "Orders only from inside",
+            "desc": "You can require the customer to be physically near the restaurant to order — you turn it on whenever you want."
+          },
+          {
+            "icon": "🎨",
+            "title": "A style that fits your place",
+            "desc": "Classic, beach, Asian, rustic... pick the look of your menu and QR in one tap, no design skills needed."
           }
         ]
       },
@@ -291,9 +311,9 @@
             "caption": "Table, notes and total — the order is clear before it's sent."
           },
           {
-            "img": "qr-sheet.png",
-            "alt": "Print-ready QR code sheet",
-            "caption": "A QR sheet ready to print for your tables."
+            "img": "pdf-menu.png",
+            "alt": "Printable PDF menu with categories, dishes and prices",
+            "caption": "Your menu as a PDF too, ready to print."
           }
         ]
       },
@@ -378,6 +398,16 @@
             "icon": "🌙",
             "title": "Sombre, clair et arabe (RTL)",
             "desc": "Votre carte s'adapte au téléphone de chaque client, écriture de droite à gauche incluse."
+          },
+          {
+            "icon": "📍",
+            "title": "Commandes seulement sur place",
+            "desc": "Vous pouvez exiger que le client soit physiquement près du restaurant pour commander — vous l'activez quand vous voulez."
+          },
+          {
+            "icon": "🎨",
+            "title": "Un style assorti à votre lieu",
+            "desc": "Classique, plage, asiatique, rustique... choisissez l'apparence de votre carte et votre QR en un geste, sans design."
           }
         ]
       },
@@ -431,9 +461,9 @@
             "caption": "Table, notes et total — la commande est claire avant l'envoi."
           },
           {
-            "img": "qr-sheet.png",
-            "alt": "Feuille de QR codes prête à imprimer",
-            "caption": "Une feuille de QR prête à imprimer pour vos tables."
+            "img": "pdf-menu.png",
+            "alt": "Printable PDF menu with categories, dishes and prices",
+            "caption": "Votre carte aussi en PDF, prête à imprimer."
           }
         ]
       },
@@ -518,6 +548,16 @@
             "icon": "🌙",
             "title": "Scuro, chiaro e arabo (RTL)",
             "desc": "Il tuo menu si adatta al telefono di ogni cliente, scrittura da destra a sinistra inclusa."
+          },
+          {
+            "icon": "📍",
+            "title": "Ordini solo dal locale",
+            "desc": "Puoi richiedere che il cliente sia fisicamente vicino al ristorante per ordinare — lo attivi tu, quando vuoi."
+          },
+          {
+            "icon": "🎨",
+            "title": "Uno stile su misura per il tuo locale",
+            "desc": "Classico, spiaggia, asiatico, rustico... scegli l'aspetto del tuo menu e del QR con un tocco, senza saper progettare."
           }
         ]
       },
@@ -571,9 +611,9 @@
             "caption": "Tavolo, note e totale — l'ordine è chiaro prima di inviarlo."
           },
           {
-            "img": "qr-sheet.png",
-            "alt": "Foglio di codici QR pronto da stampare",
-            "caption": "Un foglio QR pronto da stampare per i tuoi tavoli."
+            "img": "pdf-menu.png",
+            "alt": "Printable PDF menu with categories, dishes and prices",
+            "caption": "Il tuo menu anche in PDF, pronto da stampare."
           }
         ]
       },
@@ -658,6 +698,16 @@
             "icon": "🌙",
             "title": "Dunkel, hell und Arabisch (RTL)",
             "desc": "Ihre Speisekarte passt sich dem Handy jedes Kunden an, inklusive Schreibrichtung von rechts nach links."
+          },
+          {
+            "icon": "📍",
+            "title": "Bestellungen nur vor Ort",
+            "desc": "Sie können verlangen, dass der Kunde sich physisch in der Nähe des Restaurants befindet, um zu bestellen — Sie schalten es ein, wann Sie wollen."
+          },
+          {
+            "icon": "🎨",
+            "title": "Ein Stil, der zu Ihrem Lokal passt",
+            "desc": "Klassisch, Strand, asiatisch, rustikal... wählen Sie das Aussehen Ihrer Speisekarte und des QR-Codes mit einem Klick, ohne Design-Kenntnisse."
           }
         ]
       },
@@ -711,9 +761,9 @@
             "caption": "Tisch, Notizen und Summe — die Bestellung ist vor dem Senden klar."
           },
           {
-            "img": "qr-sheet.png",
-            "alt": "Druckfertiges Blatt mit QR-Codes",
-            "caption": "Ein druckfertiges QR-Blatt für Ihre Tische."
+            "img": "pdf-menu.png",
+            "alt": "Printable PDF menu with categories, dishes and prices",
+            "caption": "Ihre Speisekarte auch als PDF, druckfertig."
           }
         ]
       },
@@ -798,6 +848,16 @@
             "icon": "🌙",
             "title": "Escuro, claro e árabe (RTL)",
             "desc": "Seu cardápio se adapta ao celular de cada cliente, incluindo a escrita da direita para a esquerda."
+          },
+          {
+            "icon": "📍",
+            "title": "Pedidos só de dentro do local",
+            "desc": "Você pode exigir que o cliente esteja fisicamente perto do restaurante para pedir — você ativa quando quiser."
+          },
+          {
+            "icon": "🎨",
+            "title": "Um estilo que combina com o seu local",
+            "desc": "Clássico, praia, asiático, rústico... escolha a aparência do seu cardápio e QR em um toque, sem precisar de design."
           }
         ]
       },
@@ -851,9 +911,9 @@
             "caption": "Mesa, notas e total — o pedido fica claro antes de enviar."
           },
           {
-            "img": "qr-sheet.png",
-            "alt": "Folha de códigos QR pronta para imprimir",
-            "caption": "Uma folha de QR pronta para imprimir nas suas mesas."
+            "img": "pdf-menu.png",
+            "alt": "Printable PDF menu with categories, dishes and prices",
+            "caption": "Seu cardápio também em PDF, pronto para imprimir."
           }
         ]
       },
@@ -938,6 +998,16 @@
             "icon": "🌙",
             "title": "深色、浅色与阿拉伯语（RTL）",
             "desc": "您的菜单会自动适配每位顾客的手机，包括从右到左的书写方式。"
+          },
+          {
+            "icon": "📍",
+            "title": "仅限店内下单",
+            "desc": "你可以要求顾客必须在餐厅附近才能下单——什么时候开启由你决定。"
+          },
+          {
+            "icon": "🎨",
+            "title": "与你的店铺相衬的风格",
+            "desc": "经典、海滩、亚洲、乡村……一键选择菜单和二维码的外观，无需设计经验。"
           }
         ]
       },
@@ -991,9 +1061,9 @@
             "caption": "桌号、备注和总价——发送前一目了然。"
           },
           {
-            "img": "qr-sheet.png",
-            "alt": "可直接打印的QR码表",
-            "caption": "为您的餐桌准备的可打印QR码表。"
+            "img": "pdf-menu.png",
+            "alt": "Printable PDF menu with categories, dishes and prices",
+            "caption": "菜单同样支持PDF格式，随时可打印。"
           }
         ]
       },
@@ -1078,6 +1148,16 @@
             "icon": "🌙",
             "title": "داكن وفاتح وعربي (من اليمين لليسار)",
             "desc": "تتكيف قائمتك مع هاتف كل عميل، بما في ذلك الكتابة من اليمين إلى اليسار."
+          },
+          {
+            "icon": "📍",
+            "title": "طلبات من داخل المطعم فقط",
+            "desc": "يمكنك اشتراط أن يكون العميل قريبًا فعليًا من المطعم لتقديم الطلب — تُفعّله أنت وقتما تشاء."
+          },
+          {
+            "icon": "🎨",
+            "title": "أسلوب يلائم مكانك",
+            "desc": "كلاسيكي، شاطئي، آسيوي، ريفي... اختر مظهر قائمتك ورمز QR بلمسة واحدة، دون الحاجة لأي تصميم."
           }
         ]
       },
@@ -1131,9 +1211,9 @@
             "caption": "الطاولة والملاحظات والمجموع — الطلب واضح قبل إرساله."
           },
           {
-            "img": "qr-sheet.png",
-            "alt": "ورقة رموز QR جاهزة للطباعة",
-            "caption": "ورقة QR جاهزة للطباعة لطاولاتك."
+            "img": "pdf-menu.png",
+            "alt": "Printable PDF menu with categories, dishes and prices",
+            "caption": "قائمتك أيضًا بصيغة PDF، جاهزة للطباعة."
           }
         ]
       },

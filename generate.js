@@ -36,6 +36,7 @@ const IMG_DIMS = {
     'home-es.png': [1080, 2250],
     'image-catalog.png': [1080, 1760],
     'order-modal.png': [420, 750],
+    'pdf-menu.png': [540, 655],
     'published-home-dark.png': [420, 900],
     'published-home.png': [420, 900],
     'published-menu-cn.png': [420, 820],
