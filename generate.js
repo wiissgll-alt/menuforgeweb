@@ -6,9 +6,12 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
-// Configurado para el dominio propio en la raíz
+// Los archivos generados (y los estáticos: css/js/assets/config.json) viven en la subcarpeta
+// menuforgeweb/ del repo, para servirse en wsapps.dpdns.org/menuforgeweb -content.json y este
+// script se quedan en la raíz real del repo, no se publican-.
+const OUT_DIR = path.join(ROOT, 'menuforgeweb');
 const DOMAIN = 'https://wsapps.dpdns.org';
-const BASE_PATH = '';
+const BASE_PATH = '/menuforgeweb';
 
 const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'content.json'), 'utf8'));
 const { languages, defaultLang, rtlLangs, langNames, langShort, content } = data;
@@ -308,10 +311,10 @@ ${renderHreflangs(lang)}
 }
 
 function writeFile(rel, content_) {
-    const full = path.join(ROOT, rel);
+    const full = path.join(OUT_DIR, rel);
     fs.mkdirSync(path.dirname(full), { recursive: true });
     fs.writeFileSync(full, content_, 'utf8');
-    console.log('wrote', rel);
+    console.log('wrote', path.join('menuforgeweb', rel));
 }
 
 languages.forEach((lang) => {
@@ -336,4 +339,4 @@ writeFile('manifest.json', JSON.stringify({
     icons: [48, 72, 96, 128, 192, 256, 512].map((s) => ({ src: asset(`/assets/icons/icon-${s}.webp`), type: 'image/webp', sizes: `${s}x${s}`, purpose: 'any maskable' }))
 }, null, 2) + '\n');
 
-console.log('\nListo. Dominio:', DOMAIN, '- BASE_PATH limpio para la raíz.');
+console.log('\nListo. URL final:', DOMAIN + BASE_PATH + '/');
