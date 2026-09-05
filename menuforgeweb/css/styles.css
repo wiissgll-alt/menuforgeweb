@@ -1,3 +1,20 @@
+/* Tipografías autoalojadas -antes venían de fonts.googleapis.com en tiempo de carga, lo
+   que cuenta como transmisión de datos (IP) a Google sin avisar en la UE-. */
+@font-face {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('../assets/fonts/outfit.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Noto Sans Arabic';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('../assets/fonts/noto-sans-arabic.woff2') format('woff2');
+}
+
 :root {
     --bg: #f8fafc;
     --bg-alt: #ffffff;
@@ -80,6 +97,25 @@ header.site-header {
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.15rem; direction: ltr; margin-inline-start: 15px; }
 .brand img { width: 30px; height: 30px; border-radius: 8px; }
 .header-actions { display: flex; align-items: center; gap: 8px; margin-inline-end: 15px; }
+
+/* ---------- aviso de cookies (informativo: la web no usa cookies de seguimiento ni
+   publicidad, solo localStorage funcional para idioma/tema) ---------- */
+.cookie-notice {
+    display: none;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+.cookie-notice.open { display: block; }
+.cookie-notice-inner {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 12px;
+    padding: 10px 15px; font-size: 0.8rem; color: var(--text-muted);
+}
+.cookie-notice-inner p { margin: 0; flex: 1; min-width: 200px; }
+.cookie-notice-accept {
+    flex-shrink: 0; border: none; cursor: pointer;
+    background: var(--accent-gradient); color: #fff; font-weight: 700;
+    padding: 8px 16px; border-radius: 999px; font-size: 0.8rem;
+}
 .icon-btn {
     display: inline-flex; align-items: center; justify-content: center;
     width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--border);

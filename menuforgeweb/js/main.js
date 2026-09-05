@@ -91,9 +91,27 @@
             .catch(function () {});
     }
 
+    // ---------- Aviso de cookies ----------
+    function initCookieNotice() {
+        var bar = document.getElementById('cookie-notice');
+        if (!bar) return;
+        var KEY = 'menuforgeweb_cookie_notice_dismissed';
+        var dismissed = false;
+        try { dismissed = localStorage.getItem(KEY) === '1'; } catch (e) {}
+        if (!dismissed) bar.classList.add('open');
+        var btn = bar.querySelector('.cookie-notice-accept');
+        if (btn) {
+            btn.addEventListener('click', function () {
+                bar.classList.remove('open');
+                try { localStorage.setItem(KEY, '1'); } catch (e) {}
+            });
+        }
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
         updateThemeIcon();
         initReveal();
         initCta();
+        initCookieNotice();
     });
 })();

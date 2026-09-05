@@ -133,9 +133,9 @@ function renderPage(lang) {
     const c = content[lang];
     const dir = rtlLangs.includes(lang) ? 'rtl' : 'ltr';
     const url = fullUrl(lang);
-    const fontLink = lang === 'sa'
-        ? `<link rel="preconnect" href="https://fonts.googleapis.com">\n    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700;800&display=swap" rel="stylesheet">`
-        : `<link rel="preconnect" href="https://fonts.googleapis.com">\n    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">`;
+    // Ya no se depende de fonts.googleapis.com en tiempo de carga -las tipografías están
+    // autoalojadas en /assets/fonts/, declaradas por @font-face en styles.css-.
+    const fontLink = '';
 
     return `<!DOCTYPE html>
 <html lang="${c.htmlLang}" dir="${dir}">
@@ -176,6 +176,13 @@ ${renderHreflangs(lang)}
             </div>
         </div>
     </header>
+
+    <div class="cookie-notice" id="cookie-notice">
+        <div class="container cookie-notice-inner">
+            <p>${escapeHtml(c.cookieNotice.msg)}</p>
+            <button class="cookie-notice-accept" type="button">${escapeHtml(c.cookieNotice.accept)}</button>
+        </div>
+    </div>
 
     <main>
         <section class="hero">

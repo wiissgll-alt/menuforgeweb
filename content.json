@@ -182,6 +182,10 @@
             "caption": "Categorías, fotos y precios — también en oscuro."
           }
         ]
+      },
+      "cookieNotice": {
+        "msg": "Esta web no usa cookies de seguimiento ni publicidad. Solo guardamos tu idioma y tema en tu propio navegador, para tu comodidad.",
+        "accept": "Entendido"
       }
     },
     "en": {
@@ -332,6 +336,10 @@
             "caption": "Categories, photos and prices — in dark mode too."
           }
         ]
+      },
+      "cookieNotice": {
+        "msg": "This site does not use tracking or advertising cookies. We only save your language and theme in your own browser, for your convenience.",
+        "accept": "Got it"
       }
     },
     "fr": {
@@ -482,6 +490,10 @@
             "caption": "Catégories, photos et prix — aussi en mode sombre."
           }
         ]
+      },
+      "cookieNotice": {
+        "msg": "Ce site n'utilise pas de cookies de suivi ni de publicité. Nous enregistrons uniquement votre langue et votre thème dans votre navigateur, pour votre confort.",
+        "accept": "J'ai compris"
       }
     },
     "it": {
@@ -632,6 +644,10 @@
             "caption": "Categorie, foto e prezzi — anche in modalità scura."
           }
         ]
+      },
+      "cookieNotice": {
+        "msg": "Questo sito non usa cookie di tracciamento o pubblicitari. Salviamo solo la tua lingua e il tema nel tuo browser, per comodità.",
+        "accept": "Capito"
       }
     },
     "de": {
@@ -782,6 +798,10 @@
             "caption": "Kategorien, Fotos und Preise — auch im Dunkelmodus."
           }
         ]
+      },
+      "cookieNotice": {
+        "msg": "Diese Website verwendet keine Tracking- oder Werbe-Cookies. Wir speichern nur deine Sprache und dein Design in deinem eigenen Browser, zu deiner Bequemlichkeit.",
+        "accept": "Verstanden"
       }
     },
     "pt": {
@@ -932,6 +952,10 @@
             "caption": "Categorias, fotos e preços — também no modo escuro."
           }
         ]
+      },
+      "cookieNotice": {
+        "msg": "Este site não usa cookies de rastreamento nem publicidade. Guardamos apenas o seu idioma e tema no seu próprio navegador, para sua comodidade.",
+        "accept": "Entendi"
       }
     },
     "cn": {
@@ -1082,6 +1106,10 @@
             "caption": "分类、照片和价格——深色模式下同样清晰。"
           }
         ]
+      },
+      "cookieNotice": {
+        "msg": "本网站不使用跟踪或广告类 Cookie。我们仅在您自己的浏览器中保存您的语言和主题设置，以方便您使用。",
+        "accept": "知道了"
       }
     },
     "sa": {
@@ -1232,6 +1260,10 @@
             "caption": "الفئات والصور والأسعار — في الوضع الداكن أيضًا."
           }
         ]
+      },
+      "cookieNotice": {
+        "msg": "لا يستخدم هذا الموقع ملفات تعريف ارتباط للتتبع أو الإعلانات. نحن فقط نحفظ لغتك والمظهر في متصفحك الخاص، لراحتك.",
+        "accept": "فهمت"
       }
     }
   }
