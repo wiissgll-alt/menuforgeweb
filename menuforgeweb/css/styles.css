@@ -93,34 +93,6 @@ button { font-family: inherit; }
 @keyframes float-a { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(40px, 50px) scale(1.08); } }
 @keyframes float-b { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-50px, -30px) scale(1.05); } }
 
-/* ---------- objetos voladores que revotan (decorativos, temática carta/QR) ---------- */
-.floaters { position: absolute; inset: 0; overflow: visible; pointer-events: none; z-index: 0; }
-.floater {
-    position: absolute; font-size: 1.7rem; line-height: 1; filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.25));
-    animation: bounce-float var(--dur, 7s) ease-in-out infinite, spin-wobble var(--spin, 9s) ease-in-out infinite;
-    animation-delay: var(--delay, 0s); opacity: 0.92; will-change: transform;
-}
-@keyframes bounce-float {
-    0%, 100% { transform: translateY(0) translateX(0); }
-    25% { transform: translateY(-24px) translateX(8px); }
-    50% { transform: translateY(-6px) translateX(-12px); }
-    75% { transform: translateY(-30px) translateX(6px); }
-}
-@keyframes spin-wobble { 0%, 100% { rotate: -8deg; } 50% { rotate: 8deg; } }
-.hero .floaters .f1 { top: 2%; inset-inline-start: 0%; --dur: 6.5s; --spin: 8s; font-size: 2.1rem; }
-.hero .floaters .f2 { top: 14%; inset-inline-end: 2%; --dur: 8s; --spin: 10s; --delay: .6s; }
-.hero .floaters .f3 { bottom: 6%; inset-inline-start: 4%; --dur: 7.2s; --spin: 9.5s; --delay: 1.2s; font-size: 1.8rem; }
-.hero .floaters .f4 { bottom: 20%; inset-inline-end: 6%; --dur: 9s; --spin: 7s; --delay: .3s; }
-.hero .floaters .f5 { top: 46%; inset-inline-start: -4%; --dur: 7.8s; --spin: 11s; --delay: 1.8s; font-size: 1.4rem; }
-.hero .floaters .f6 { top: 58%; inset-inline-end: -3%; --dur: 6.8s; --spin: 8.5s; --delay: .9s; }
-.final-cta .floaters .f1 { top: 6%; inset-inline-start: 4%; --dur: 6.5s; --spin: 8s; font-size: 1.7rem; opacity: 0.55; }
-.final-cta .floaters .f2 { top: 60%; inset-inline-end: 6%; --dur: 8s; --spin: 10s; --delay: .5s; opacity: 0.5; }
-.final-cta .floaters .f3 { bottom: 8%; inset-inline-start: 42%; --dur: 7.4s; --spin: 9s; --delay: 1s; opacity: 0.45; font-size: 1.5rem; }
-@media (max-width: 700px) {
-    .floater { display: none; }
-    .hero .floaters .f1, .hero .floaters .f3 { display: block; font-size: 1.4rem; opacity: 0.65; }
-}
-@media (prefers-reduced-motion: reduce) { .floater { animation: none !important; } }
 
 /* ---------- header ---------- */
 header.site-header {
@@ -290,7 +262,15 @@ section { padding: 70px 0; }
 /* ---------- proof (same dish, two languages) ---------- */
 .proof-wrap { display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap; direction: ltr; }
 .proof-card { display: flex; flex-direction: column; align-items: center; gap: 14px; }
-.proof-card .phone-frame { width: min(230px, 68vw); }
+/* Las capturas reales que se muestran aqui tienen proporciones muy distintas entre si
+   (navegador ancho, pantalla de app estrecha, pagina de PDF casi cuadrada) -por eso los paneles
+   no cuadraban entre si y la seccion parecia "destartalada"-. Fijando una proporcion comun y
+   usando object-fit:contain, todos los marcos de una misma fila quedan del mismo tamano sin
+   recortar el contenido de ninguna imagen. */
+.proof-card .phone-frame {
+    width: min(230px, 68vw); aspect-ratio: 9 / 18; display: flex; align-items: center; overflow: hidden;
+}
+.proof-card .phone-frame img { height: 100%; width: 100%; object-fit: contain; }
 .proof-caption { font-weight: 700; font-size: 0.88rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
 .proof-arrow { display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 50%; background: var(--accent-gradient); color: #fff; font-size: 1.3rem; font-weight: 800; box-shadow: var(--shadow-card); flex-shrink: 0; }
 
@@ -323,7 +303,7 @@ section { padding: 70px 0; }
 }
 
 /* ---------- features ---------- */
-.features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.features-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
 .feature-card {
     position: relative; overflow: hidden;
     background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);
@@ -345,7 +325,7 @@ section { padding: 70px 0; }
 .feature-card p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.55; margin: 0; }
 
 /* ---------- steps ---------- */
-.steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; counter-reset: step; }
+.steps-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; counter-reset: step; }
 .step-card { position: relative; padding: 30px 24px 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-soft); transition: border-color 0.3s ease; }
 .step-card:hover { border-color: var(--accent); }
 .step-num {
@@ -357,10 +337,22 @@ section { padding: 70px 0; }
 
 /* ---------- gallery ---------- */
 .gallery-grid { display: grid; gap: 28px; max-width: 780px; margin: 0 auto; }
-.gallery-grid-2 { grid-template-columns: repeat(2, 1fr); max-width: 980px; }
-.gallery-grid-3 { grid-template-columns: repeat(3, 1fr); max-width: 1100px; }
-.gallery-item { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
-.gallery-item .phone-frame { width: 100%; border-radius: 26px; }
+.gallery-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 980px; }
+.gallery-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 1100px; }
+.gallery-item { display: flex; flex-direction: column; gap: 12px; min-width: 0; width: 100%; }
+/* aspect-ratio en un item de grid con contenido de proporciones distintas provoca en Chrome un
+   calculo circular que encoge esa columna por debajo del ancho real de su pista -por eso una
+   imagen salia mas pequena que sus hermanas aun siendo la misma columna-. Con una altura fija
+   explicita (en vez de aspect-ratio) se evita el circulo: el ancho lo sigue dando el grid al
+   100%, el alto es fijo, y object-fit:contain encaja cada imagen sin recortarla. */
+.gallery-item .phone-frame {
+    width: 100%; border-radius: 26px; display: flex; align-items: center; overflow: hidden;
+}
+.gallery-item .phone-frame img { width: 100%; object-fit: contain; }
+.gallery-grid-2 .phone-frame { height: 480px; }
+.gallery-grid-2 .phone-frame img { height: 480px; }
+.gallery-grid-3 .phone-frame { height: 380px; }
+.gallery-grid-3 .phone-frame img { height: 380px; }
 .gallery-caption { font-size: 0.82rem; color: var(--text-muted); text-align: center; line-height: 1.4; }
 
 /* ---------- honest ---------- */
@@ -437,9 +429,9 @@ footer.site-footer {
 @media (max-width: 900px) {
     .hero-grid { grid-template-columns: 1fr; gap: 40px; }
     .float-chip { display: none; }
-    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .features-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .steps-grid { grid-template-columns: 1fr; }
-    .gallery-grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .gallery-grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .proof-wrap { flex-direction: column; }
     .proof-arrow { transform: rotate(90deg); }
 }
@@ -447,6 +439,8 @@ footer.site-footer {
 @media (max-width: 560px) {
     .features-grid { grid-template-columns: 1fr; }
     .gallery-grid-2, .gallery-grid-3 { grid-template-columns: 1fr; max-width: min(320px, 82vw); }
+    .gallery-grid-2 .phone-frame, .gallery-grid-2 .phone-frame img { height: 420px; }
+    .gallery-grid-3 .phone-frame, .gallery-grid-3 .phone-frame img { height: 420px; }
     .hero { padding: 40px 0 24px; }
     section { padding: 50px 0; }
     .honest-box { padding: 26px; }
