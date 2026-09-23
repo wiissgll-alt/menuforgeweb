@@ -45,6 +45,26 @@
         if (target) window.location.href = target;
     };
 
+    // ---------- Efecto de scroll en el fondo del hero (paralaje + desvanecido) ----------
+    function initHeroParallax() {
+        var ambient = document.getElementById('hero-ambient');
+        var hero = document.querySelector('.hero');
+        if (!ambient || !hero) return;
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var ticking = false;
+        function update() {
+            ticking = false;
+            var heroHeight = hero.offsetHeight || 1;
+            var progress = Math.min(Math.max(window.scrollY / heroHeight, 0), 1);
+            ambient.style.transform = 'translateY(' + (window.scrollY * 0.2) + 'px)';
+            ambient.style.opacity = String(1 - progress * 0.85);
+        }
+        window.addEventListener('scroll', function () {
+            if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
+        }, { passive: true });
+        update();
+    }
+
     // ---------- Scroll reveal ----------
     function initReveal() {
         var items = document.querySelectorAll('.fly-in, .fly-in-left, .fly-in-right, .fly-in-scale');
@@ -110,6 +130,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         updateThemeIcon();
+        initHeroParallax();
         initReveal();
         initCta();
         initCookieNotice();

@@ -41,7 +41,7 @@ const IMG_DIMS = {
     'order-modal.png': [420, 750],
     'pdf-menu.png': [540, 655],
     'published-home-dark.png': [420, 900],
-    'published-home.png': [420, 900],
+    'published-home.png': [1080, 2180],
     'published-menu-cn.png': [420, 820],
     'published-menu-dark.png': [420, 900],
     'published-menu.png': [420, 900],
@@ -171,8 +171,6 @@ ${renderHreflangs(lang)}
     <script type="application/ld+json">${jsonLd(lang, c)}</script>
 </head>
 <body>
-    <div class="ambient"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div><div class="blob blob-4"></div></div>
-
     <header class="site-header">
         <div class="container header-inner">
             <div class="brand"><img src="${asset('/assets/icons/icon-96.webp')}" alt="MenuForge" width="30" height="30">MenuForge</div>
@@ -192,6 +190,7 @@ ${renderHreflangs(lang)}
 
     <main>
         <section class="hero">
+            <div class="ambient" id="hero-ambient"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div><div class="blob blob-4"></div></div>
             <div class="container hero-grid">
                 <div>
                     <span class="kicker fly-in visible">✨ ${escapeHtml(c.hero.kicker)}</span>

@@ -76,15 +76,20 @@ button { font-family: inherit; }
 
 .container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
-/* ---------- background ambient blobs ---------- */
-.ambient { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
-.blob { position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.4; }
-.blob-1 { width: 580px; height: 580px; background: #7c3aed; top: -200px; inset-inline-start: -160px; animation: float-a 22s ease-in-out infinite; }
-.blob-2 { width: 500px; height: 500px; background: #4f46e5; top: 260px; inset-inline-end: -180px; animation: float-b 26s ease-in-out infinite; }
-.blob-3 { width: 420px; height: 420px; background: #22d3ee; bottom: -180px; inset-inline-start: 30%; animation: float-a 30s ease-in-out infinite reverse; opacity: 0.25; }
-.blob-4 { width: 360px; height: 360px; background: #f472b6; top: 42%; inset-inline-end: 18%; animation: float-b 34s ease-in-out infinite; opacity: 0.16; }
-[data-theme="dark"] .blob { opacity: 0.32; }
-[data-theme="dark"] .blob-4 { opacity: 0.22; }
+/* ---------- background ambient blobs ----------
+   Antes cubrian TODA la pagina (position:fixed detras de todo el scroll), lo que banaba cada
+   seccion en el mismo lavado morado -de ahi la sensacion de "cutre"-. Ahora viven solo dentro
+   del hero (position:absolute, .hero tiene overflow:hidden) y el resto de la web vuelve al
+   fondo limpio/blanco, igual que hace la app real: el morado queda como acento puntual, no
+   como base de toda la pagina. */
+.ambient { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.32; }
+.blob-1 { width: 520px; height: 520px; background: #4f46e5; top: -220px; inset-inline-start: -160px; animation: float-a 22s ease-in-out infinite; }
+.blob-2 { width: 440px; height: 440px; background: #7c3aed; top: 180px; inset-inline-end: -180px; animation: float-b 26s ease-in-out infinite; opacity: 0.22; }
+.blob-3 { width: 380px; height: 380px; background: #22d3ee; bottom: -220px; inset-inline-start: 30%; animation: float-a 30s ease-in-out infinite reverse; opacity: 0.18; }
+.blob-4 { width: 320px; height: 320px; background: #f472b6; top: 30%; inset-inline-end: 12%; animation: float-b 34s ease-in-out infinite; opacity: 0.12; }
+[data-theme="dark"] .blob { opacity: 0.26; }
+[data-theme="dark"] .blob-4 { opacity: 0.16; }
 @keyframes float-a { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(40px, 50px) scale(1.08); } }
 @keyframes float-b { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-50px, -30px) scale(1.05); } }
 
@@ -171,8 +176,8 @@ html[dir="rtl"] .lang-picker select { padding: 9px 14px 9px 30px; }
 }
 
 /* ---------- hero ---------- */
-.hero { padding: 64px 0 40px; }
-.hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; direction: ltr; }
+.hero { position: relative; overflow: hidden; padding: 64px 0 40px; }
+.hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; direction: ltr; }
 .kicker {
     display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px; border-radius: 999px;
     background: var(--surface-soft); border: 1px solid var(--border); font-size: 0.8rem; font-weight: 700;
@@ -199,9 +204,9 @@ html[dir="rtl"] .lang-picker select { padding: 9px 14px 9px 30px; }
 .btn-primary { position: relative; background: var(--accent-gradient); color: #fff; box-shadow: 0 16px 32px -12px rgba(79, 70, 229, 0.55); }
 .btn-primary::after {
     content: ""; position: absolute; inset: -3px; border-radius: inherit; z-index: -1;
-    background: var(--accent-gradient); filter: blur(16px); opacity: 0.5; animation: pulse-glow 2.4s ease-in-out infinite;
+    background: var(--accent-gradient); filter: blur(16px); opacity: 0.35;
 }
-@keyframes pulse-glow { 0%, 100% { opacity: 0.32; } 50% { opacity: 0.68; } }
+.btn-primary:hover::after { opacity: 0.55; }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-glow); }
 .btn-primary.is-disabled { opacity: 0.6; cursor: default; }
 .btn-primary.is-disabled:hover { transform: none; }
@@ -212,8 +217,9 @@ html[dir="rtl"] .lang-picker select { padding: 9px 14px 9px 30px; }
 .cta-badge-link { position: relative; display: inline-flex; transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease; border-radius: 12px; }
 .cta-badge-link::after {
     content: ""; position: absolute; inset: -6px; border-radius: 16px; z-index: -1;
-    background: var(--accent-gradient); filter: blur(18px); opacity: 0.45; animation: pulse-glow 2.4s ease-in-out infinite;
+    background: var(--accent-gradient); filter: blur(18px); opacity: 0.3;
 }
+.cta-badge-link:hover::after { opacity: 0.5; }
 .cta-badge-link.is-disabled::after { display: none; }
 .cta-badge-link:hover { transform: translateY(-2px); box-shadow: var(--shadow-glow); }
 .cta-badge-link .google-play-badge { width: 180px; height: auto; display: block; border-radius: 12px; box-shadow: 0 16px 32px -14px rgba(0, 0, 0, 0.5); }
@@ -238,8 +244,8 @@ html[dir="rtl"] .lang-picker select { padding: 9px 14px 9px 30px; }
 .phone-frame img { width: 100%; height: auto; display: block; border-radius: 22px; }
 .phone-frame-glow { position: relative; }
 .phone-frame-glow::before {
-    content: ""; position: absolute; inset: -3px; border-radius: 37px; z-index: -1; opacity: 0.55; filter: blur(7px);
-    background: conic-gradient(from 0deg, #4f46e5, #7c3aed, #22d3ee, #4f46e5); animation: rotate-ring 6s linear infinite;
+    content: ""; position: absolute; inset: -3px; border-radius: 37px; z-index: -1; opacity: 0.3; filter: blur(8px);
+    background: conic-gradient(from 0deg, #4f46e5, #7c3aed, #22d3ee, #4f46e5); animation: rotate-ring 11s linear infinite;
 }
 @keyframes rotate-ring { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .phone-frame-glow::before { animation: none !important; } }
@@ -359,16 +365,28 @@ section { padding: 70px 0; }
 .honest-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.98rem; line-height: 1.5; }
 .honest-check { flex-shrink: 0; width: 26px; height: 26px; border-radius: 8px; background: rgba(34, 197, 94, 0.15); color: #22c55e; display: flex; align-items: center; justify-content: center; font-weight: 800; }
 
-/* ---------- final cta ---------- */
+/* ---------- final cta ----------
+   Antes era un bloque solido con el degradado de marca cubriendo todo el ancho -el efecto
+   "banner barato" que se veia cutre-. La app real solo usa ese morado en detalles puntuales
+   (un boton, una tarjeta pequena), nunca como fondo completo, asi que aqui pasa a ser una
+   tarjeta clara con un borde-resplandor sutil, igual que .livedemo-box. */
 .final-cta {
-    background: linear-gradient(120deg, #4f46e5, #9333ea, #4f46e5); background-size: 200% auto; animation: shine 6s linear infinite;
-    border-radius: var(--radius-lg); padding: 56px 32px; text-align: center; color: #fff; position: relative; overflow: hidden; box-shadow: var(--shadow-card);
+    position: relative; overflow: hidden; text-align: center;
+    background: var(--surface); border: 1.5px solid transparent;
+    background-image: linear-gradient(var(--surface), var(--surface)), linear-gradient(120deg, #4f46e5, #22d3ee, #7c3aed, #4f46e5);
+    background-origin: border-box; background-clip: padding-box, border-box;
+    background-size: 100% 100%, 300% auto;
+    animation: shine 8s linear infinite;
+    border-radius: var(--radius-lg); padding: 56px 32px;
+    box-shadow: var(--shadow-card), 0 0 60px -20px rgba(79, 70, 229, 0.35);
+}
+.final-cta::after {
+    content: ""; position: absolute; inset: 0; z-index: 0; background: var(--accent-gradient); opacity: 0.07; pointer-events: none;
 }
 .final-cta h2, .final-cta p, .final-cta .cta-badge-link { position: relative; z-index: 1; }
 .final-cta h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin: 0 0 10px; }
-.final-cta p { opacity: 0.92; margin: 0 0 26px; }
+.final-cta p { color: var(--text-muted); margin: 0 0 26px; }
 .final-cta .cta-badge-link { display: inline-flex; }
-.final-cta .cta-badge-link::after { display: none; }
 @media (prefers-reduced-motion: reduce) { .final-cta { animation: none !important; } }
 
 /* ---------- FOOTER ----------
