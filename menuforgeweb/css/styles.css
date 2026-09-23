@@ -35,10 +35,21 @@ img { max-width: 100%; height: auto; display: block; }
 .glass { background: var(--glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--border); }
 .glass-section { background: var(--bg-alt); padding: 5rem 0; }
 .glass-dark { background: rgba(0,0,0,0.7); backdrop-filter: blur(10px); color: #fff; border: 1px solid rgba(255,255,255,0.1); }
-.gradient-text { background: linear-gradient(135deg, #6366f1, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .gradient-bg { background: linear-gradient(135deg, #6366f1, #ec4899); }
 .highlight-border { position: relative; }
 .highlight-border::before { content: ''; position: absolute; inset: -2px; border-radius: calc(var(--radius) + 2px); background: linear-gradient(135deg, #6366f1, #ec4899); z-index: -1; opacity: 0.5; transition: opacity 0.3s; }
+
+/* Animación Shimmer (Brillo que vende) */
+.shimmer-text {
+    background: linear-gradient(90deg, #6366f1 0%, #ec4899 50%, #6366f1 100%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shimmer 4s linear infinite;
+    display: inline-block;
+}
+@keyframes shimmer { to { background-position: 200% center; } }
 
 /* Blobs de fondo (Efecto WOW) */
 .blob { position: absolute; filter: blur(90px); z-index: -1; opacity: 0.4; border-radius: 50%; pointer-events: none; animation: float 10s ease-in-out infinite; }
@@ -59,7 +70,9 @@ img { max-width: 100%; height: auto; display: block; }
 [data-theme='dark'] .moon-icon { display: none; }
 [data-theme='light'] .sun-icon { display: none; }
 [data-theme='light'] .moon-icon { display: block; }
-select { background: var(--surface); color: var(--text); border: 1px solid var(--border); padding: 0.4rem 1rem; border-radius: 20px; outline: none; cursor: pointer; font-family: inherit; font-weight: 600; }
+
+/* Selector de idioma con bandera */
+select { background: var(--surface); color: var(--text); border: 1px solid var(--border); padding: 0.4rem 1rem 0.4rem 0.5rem; border-radius: 20px; outline: none; cursor: pointer; font-family: inherit; font-weight: 600; appearance: none; -webkit-appearance: none; padding-right: 2rem; background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 0.7rem top 50%; background-size: 0.65rem auto; }
 
 /* Hero */
 .hero { padding: 10rem 0 6rem; position: relative; }
@@ -83,12 +96,21 @@ h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; font-weight: 800; 
 .badge-row { display: flex; flex-wrap: wrap; gap: 0.8rem; }
 .pill { font-size: 0.85rem; padding: 0.3rem 0.8rem; border-radius: 20px; background: var(--surface); border: 1px solid var(--border); font-weight: 600; color: var(--text-muted); }
 
-/* Phone Frame */
-.phone-wrapper { position: relative; width: max-content; margin: 0 auto; perspective: 1000px; }
-.phone-frame { border: 10px solid #111; border-radius: 40px; overflow: hidden; background: #000; position: relative; box-shadow: var(--shadow); transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-.phone-frame img { border-radius: 30px; display: block; }
-.phone-frame-glow::before { content: ''; position: absolute; inset: -20px; background: linear-gradient(135deg, #6366f1, #ec4899); filter: blur(30px); z-index: -1; opacity: 0.5; border-radius: 50%; }
-.float-chip { position: absolute; padding: 0.6rem 1.2rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; z-index: 10; animation: float 6s ease-in-out infinite; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+/* Phone Frame & Glow (Corregido y Ultra Animado) */
+.hero-visual-wrapper { display: flex; justify-content: center; align-items: center; }
+.hero-visual { animation: float-hero 6s ease-in-out infinite; }
+@keyframes float-hero { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+.phone-wrapper { position: relative; width: max-content; margin: 0 auto; }
+.phone-frame { border: 8px solid #1a1a2e; border-radius: 36px; overflow: hidden; background: #09090b; position: relative; box-shadow: var(--shadow); z-index: 2; }
+.phone-frame img { border-radius: 28px; display: block; }
+
+/* El resplandor ahora se queda 100% detrás y pulsa */
+.phone-frame-glow::before { content: ''; position: absolute; inset: -15px; background: linear-gradient(135deg, #6366f1, #ec4899); filter: blur(30px); z-index: 0; opacity: 0.6; border-radius: 50%; animation: pulse-glow 4s ease-in-out infinite; }
+@keyframes pulse-glow { 0%, 100% { opacity: 0.5; filter: blur(25px); transform: scale(1); } 50% { opacity: 0.8; filter: blur(35px); transform: scale(1.02); } }
+
+.float-chip { position: absolute; padding: 0.6rem 1.2rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; z-index: 10; animation: float-chip-anim 6s ease-in-out infinite; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+@keyframes float-chip-anim { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
 .float-chip-1 { top: 10%; right: -20%; animation-delay: 0s; }
 .float-chip-2 { bottom: 25%; left: -25%; animation-delay: -2s; }
 .float-chip-3 { bottom: 10%; right: -15%; animation-delay: -4s; }
@@ -106,10 +128,10 @@ h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; font-weight: 800; 
 .feature-card h3 { font-size: 1.25rem; font-weight: 700; }
 .feature-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-/* Proof */
-.proof-wrap { display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
-.proof-card { padding: 1rem; border-radius: var(--radius); display: flex; flex-direction: column; gap: 1rem; text-align: center; font-weight: 600; }
-.proof-arrow { font-size: 3rem; font-weight: 300; }
+/* Proof (Corregido Responsive Flecha) */
+.proof-wrap { display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: nowrap; }
+.proof-card { flex: 1; max-width: 320px; padding: 1.5rem; border-radius: var(--radius); display: flex; flex-direction: column; gap: 1rem; text-align: center; font-weight: 600; }
+.proof-arrow { font-size: 3rem; font-weight: 300; display: flex; align-items: center; justify-content: center; }
 
 /* Timeline */
 .timeline { position: relative; max-width: 800px; margin: 0 auto; }
@@ -131,12 +153,32 @@ h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; font-weight: 800; 
 .livedemo-qr img { border-radius: 12px; margin-bottom: 1rem; }
 .livedemo-qr-caption { font-weight: 600; color: var(--text-muted); font-size: 0.9rem; }
 
-/* Galleries */
-.gallery-grid { display: grid; gap: 3rem; justify-items: center; }
-.gallery-grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-.gallery-grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-.gallery-caption { text-align: center; margin-top: 1.5rem; font-weight: 600; color: var(--text-muted); }
-.3d-hover:hover { transform: scale(1.02) translateY(-10px); }
+/* Galleries (Corregido alineación exacta de 2 teléfonos) */
+.gallery-grid { display: grid; gap: 2rem; justify-content: center; align-items: start; }
+.gallery-grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.gallery-grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+.gallery-item { display: flex; flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto; }
+.gallery-item .phone-frame { 
+    height: 550px; /* Forzamos la misma altura exacta para todos */
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    background: #000; 
+    border: 8px solid #1a1a2e; 
+    border-radius: 32px; 
+    overflow: hidden; 
+    box-shadow: var(--shadow);
+}
+.gallery-item .phone-frame img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* Si la imagen es más corta o larga, la adapta y recorta por abajo, manteniendo idéntico el aspecto general */
+    object-position: top; 
+    border-radius: 24px;
+}
+.gallery-caption { text-align: center; margin-top: 1.5rem; font-weight: 600; color: var(--text-muted); padding: 0 1rem; }
+.3d-hover:hover { transform: scale(1.02) translateY(-10px); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 
 /* Honest */
 .honest-box { max-width: 800px; margin: 0 auto; padding: 3rem; border-radius: var(--radius); }
@@ -159,14 +201,14 @@ h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; font-weight: 800; 
 .cookie-notice p { font-size: 0.9rem; margin: 0; }
 .btn-sm { padding: 0.5rem 1rem; font-size: 0.9rem; }
 
-/* Animaciones Core (El secreto del efecto Molón) */
+/* Animaciones de Scroll */
 .fly-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
 .fly-in-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
 .fly-in-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
 .fly-in-scale { opacity: 0; transform: scale(0.9); transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
 .visible { opacity: 1 !important; transform: translate(0) scale(1) !important; }
 
-/* Responsive */
+/* Responsive General */
 @media (max-width: 900px) {
     .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
     .hero-content { display: flex; flex-direction: column; align-items: center; }
@@ -174,8 +216,14 @@ h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; font-weight: 800; 
     .badge-row { justify-content: center; }
     .float-chip { display: none; }
 }
+
+/* Magia Responsive para la Prueba (Proof) */
+@media (max-width: 800px) {
+    .proof-wrap { flex-direction: column; gap: 1.5rem; }
+    .proof-arrow { transform: rotate(90deg); margin: 0; /* Gira la flecha y la centra verticalmente */ }
+}
+
 @media (max-width: 600px) {
     h1 { font-size: 2.2rem; }
-    .proof-arrow { transform: rotate(90deg); margin: 1rem 0; }
     .livedemo-box { padding: 2rem; justify-content: center; text-align: center; }
 }
