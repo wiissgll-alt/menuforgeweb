@@ -2,7 +2,7 @@
 <html lang="fr" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <title>MenuForge — Carte digitale QR en 8 langues, gratuite</title>
     <meta name="description" content="Créez la carte digitale de votre restaurant en quelques minutes : QR code, traduction réelle en 8 langues et commandes par WhatsApp. Sans coût de départ, sans publicité gênante.">
     <link rel="canonical" href="https://menuforgeweb.wiissapps.com/fr/">
@@ -22,7 +22,7 @@
     <meta property="og:image" content="https://menuforgeweb.wiissapps.com/assets/screens/published-home.png">
     <meta property="og:locale" content="fr">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="theme-color" content="#4f46e5">
+    <meta name="theme-color" content="#ea580c">
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/assets/icons/icon-96.webp">
     <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
@@ -38,7 +38,57 @@
         <div class="container header-inner">
             <div class="brand fly-in"><img src="/assets/icons/icon-96.webp" alt="MenuForge" width="36" height="36"><span class="shimmer-text">MenuForge</span></div>
             <div class="header-actions fly-in" style="transition-delay: 100ms">
-                <div class="lang-picker"><select onchange="goToLang(this)" aria-label="Menu"><option value="/" >🇪🇸 ES</option><option value="/en/" >🇬🇧 EN</option><option value="/fr/" selected>🇫🇷 FR</option><option value="/it/" >🇮🇹 IT</option><option value="/de/" >🇩🇪 DE</option><option value="/pt/" >🇵🇹 PT</option><option value="/cn/" >🇨🇳 中文</option><option value="/sa/" >🇸🇦 عربي</option></select></div>
+                
+    <div class="custom-dropdown" id="lang-dropdown">
+        <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown(event)">
+            <img src="https://flagcdn.com/w20/fr.png" alt="fr" width="20" height="15">
+            <span>FR</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown-menu">
+            
+        <a href="/" class="lang-option ">
+            <img src="https://flagcdn.com/w20/es.png" alt="es" width="20" height="15" loading="lazy">
+            <span>ES</span>
+        </a>
+    
+        <a href="/en/" class="lang-option ">
+            <img src="https://flagcdn.com/w20/gb.png" alt="en" width="20" height="15" loading="lazy">
+            <span>EN</span>
+        </a>
+    
+        <a href="/fr/" class="lang-option active">
+            <img src="https://flagcdn.com/w20/fr.png" alt="fr" width="20" height="15" loading="lazy">
+            <span>FR</span>
+        </a>
+    
+        <a href="/it/" class="lang-option ">
+            <img src="https://flagcdn.com/w20/it.png" alt="it" width="20" height="15" loading="lazy">
+            <span>IT</span>
+        </a>
+    
+        <a href="/de/" class="lang-option ">
+            <img src="https://flagcdn.com/w20/de.png" alt="de" width="20" height="15" loading="lazy">
+            <span>DE</span>
+        </a>
+    
+        <a href="/pt/" class="lang-option ">
+            <img src="https://flagcdn.com/w20/pt.png" alt="pt" width="20" height="15" loading="lazy">
+            <span>PT</span>
+        </a>
+    
+        <a href="/cn/" class="lang-option ">
+            <img src="https://flagcdn.com/w20/cn.png" alt="cn" width="20" height="15" loading="lazy">
+            <span>中文</span>
+        </a>
+    
+        <a href="/sa/" class="lang-option ">
+            <img src="https://flagcdn.com/w20/sa.png" alt="sa" width="20" height="15" loading="lazy">
+            <span>عربي</span>
+        </a>
+    
+        </div>
+    </div>
                 <button id="theme-toggle" class="icon-btn" onclick="toggleTheme()" aria-label="Changer de thème" type="button">
                     <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
                     <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -168,7 +218,9 @@
                         <div class="phone-frame shadow-xl"><img src="/assets/screens/published-menu-cn.png" alt="Le client voit la carte en chinois" loading="lazy" width="280" height="565"></div>
                         <div class="proof-caption">🇨🇳 Le client voit la carte en chinois</div>
                     </div>
-                    <div class="proof-arrow fly-in-scale shimmer-text">➔</div>
+                    <div class="proof-arrow fly-in-scale shimmer-text">
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
                     <div class="proof-card fly-in-right glass">
                         <div class="phone-frame shadow-xl"><img src="/assets/screens/whatsapp-order.png" alt="Le restaurateur la reçoit dans la sienne (ici, espagnol)" loading="lazy" width="280" height="272"></div>
                         <div class="proof-caption">🇪🇸 Le restaurateur la reçoit dans la sienne (ici, espagnol)</div>
@@ -235,13 +287,13 @@
                 </div>
                 <div class="gallery-grid gallery-grid-2">
                 <div class="gallery-item fly-in-left" style="transition-delay:0ms">
-                    <div class="phone-frame 3d-hover">
+                    <div class="phone-frame 3d-hover shadow-xl">
                         <img src="/assets/screens/published-home.png" alt="Real published MenuForge restaurant page with food photos" loading="lazy" width="460" height="929">
                     </div>
                     <div class="gallery-caption">Voici ce que voit vraiment votre client.</div>
                 </div>
                 <div class="gallery-item fly-in-right" style="transition-delay:90ms">
-                    <div class="phone-frame 3d-hover">
+                    <div class="phone-frame 3d-hover shadow-xl">
                         <img src="/assets/screens/published-menu-dark.png" alt="Real published menu page in dark mode with dish photos and prices" loading="lazy" width="460" height="986">
                     </div>
                     <div class="gallery-caption">Catégories, photos et prix — aussi en mode sombre.</div>
@@ -269,9 +321,9 @@
             <div class="container">
                 <div class="final-cta fly-in-scale glass highlight-border text-center">
                     <h2 class="shimmer-text">Votre carte digitale, prête aujourd&#39;hui</h2>
-                    <p class="lead mb-8">Sans engagement, sans coût de départ.</p>
+                    <p class="lead mb-8" style="margin-left:auto; margin-right:auto;">Sans engagement, sans coût de départ.</p>
                     <a href="#" class="cta-badge-link scale-hover inline-block" data-cta="download">
-                        <img class="google-play-badge" src="/assets/badges/google-play-fr.png" alt="Télécharger l&#39;app" width="200" height="60">
+                        <img class="google-play-badge" src="/assets/badges/google-play-fr.png" alt="Télécharger l&#39;app" width="200" height="60" style="margin:0 auto;">
                     </a>
                 </div>
             </div>
