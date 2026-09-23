@@ -324,16 +324,34 @@ section { padding: 70px 0; }
 .feature-card h3 { font-size: 1.05rem; font-weight: 800; margin: 0 0 8px; }
 .feature-card p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.55; margin: 0; }
 
-/* ---------- steps ---------- */
-.steps-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; counter-reset: step; }
-.step-card { position: relative; padding: 30px 24px 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-soft); transition: border-color 0.3s ease; }
-.step-card:hover { border-color: var(--accent); }
-.step-num {
-    width: 40px; height: 40px; border-radius: 12px; background: var(--accent-gradient); color: #fff;
-    display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; margin-bottom: 16px;
+/* ---------- steps: linea de tiempo vertical (banda oscura fija, no sigue claro/oscuro) ----------
+   Inspirado en el "como funciona" de buenacarta.com que el usuario senalo como ejemplo de buen
+   efecto: insignias circulares conectadas por una linea, en vez de 3 tarjetas planas sueltas. La
+   banda oscura fija (no depende de --bg) da un respiro visual dentro de una pagina mayormente
+   clara, un recurso habitual en sites premium (Stripe, Linear...). */
+#steps { background: #0f0f13; padding: 80px 0; }
+#steps .section-head h2 { color: #fff; }
+#steps .section-head p { color: #a1a1aa; }
+.timeline { position: relative; max-width: 620px; margin: 0 auto; }
+.timeline-line {
+    position: absolute; inset-inline-start: 27px; top: 6px; bottom: 6px; width: 2px;
+    background: linear-gradient(to bottom, #4f46e5, #7c3aed, rgba(124, 58, 237, 0));
 }
-.step-card h3 { font-size: 1.02rem; font-weight: 800; margin: 0 0 8px; }
-.step-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.55; margin: 0; }
+.timeline-item { position: relative; display: flex; gap: 24px; padding-bottom: 44px; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-badge {
+    position: relative; z-index: 1; flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%;
+    background: var(--accent-gradient); color: #fff; display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1.3rem; box-shadow: 0 0 0 6px #0f0f13, 0 10px 24px -8px rgba(79, 70, 229, 0.6);
+}
+.timeline-content { padding-top: 10px; }
+.timeline-content h3 { color: #fff; font-size: 1.1rem; font-weight: 800; margin: 0 0 8px; }
+.timeline-content p { color: #a1a1aa; font-size: 0.95rem; line-height: 1.6; margin: 0; }
+@media (max-width: 560px) {
+    .timeline-badge { width: 44px; height: 44px; font-size: 1.1rem; }
+    .timeline-line { inset-inline-start: 21px; }
+    .timeline-item { gap: 16px; padding-bottom: 34px; }
+}
 
 /* ---------- gallery ---------- */
 .gallery-grid { display: grid; gap: 28px; max-width: 780px; margin: 0 auto; }
@@ -430,7 +448,6 @@ footer.site-footer {
     .hero-grid { grid-template-columns: 1fr; gap: 40px; }
     .float-chip { display: none; }
     .features-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .steps-grid { grid-template-columns: 1fr; }
     .gallery-grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .proof-wrap { flex-direction: column; }
     .proof-arrow { transform: rotate(90deg); }

@@ -97,13 +97,18 @@ function renderFeatures(items) {
                 </div>`).join('');
 }
 
+// Linea de tiempo vertical con insignias circulares conectadas -en vez de 3 tarjetas planas
+// sueltas- inspirada en el "como funciona" de buenacarta.com, que el usuario señalo como
+// ejemplo de efecto bueno.
 function renderSteps(items) {
     return items.map((s, i) => `
-                <div class="step-card fly-in" style="transition-delay:${i * 100}ms">
-                    <div class="step-num">${i + 1}</div>
-                    <h3>${escapeHtml(s.title)}</h3>
-                    <p>${escapeHtml(s.desc)}</p>
-                </div>`).join('');
+                    <div class="timeline-item fly-in-left" style="transition-delay:${i * 140}ms">
+                        <div class="timeline-badge">${i + 1}</div>
+                        <div class="timeline-content">
+                            <h3>${escapeHtml(s.title)}</h3>
+                            <p>${escapeHtml(s.desc)}</p>
+                        </div>
+                    </div>`).join('');
 }
 
 // Las tarjetas entran deslizandose desde un lado al hacer scroll -la primera de cada fila
@@ -279,7 +284,9 @@ ${renderHreflangs(lang)}
                 <div class="section-head fly-in">
                     <h2>${escapeHtml(c.steps.title)}</h2>
                 </div>
-                <div class="steps-grid">${renderSteps(c.steps.items)}
+                <div class="timeline">
+                    <div class="timeline-line" aria-hidden="true"></div>
+${renderSteps(c.steps.items)}
                 </div>
             </div>
         </section>
