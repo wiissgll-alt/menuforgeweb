@@ -57,6 +57,12 @@ function imgSize(file, displayWidth) {
     return { width: displayWidth, height: Math.round((displayWidth * h) / w) };
 }
 
+// Menú real publicado con la propia app -se deja fijo tras un borrado de almacenamiento
+// local en el móvil de pruebas, así que el enlace y el QR siguen vivos siempre: los datos
+// del menú viven en el backend (GitHub vía el Worker), no en el dispositivo-.
+const LIVE_DEMO_URL = 'https://wiissapps.com/#restaurant:resto_1790153464516_x4dmsfv';
+const LIVE_KICKER = { es: 'En directo, ahora mismo', en: 'Live, right now', fr: 'En direct, à l\'instant', it: 'In diretta, proprio ora', de: 'Live, gerade jetzt', pt: 'Ao vivo, agora mesmo', cn: '实时,就在现在', sa: 'مباشر، الآن' };
+
 // Badge oficial de "Disponible en Google Play" -no hay versión oficial en chino simplificado,
 // así que esa página cae en la inglesa, igual que hacen muchas apps reales-.
 const GOOGLE_PLAY_BADGE = { es: 'es', en: 'en', fr: 'fr', it: 'it', de: 'de', pt: 'pt', cn: 'en', sa: 'ar' };
@@ -234,6 +240,23 @@ ${renderHreflangs(lang)}
                     <div class="proof-card fly-in-right">
                         <div class="phone-frame"><img src="${asset('/assets/screens/whatsapp-order.png')}" alt="${escapeHtml(c.proof.captionRight)}" width="${imgSize('whatsapp-order.png', 280).width}" height="${imgSize('whatsapp-order.png', 280).height}"></div>
                         <div class="proof-caption">🇪🇸 ${escapeHtml(c.proof.captionRight)}</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="livedemo">
+            <div class="container">
+                <div class="livedemo-box fly-in-scale">
+                    <div class="livedemo-text">
+                        <span class="kicker">🔴 ${escapeHtml(LIVE_KICKER[lang])}</span>
+                        <h2>${escapeHtml(c.liveDemo.title)}</h2>
+                        <p>${escapeHtml(c.liveDemo.subtitle)}</p>
+                        <a class="btn btn-primary" href="${LIVE_DEMO_URL}" target="_blank" rel="noopener">🍽️ ${escapeHtml(c.liveDemo.linkLabel)}</a>
+                    </div>
+                    <div class="livedemo-qr">
+                        <img src="${asset('/assets/screens/live-demo-qr.png')}" alt="${escapeHtml(c.liveDemo.linkLabel)}" width="180" height="180" loading="lazy">
+                        <span class="livedemo-qr-caption">${escapeHtml(c.liveDemo.qrCaption)}</span>
                     </div>
                 </div>
             </div>

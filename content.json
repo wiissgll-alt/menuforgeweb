@@ -66,6 +66,12 @@
         "captionLeft": "El cliente ve la carta en chino",
         "captionRight": "El hostelero lo recibe en el suyo (aquí, español)"
       },
+      "liveDemo": {
+        "title": "Esto no es una maqueta",
+        "subtitle": "Es una carta real, publicada ahora mismo con la propia app. Ábrela o escanéala.",
+        "linkLabel": "Restaurante La Toscana",
+        "qrCaption": "Escanéala con tu móvil"
+      },
       "features": {
         "title": "Todo lo que necesitas, ya incluido",
         "items": [
@@ -219,6 +225,12 @@
         "subtitle": "The customer places the order in their language — you receive it automatically in yours.",
         "captionLeft": "The customer sees the menu in Chinese",
         "captionRight": "The owner receives it in theirs (here, Spanish)"
+      },
+      "liveDemo": {
+        "title": "This isn't a mockup",
+        "subtitle": "It's a real menu, published right now with the app itself. Open it or scan it.",
+        "linkLabel": "La Toscana Restaurant",
+        "qrCaption": "Scan it with your phone"
       },
       "features": {
         "title": "Everything you need, already included",
@@ -374,6 +386,12 @@
         "captionLeft": "Le client voit la carte en chinois",
         "captionRight": "Le restaurateur la reçoit dans la sienne (ici, espagnol)"
       },
+      "liveDemo": {
+        "title": "Ce n'est pas une maquette",
+        "subtitle": "C'est une vraie carte, publiée en ce moment même avec l'application. Ouvrez-la ou scannez-la.",
+        "linkLabel": "Restaurant La Toscana",
+        "qrCaption": "Scannez-la avec votre mobile"
+      },
       "features": {
         "title": "Tout ce qu'il vous faut, déjà inclus",
         "items": [
@@ -527,6 +545,12 @@
         "subtitle": "Il cliente effettua l'ordine nella sua lingua — tu lo ricevi automaticamente nella tua.",
         "captionLeft": "Il cliente vede il menu in cinese",
         "captionRight": "Il ristoratore lo riceve nella sua (qui, spagnolo)"
+      },
+      "liveDemo": {
+        "title": "Non è un modello",
+        "subtitle": "È un menu reale, pubblicato proprio ora con l'app stessa. Aprilo o scansionalo.",
+        "linkLabel": "Ristorante La Toscana",
+        "qrCaption": "Scansionalo con il tuo cellulare"
       },
       "features": {
         "title": "Tutto quello che ti serve, già incluso",
@@ -682,6 +706,12 @@
         "captionLeft": "Der Kunde sieht die Speisekarte auf Chinesisch",
         "captionRight": "Der Gastwirt erhält es in seiner (hier: Spanisch)"
       },
+      "liveDemo": {
+        "title": "Das ist kein Mockup",
+        "subtitle": "Das ist eine echte Speisekarte, gerade eben mit der App selbst veröffentlicht. Öffne sie oder scanne sie.",
+        "linkLabel": "Restaurant La Toscana",
+        "qrCaption": "Mit dem Handy scannen"
+      },
       "features": {
         "title": "Alles, was Sie brauchen, schon dabei",
         "items": [
@@ -835,6 +865,12 @@
         "subtitle": "O cliente faz o pedido no seu idioma — você o recebe automaticamente no seu.",
         "captionLeft": "O cliente vê o cardápio em chinês",
         "captionRight": "O dono recebe no dele (aqui, espanhol)"
+      },
+      "liveDemo": {
+        "title": "Isto não é uma maquete",
+        "subtitle": "É um cardápio real, publicado agora mesmo com a própria app. Abra-o ou escaneie-o.",
+        "linkLabel": "Restaurante La Toscana",
+        "qrCaption": "Escaneie com o seu telemóvel"
       },
       "features": {
         "title": "Tudo o que você precisa, já incluído",
@@ -990,6 +1026,12 @@
         "captionLeft": "顾客看到的是中文菜单",
         "captionRight": "老板以他的语言收到（此处为西班牙语）"
       },
+      "liveDemo": {
+        "title": "这不是模拟效果",
+        "subtitle": "这是一份真实的菜单,由该应用程序本身刚刚发布。打开它或扫描它。",
+        "linkLabel": "La Toscana 餐厅",
+        "qrCaption": "用手机扫描"
+      },
       "features": {
         "title": "您需要的一切，全部内置",
         "items": [
@@ -1143,6 +1185,12 @@
         "subtitle": "يقدم العميل الطلب بلغته — وتتلقاه تلقائيًا بلغتك.",
         "captionLeft": "يرى العميل القائمة بالصينية",
         "captionRight": "يتلقاه صاحب المطعم بلغته (هنا، الإسبانية)"
+      },
+      "liveDemo": {
+        "title": "هذا ليس نموذجًا تجريبيًا",
+        "subtitle": "هذه قائمة طعام حقيقية، تم نشرها للتو باستخدام التطبيق نفسه. افتحها أو امسحها ضوئيًا.",
+        "linkLabel": "مطعم لا توسكانا",
+        "qrCaption": "امسحها ضوئيًا بهاتفك"
       },
       "features": {
         "title": "كل ما تحتاجه، مُضمَّن بالفعل",
