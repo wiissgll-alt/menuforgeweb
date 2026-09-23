@@ -10,8 +10,8 @@ const ROOT = __dirname;
 // menuforgeweb/ del repo, para servirse en wsapps.dpdns.org/menuforgeweb -content.json y este
 // script se quedan en la raíz real del repo, no se publican-.
 const OUT_DIR = path.join(ROOT, 'menuforgeweb');
-const DOMAIN = 'https://wsapps.dpdns.org';
-const BASE_PATH = '/menuforgeweb';
+const DOMAIN = 'https://menuforgeweb.wiissapps.com';
+const BASE_PATH = '';
 
 const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'content.json'), 'utf8'));
 const { languages, defaultLang, rtlLangs, langNames, langShort, content } = data;
@@ -165,7 +165,7 @@ ${renderHreflangs(lang)}
     <script type="application/ld+json">${jsonLd(lang, c)}</script>
 </head>
 <body>
-    <div class="ambient"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
+    <div class="ambient"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div><div class="blob blob-4"></div></div>
 
     <header class="site-header">
         <div class="container header-inner">
@@ -203,7 +203,15 @@ ${renderHreflangs(lang)}
                     </div>
                 </div>
                 <div class="hero-visual fly-in-scale visible">
-                    <div class="phone-frame"><img src="${asset('/assets/screens/published-home.png')}" alt="${escapeHtml(c.webGallery.items[0].alt)}" width="${imgSize('published-home.png', 300).width}" height="${imgSize('published-home.png', 300).height}"></div>
+                    <div class="floaters" aria-hidden="true">
+                        <span class="floater f1">🍽️</span>
+                        <span class="floater f2">📱</span>
+                        <span class="floater f3">🔲</span>
+                        <span class="floater f4">⭐</span>
+                        <span class="floater f5">🍜</span>
+                        <span class="floater f6">🔔</span>
+                    </div>
+                    <div class="phone-frame phone-frame-glow"><img src="${asset('/assets/screens/published-home.png')}" alt="${escapeHtml(c.webGallery.items[0].alt)}" width="${imgSize('published-home.png', 300).width}" height="${imgSize('published-home.png', 300).height}"></div>
                     <div class="float-chip float-chip-1">🌐 8 / 8</div>
                     <div class="float-chip float-chip-2">📱 WhatsApp</div>
                     <div class="float-chip float-chip-3">🔲 QR</div>
@@ -289,6 +297,11 @@ ${renderHreflangs(lang)}
         <section id="final-cta">
             <div class="container">
                 <div class="final-cta fly-in-scale">
+                    <div class="floaters" aria-hidden="true">
+                        <span class="floater f1">🍽️</span>
+                        <span class="floater f2">⭐</span>
+                        <span class="floater f3">🔲</span>
+                    </div>
                     <h2>${escapeHtml(c.finalCta.title)}</h2>
                     <p>${escapeHtml(c.finalCta.subtitle)}</p>
                     <a href="#" class="cta-badge-link" data-cta="download" title="${escapeHtml(c.hero.ctaPrimarySoon)}">
