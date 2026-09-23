@@ -180,8 +180,14 @@ ${renderHreflangs(lang)}
     <meta property="og:description" content="${escapeHtml(c.meta.description)}">
     <meta property="og:url" content="${url}">
     <meta property="og:image" content="${DOMAIN}${asset('/assets/screens/published-home.png')}">
+    <meta property="og:image:alt" content="${escapeHtml(c.meta.title)}">
     <meta property="og:locale" content="${c.htmlLang}">
+    <meta property="og:site_name" content="MenuForge">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${escapeHtml(c.meta.title)}">
+    <meta name="twitter:description" content="${escapeHtml(c.meta.description)}">
+    <meta name="twitter:image" content="${DOMAIN}${asset('/assets/screens/published-home.png')}">
+    <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#ea580c">
     <link rel="manifest" href="${asset('/manifest.json')}">
     <link rel="icon" href="${asset('/assets/icons/icon-96.webp')}">
