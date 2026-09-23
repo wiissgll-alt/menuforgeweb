@@ -240,6 +240,13 @@ html[dir="rtl"] .lang-picker select { padding: 9px 14px 9px 30px; }
     width: min(300px, 78vw); padding: 12px; border-radius: 34px; border: 1px solid var(--border);
     box-shadow: var(--shadow-card); background: var(--surface); transition: transform 0.4s ease;
 }
+/* En oscuro, --surface (#131318) y --bg (#08080b) quedan demasiado cerca -el marco
+   practicamente desaparecia contra el fondo negro-, asi que aqui gana un borde mas claro y un
+   aro de contraste para que se distinga del fondo aunque la imagen tambien sea oscura. */
+[data-theme="dark"] .phone-frame {
+    background: #1c1c24; border-color: rgba(255, 255, 255, 0.14);
+    box-shadow: var(--shadow-card), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
 .phone-frame:hover { transform: translateY(-5px); }
 .phone-frame img { width: 100%; height: auto; display: block; border-radius: 22px; }
 .phone-frame-glow { position: relative; }
@@ -349,9 +356,9 @@ section { padding: 70px 0; }
 .step-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.55; margin: 0; }
 
 /* ---------- gallery ---------- */
-.gallery-grid { display: grid; gap: 18px; max-width: 780px; margin: 0 auto; }
-.gallery-grid-2 { grid-template-columns: repeat(2, 1fr); }
-.gallery-grid-3 { grid-template-columns: repeat(3, 1fr); max-width: 980px; }
+.gallery-grid { display: grid; gap: 28px; max-width: 780px; margin: 0 auto; }
+.gallery-grid-2 { grid-template-columns: repeat(2, 1fr); max-width: 980px; }
+.gallery-grid-3 { grid-template-columns: repeat(3, 1fr); max-width: 1100px; }
 .gallery-item { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
 .gallery-item .phone-frame { width: 100%; border-radius: 26px; }
 .gallery-caption { font-size: 0.82rem; color: var(--text-muted); text-align: center; line-height: 1.4; }
@@ -439,7 +446,7 @@ footer.site-footer {
 
 @media (max-width: 560px) {
     .features-grid { grid-template-columns: 1fr; }
-    .gallery-grid-2, .gallery-grid-3 { grid-template-columns: 1fr; max-width: 280px; }
+    .gallery-grid-2, .gallery-grid-3 { grid-template-columns: 1fr; max-width: min(320px, 82vw); }
     .hero { padding: 40px 0 24px; }
     section { padding: 50px 0; }
     .honest-box { padding: 26px; }

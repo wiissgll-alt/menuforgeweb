@@ -106,11 +106,22 @@ function renderSteps(items) {
                 </div>`).join('');
 }
 
-function renderGallery(items, cols) {
+// Las tarjetas entran deslizandose desde un lado al hacer scroll -la primera de cada fila
+// desde la izquierda, la ultima desde la derecha, las del medio con un escalado suave-, en vez
+// del generico "aparece hacia arriba" que llevaban antes.
+function slideClass(i, cols) {
+    if (cols <= 1) return 'fly-in';
+    const pos = i % cols;
+    if (pos === 0) return 'fly-in-left';
+    if (pos === cols - 1) return 'fly-in-right';
+    return 'fly-in-scale';
+}
+
+function renderGallery(items, cols, displayWidth) {
     return items.map((g, i) => {
-        const size = imgSize(g.img, 360);
+        const size = imgSize(g.img, displayWidth || 360);
         return `
-                <div class="gallery-item fly-in" style="transition-delay:${(i % cols) * 70}ms">
+                <div class="gallery-item ${slideClass(i, cols)}" style="transition-delay:${(i % cols) * 90}ms">
                     <div class="phone-frame"><img src="${asset(`/assets/screens/${g.img}`)}" alt="${escapeHtml(g.alt)}" loading="lazy" width="${size.width}" height="${size.height}"></div>
                     <div class="gallery-caption">${escapeHtml(g.caption)}</div>
                 </div>`;
@@ -287,7 +298,7 @@ ${renderHreflangs(lang)}
                     <h2>${escapeHtml(c.webGallery.title)}</h2>
                     <p>${escapeHtml(c.webGallery.subtitle)}</p>
                 </div>
-                <div class="gallery-grid gallery-grid-2">${renderGallery(c.webGallery.items, 2)}
+                <div class="gallery-grid gallery-grid-2">${renderGallery(c.webGallery.items, 2, 460)}
                 </div>
             </div>
         </section>
@@ -298,7 +309,7 @@ ${renderHreflangs(lang)}
                     <h2>${escapeHtml(c.appGallery.title)}</h2>
                     <p>${escapeHtml(c.appGallery.subtitle)}</p>
                 </div>
-                <div class="gallery-grid gallery-grid-3">${renderGallery(c.appGallery.items, 3)}
+                <div class="gallery-grid gallery-grid-3">${renderGallery(c.appGallery.items, 3, 340)}
                 </div>
             </div>
         </section>
