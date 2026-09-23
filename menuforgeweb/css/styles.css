@@ -35,7 +35,14 @@
   --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; transition: background 0.3s, color 0.3s; }
+/* overflow-x:hidden solo en body "se propaga" al viewport en algunos navegadores pero no es
+   fiable -en movil se seguia pudiendo arrastrar la pagina hacia el lado y ver hueco en blanco,
+   comprobado con window.scrollTo-. Ponerlo tambien en html lo hace infalible. */
+html { overflow-x: hidden; }
+/* position:relative es necesario para que overflow-x:hidden recorte de verdad a los .blob
+   -son position:absolute y sin un ancestro posicionado se colocan respecto a toda la ventana,
+   provocando el scroll lateral de mas en movil-. */
+body { position: relative; font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; transition: background 0.3s, color 0.3s; }
 .container { max-width: 1200px; width: 100%; margin: 0 auto; padding: 0 1.5rem; }
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; height: auto; display: block; }
@@ -211,7 +218,9 @@ h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; font-weight: 800; 
     border-radius: 28px;
 }
 .gallery-caption { text-align: center; margin-top: 1.5rem; font-weight: 600; color: var(--text-muted); padding: 0 1rem; }
-.3d-hover:hover { transform: scale(1.02) translateY(-10px); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+/* Un nombre de clase no puede empezar por un numero -.3d-hover era invalido y el navegador
+   ignoraba la regla entera, asi que el efecto no hacia nada-. */
+.hover-3d:hover { transform: scale(1.02) translateY(-10px); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 
 /* Honest */
 .honest-box { max-width: 800px; margin: 0 auto; padding: 3rem; border-radius: var(--radius); }
