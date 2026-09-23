@@ -42,7 +42,7 @@ const IMG_DIMS = {
     'pdf-menu.png': [540, 655],
     'published-home-dark.png': [420, 900],
     'published-home.png': [1080, 2180],
-    'published-menu-cn.png': [420, 820],
+    'published-menu-cn.png': [1080, 2180],
     'published-menu-dark.png': [420, 900],
     'published-menu.png': [420, 900],
     'qr-sheet.png': [1080, 2250],
