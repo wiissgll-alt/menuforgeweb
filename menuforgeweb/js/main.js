@@ -6,12 +6,20 @@ function toggleTheme() {
     localStorage.setItem('theme', current);
 }
 
-// Selector de idioma
-function goToLang(sel) {
-    window.location.href = sel.value;
-}
+// Menú desplegable de Idiomas
+window.toggleDropdown = function(e) {
+    e.stopPropagation();
+    const drop = document.getElementById('lang-dropdown');
+    if(drop) drop.classList.toggle('open');
+};
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', () => {
+        const drop = document.getElementById('lang-dropdown');
+        if(drop) drop.classList.remove('open');
+    });
+
     // Restaurar tema
     if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.setAttribute('data-theme', 'dark');
@@ -24,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Unobserve para que no se anime cada vez que subes y bajas
                 observer.unobserve(entry.target);
             }
         });
@@ -36,14 +43,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const cookieNotice = document.getElementById('cookie-notice');
     if (!localStorage.getItem('cookiesAccepted')) {
         setTimeout(() => {
-            cookieNotice.classList.add('show');
+            if(cookieNotice) cookieNotice.classList.add('show');
         }, 1500);
     }
 
-    document.querySelector('.cookie-notice-accept')?.addEventListener('click', () => {
-        localStorage.setItem('cookiesAccepted', 'true');
-        cookieNotice.classList.remove('show');
-    });
+    const btnAccept = document.querySelector('.cookie-notice-accept');
+    if(btnAccept) {
+        btnAccept.addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            cookieNotice.classList.remove('show');
+        });
+    }
 
     // Header sticky con blur
     const header = document.querySelector('.site-header');
