@@ -272,7 +272,7 @@ section { padding: 70px 0; }
    usando object-fit:contain, todos los marcos de una misma fila quedan del mismo tamano sin
    recortar el contenido de ninguna imagen. */
 .proof-card .phone-frame {
-    width: min(230px, 68vw); aspect-ratio: 9 / 18; display: flex; align-items: center; overflow: hidden;
+    width: min(230px, 68vw); aspect-ratio: 9 / 18; display: flex; align-items: center; justify-content: center; overflow: hidden;
 }
 .proof-card .phone-frame img { height: 100%; width: 100%; object-fit: contain; }
 .proof-caption { font-weight: 700; font-size: 0.88rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
@@ -368,7 +368,7 @@ section { padding: 70px 0; }
    explicita (en vez de aspect-ratio) se evita el circulo: el ancho lo sigue dando el grid al
    100%, el alto es fijo, y object-fit:contain encaja cada imagen sin recortarla. */
 .gallery-item .phone-frame {
-    width: 100%; border-radius: 26px; display: flex; align-items: center; overflow: hidden;
+    width: 100%; border-radius: 26px; display: flex; align-items: center; justify-content: center; overflow: hidden;
 }
 .gallery-item .phone-frame img { width: 100%; object-fit: contain; }
 .gallery-grid-2 .phone-frame { height: 480px; }
