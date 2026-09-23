@@ -252,23 +252,6 @@ ${renderHreflangs(lang)}
             </div>
         </section>
 
-        <section id="livedemo">
-            <div class="container">
-                <div class="livedemo-box fly-in-scale">
-                    <div class="livedemo-text">
-                        <span class="kicker">🔴 ${escapeHtml(LIVE_KICKER[lang])}</span>
-                        <h2>${escapeHtml(c.liveDemo.title)}</h2>
-                        <p>${escapeHtml(c.liveDemo.subtitle)}</p>
-                        <a class="btn btn-primary" href="${LIVE_DEMO_URL}" target="_blank" rel="noopener">🍽️ ${escapeHtml(c.liveDemo.linkLabel)}</a>
-                    </div>
-                    <div class="livedemo-qr">
-                        <img src="${asset('/assets/screens/live-demo-qr.png')}" alt="${escapeHtml(c.liveDemo.linkLabel)}" width="180" height="180" loading="lazy">
-                        <span class="livedemo-qr-caption">${escapeHtml(c.liveDemo.qrCaption)}</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="features">
             <div class="container">
                 <div class="section-head fly-in">
@@ -287,6 +270,25 @@ ${renderHreflangs(lang)}
                 <div class="timeline">
                     <div class="timeline-line" aria-hidden="true"></div>
 ${renderSteps(c.steps.items)}
+                </div>
+            </div>
+        </section>
+
+        <!-- El ejemplo real va DESPUES de explicar que hace/como funciona -primero se vende,
+             luego se demuestra que es verdad-, no nada mas empezar. -->
+        <section id="livedemo">
+            <div class="container">
+                <div class="livedemo-box fly-in-scale">
+                    <div class="livedemo-text">
+                        <span class="kicker">🔴 ${escapeHtml(LIVE_KICKER[lang])}</span>
+                        <h2>${escapeHtml(c.liveDemo.title)}</h2>
+                        <p>${escapeHtml(c.liveDemo.subtitle)}</p>
+                        <a class="btn btn-primary" href="${LIVE_DEMO_URL}" target="_blank" rel="noopener">🍽️ ${escapeHtml(c.liveDemo.linkLabel)}</a>
+                    </div>
+                    <div class="livedemo-qr">
+                        <img src="${asset('/assets/screens/live-demo-qr.png')}" alt="${escapeHtml(c.liveDemo.linkLabel)}" width="180" height="180" loading="lazy">
+                        <span class="livedemo-qr-caption">${escapeHtml(c.liveDemo.qrCaption)}</span>
+                    </div>
                 </div>
             </div>
         </section>

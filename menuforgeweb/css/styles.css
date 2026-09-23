@@ -24,8 +24,8 @@
     --text-muted: #64748b;
     --border: #e2e8f0;
     --accent: #4f46e5;
-    --accent-2: #7c3aed;
-    --accent-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    --accent-2: #2563eb;
+    --accent-gradient: linear-gradient(135deg, #4f46e5 0%, #2563eb 100%);
     --shadow-soft: 0 20px 45px -20px rgba(15, 23, 42, 0.15);
     --shadow-card: 0 20px 40px -15px rgba(79, 70, 229, 0.15);
     --shadow-glow: 0 0 20px rgba(79, 70, 229, 0.3);
@@ -44,7 +44,7 @@
     --border: #26262e;
     --shadow-soft: 0 20px 45px -20px rgba(0, 0, 0, 0.7);
     --shadow-card: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
-    --shadow-glow: 0 0 20px rgba(124, 58, 237, 0.2);
+    --shadow-glow: 0 0 20px rgba(37, 99, 235, 0.2);
 }
 
 * { box-sizing: border-box; }
@@ -85,9 +85,9 @@ button { font-family: inherit; }
 .ambient { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
 .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.32; }
 .blob-1 { width: 520px; height: 520px; background: #4f46e5; top: -220px; inset-inline-start: -160px; animation: float-a 22s ease-in-out infinite; }
-.blob-2 { width: 440px; height: 440px; background: #7c3aed; top: 180px; inset-inline-end: -180px; animation: float-b 26s ease-in-out infinite; opacity: 0.22; }
+.blob-2 { width: 440px; height: 440px; background: #2563eb; top: 180px; inset-inline-end: -180px; animation: float-b 26s ease-in-out infinite; opacity: 0.22; }
 .blob-3 { width: 380px; height: 380px; background: #22d3ee; bottom: -220px; inset-inline-start: 30%; animation: float-a 30s ease-in-out infinite reverse; opacity: 0.18; }
-.blob-4 { width: 320px; height: 320px; background: #f472b6; top: 30%; inset-inline-end: 12%; animation: float-b 34s ease-in-out infinite; opacity: 0.12; }
+.blob-4 { width: 320px; height: 320px; background: #38bdf8; top: 30%; inset-inline-end: 12%; animation: float-b 34s ease-in-out infinite; opacity: 0.12; }
 [data-theme="dark"] .blob { opacity: 0.26; }
 [data-theme="dark"] .blob-4 { opacity: 0.16; }
 @keyframes float-a { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(40px, 50px) scale(1.08); } }
@@ -158,7 +158,7 @@ html[dir="rtl"] .lang-picker select { padding: 9px 14px 9px 30px; }
 .hero h1 { font-size: clamp(2.3rem, 5vw, 3.8rem); line-height: 1.06; font-weight: 800; margin: 0 0 20px; letter-spacing: -0.01em; }
 
 .hero h1 .accent-text { 
-    background: linear-gradient(135deg, #4f46e5 20%, #9333ea 50%, #4f46e5 80%);
+    background: linear-gradient(135deg, #4f46e5 20%, #2563eb 50%, #4f46e5 80%);
     background-size: 200% auto;
     -webkit-background-clip: text; 
     background-clip: text; 
@@ -210,13 +210,17 @@ html[dir="rtl"] .lang-picker select { padding: 9px 14px 9px 30px; }
 .hero-visual { position: relative; display: flex; justify-content: center; }
 .phone-frame {
     width: min(300px, 78vw); padding: 12px; border-radius: 34px; border: 1px solid var(--border);
-    box-shadow: var(--shadow-card); background: var(--surface); transition: transform 0.4s ease;
+    box-shadow: var(--shadow-card); transition: transform 0.4s ease;
+    /* Degradado suave en vez de blanco liso: cuando una imagen mas cuadrada (el pedido de
+       WhatsApp, el PDF...) no llena un marco alto con object-fit:contain, el hueco se ve como
+       un panel con diseno propio en vez de un rectangulo vacio roto. */
+    background: linear-gradient(160deg, var(--surface-soft), var(--surface) 55%);
 }
 /* En oscuro, --surface (#131318) y --bg (#08080b) quedan demasiado cerca -el marco
    practicamente desaparecia contra el fondo negro-, asi que aqui gana un borde mas claro y un
    aro de contraste para que se distinga del fondo aunque la imagen tambien sea oscura. */
 [data-theme="dark"] .phone-frame {
-    background: #1c1c24; border-color: rgba(255, 255, 255, 0.14);
+    background: linear-gradient(160deg, #232330, #1c1c24 55%); border-color: rgba(255, 255, 255, 0.14);
     box-shadow: var(--shadow-card), 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 .phone-frame:hover { transform: translateY(-5px); }
@@ -224,7 +228,7 @@ html[dir="rtl"] .lang-picker select { padding: 9px 14px 9px 30px; }
 .phone-frame-glow { position: relative; }
 .phone-frame-glow::before {
     content: ""; position: absolute; inset: -3px; border-radius: 37px; z-index: -1; opacity: 0.3; filter: blur(8px);
-    background: conic-gradient(from 0deg, #4f46e5, #7c3aed, #22d3ee, #4f46e5); animation: rotate-ring 11s linear infinite;
+    background: conic-gradient(from 0deg, #4f46e5, #2563eb, #22d3ee, #4f46e5); animation: rotate-ring 11s linear infinite;
 }
 @keyframes rotate-ring { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .phone-frame-glow::before { animation: none !important; } }
@@ -335,7 +339,7 @@ section { padding: 70px 0; }
 .timeline { position: relative; max-width: 620px; margin: 0 auto; }
 .timeline-line {
     position: absolute; inset-inline-start: 27px; top: 6px; bottom: 6px; width: 2px;
-    background: linear-gradient(to bottom, #4f46e5, #7c3aed, rgba(124, 58, 237, 0));
+    background: linear-gradient(to bottom, #4f46e5, #2563eb, rgba(37, 99, 235, 0));
 }
 .timeline-item { position: relative; display: flex; gap: 24px; padding-bottom: 44px; }
 .timeline-item:last-child { padding-bottom: 0; }
@@ -390,7 +394,7 @@ section { padding: 70px 0; }
 .final-cta {
     position: relative; overflow: hidden; text-align: center;
     background: var(--surface); border: 1.5px solid transparent;
-    background-image: linear-gradient(var(--surface), var(--surface)), linear-gradient(120deg, #4f46e5, #22d3ee, #7c3aed, #4f46e5);
+    background-image: linear-gradient(var(--surface), var(--surface)), linear-gradient(120deg, #4f46e5, #22d3ee, #2563eb, #4f46e5);
     background-origin: border-box; background-clip: padding-box, border-box;
     background-size: 100% 100%, 300% auto;
     animation: shine 8s linear infinite;
